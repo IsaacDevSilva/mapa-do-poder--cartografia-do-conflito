@@ -17,13 +17,32 @@ offset_right = 632.0
 offset_bottom = 320.0
 text = "jpgare"
 
-[node name="catalogo" type="Button" parent="Panel" unique_id=818151411]
+[node name="tutorial" type="Button" parent="Panel" unique_id=818151411]
 layout_mode = 0
 offset_left = 384.0
 offset_top = 352.0
 offset_right = 656.0
 offset_bottom = 456.0
-text = "catalogo"
+text = "tutorial
+"
+
+[node name="creditos" type="Button" parent="Panel" unique_id=1106831964]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 496.0
+offset_right = 575.0
+offset_bottom = 527.0
+text = "creditos"
+
+[node name="configuraçoes" type="Button" parent="Panel" unique_id=533970823]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 576.0
+offset_right = 576.0
+offset_bottom = 600.0
+text = "configuraçoes"
 
 [connection signal="pressed" from="Panel/jogar" to="." method="_on_jogar_pressed"]
-[connection signal="pressed" from="Panel/catalogo" to="." method="_on_catalogo_pressed"]
+[connection signal="pressed" from="Panel/tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Panel/creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="Panel/configuraçoes" to="." method="_on_configuraçoes_pressed"]

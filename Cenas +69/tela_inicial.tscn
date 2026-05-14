@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://be6us6x7eqtg0"]
 
 [ext_resource type="Script" uid="uid://bl6gmb00mqlbb" path="res://Fuck Scripts/tela_inicial.gd" id="1_cwm6n"]
+[ext_resource type="FontFile" uid="uid://4lilrm62wdkj" path="res://Fonte 8 bit wonder/8-BIT WONDER.TTF" id="2_cwldp"]
 
 [node name="TelaInicial" type="Node2D" unique_id=833326805]
 script = ExtResource("1_cwm6n")
 
-[node name="Panel" type="Panel" parent="." unique_id=1350190482]
+[node name="painel_principal" type="Panel" parent="." unique_id=1350190482]
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="jogar" type="Button" parent="Panel" unique_id=53739524]
+[node name="jogar" type="Button" parent="painel_principal" unique_id=53739524]
 layout_mode = 0
 offset_left = 456.0
 offset_top = 264.0
@@ -17,7 +18,7 @@ offset_right = 632.0
 offset_bottom = 320.0
 text = "jpgare"
 
-[node name="tutorial" type="Button" parent="Panel" unique_id=818151411]
+[node name="tutorial" type="Button" parent="painel_principal" unique_id=818151411]
 layout_mode = 0
 offset_left = 384.0
 offset_top = 352.0
@@ -26,7 +27,7 @@ offset_bottom = 456.0
 text = "tutorial
 "
 
-[node name="creditos" type="Button" parent="Panel" unique_id=1106831964]
+[node name="creditos" type="Button" parent="painel_principal" unique_id=1106831964]
 layout_mode = 0
 offset_left = 504.0
 offset_top = 496.0
@@ -34,7 +35,7 @@ offset_right = 575.0
 offset_bottom = 527.0
 text = "creditos"
 
-[node name="configuraçoes" type="Button" parent="Panel" unique_id=533970823]
+[node name="configuraçoes" type="Button" parent="painel_principal" unique_id=533970823]
 layout_mode = 0
 offset_left = 504.0
 offset_top = 576.0
@@ -42,7 +43,126 @@ offset_right = 576.0
 offset_bottom = 600.0
 text = "configuraçoes"
 
-[connection signal="pressed" from="Panel/jogar" to="." method="_on_jogar_pressed"]
-[connection signal="pressed" from="Panel/tutorial" to="." method="_on_tutorial_pressed"]
-[connection signal="pressed" from="Panel/creditos" to="." method="_on_creditos_pressed"]
-[connection signal="pressed" from="Panel/configuraçoes" to="." method="_on_configuraçoes_pressed"]
+[node name="tutorial_panel_01" type="Panel" parent="." unique_id=1858428106]
+offset_right = 1154.0
+offset_bottom = 649.0
+
+[node name="titulo" type="Label" parent="tutorial_panel_01" unique_id=1741201571]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 43.0
+offset_right = 702.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 21
+text = "Objetivo do jogo"
+
+[node name="regras" type="Label" parent="tutorial_panel_01" unique_id=1040853684]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 132.0
+offset_right = 1296.0
+offset_bottom = 177.0
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 12
+text = "O objetivo do jogo é ter um país com IDH maior que 0.9, ter um PIB maior que 20 Trilhões
+e ser respeitado por mais de 3 países."
+
+[node name="regras2" type="Label" parent="tutorial_panel_01" unique_id=777910181]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 289.0
+offset_right = 1301.0
+offset_bottom = 386.0
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 12
+text = "Como começa a partida.
+O jogador escolhe um país.
+Certas características do país e do mundo são escolhidas aleatoriamente.
+O jogador começa com 1 bilhão para ultilizar.
+O país do jogador começa obrigatoriamente subdesenvolvido."
+
+[node name="regras3" type="Label" parent="tutorial_panel_01" unique_id=1127850376]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 487.0
+offset_right = 1307.0
+offset_bottom = 624.0
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 12
+text = "Um turno pode ser realizado a cada ano.
+Ao final de cada ano as mudaças são mostradas.
+O jogador pode realizar certas ações em 1 turno, como:
+* Comprar
+* Vender
+* Sancionar 
+* Propor aliança 
+* Investir"
+
+[node name="titulo2" type="Label" parent="tutorial_panel_01" unique_id=1684522447]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 223.0
+offset_right = 710.0
+offset_bottom = 273.0
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 21
+text = "Preparacao"
+
+[node name="titulo3" type="Label" parent="tutorial_panel_01" unique_id=362330959]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 426.0
+offset_right = 788.0
+offset_bottom = 476.0
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 21
+text = "turno"
+
+[node name="proxima_pag" type="Button" parent="tutorial_panel_01" unique_id=468021373]
+layout_mode = 0
+offset_left = 993.0
+offset_top = 298.0
+offset_right = 1122.0
+offset_bottom = 369.0
+text = "proxima pagina"
+
+[node name="voltar_principal_01" type="Button" parent="tutorial_panel_01" unique_id=1460976381]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 589.0
+offset_right = 58.0
+offset_bottom = 632.0
+text = "voltar"
+
+[node name="tutorial_panel_02" type="Panel" parent="." unique_id=671765777]
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 1151.0
+offset_bottom = 651.0
+
+[node name="voltar_catalogo" type="Button" parent="tutorial_panel_02" unique_id=1111705869]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 306.0
+offset_right = 100.0
+offset_bottom = 385.0
+text = "pagina anterior"
+
+[node name="voltar_principal_02" type="Button" parent="tutorial_panel_02" unique_id=2106472159]
+layout_mode = 0
+offset_left = -23.0
+offset_top = 557.0
+offset_right = 112.0
+offset_bottom = 668.0
+text = "voltar
+"
+
+[connection signal="pressed" from="painel_principal/jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="painel_principal/tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="painel_principal/creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="painel_principal/configuraçoes" to="." method="_on_configuraçoes_pressed"]
+[connection signal="pressed" from="tutorial_panel_01/proxima_pag" to="." method="_on_proxima_pag_pressed"]
+[connection signal="pressed" from="tutorial_panel_01/voltar_principal_01" to="." method="_on_voltar_principal_01_pressed"]
+[connection signal="pressed" from="tutorial_panel_02/voltar_catalogo" to="." method="_on_voltar_catalogo_pressed"]
+[connection signal="pressed" from="tutorial_panel_02/voltar_principal_02" to="." method="_on_voltar_principal_02_pressed"]

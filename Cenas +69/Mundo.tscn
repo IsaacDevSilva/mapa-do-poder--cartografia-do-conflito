@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dq6nclsp0wp8r"]
+
+[node name="Mundo" type="Node2D" unique_id=261724688]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1580745771]
+offset_left = 184.0
+offset_top = 96.0
+offset_right = 224.0
+offset_bottom = 136.0

@@ -1,3 +1,29 @@
 [gd_scene format=3 uid="uid://be6us6x7eqtg0"]
 
+[ext_resource type="Script" uid="uid://bl6gmb00mqlbb" path="res://Fuck Scripts/tela_inicial.gd" id="1_cwm6n"]
+
 [node name="TelaInicial" type="Node2D" unique_id=833326805]
+script = ExtResource("1_cwm6n")
+
+[node name="Panel" type="Panel" parent="." unique_id=1350190482]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="jogar" type="Button" parent="Panel" unique_id=53739524]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 264.0
+offset_right = 632.0
+offset_bottom = 320.0
+text = "jpgare"
+
+[node name="catalogo" type="Button" parent="Panel" unique_id=818151411]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 352.0
+offset_right = 656.0
+offset_bottom = 456.0
+text = "catalogo"
+
+[connection signal="pressed" from="Panel/jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Panel/catalogo" to="." method="_on_catalogo_pressed"]

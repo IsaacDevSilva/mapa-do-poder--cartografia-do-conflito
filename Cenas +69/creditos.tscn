@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://d31trrbkmwqpj"]
-
-[node name="Creditos" type="Node2D" unique_id=1941410312]
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=2012202149]
-offset_left = 104.0
-offset_top = 160.0
-offset_right = 608.0
-offset_bottom = 200.0

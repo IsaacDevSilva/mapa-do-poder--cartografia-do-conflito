@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cwi7jxeusansy" path="res://PixelMotherFuckerArts/Botao Voltar.png" id="6_n176t"]
 [ext_resource type="Texture2D" uid="uid://b7bbtym83n1ix" path="res://PixelMotherFuckerArts/rolo do pergaminho.png" id="7_l6577"]
 [ext_resource type="Texture2D" uid="uid://dlmhi6dictbwx" path="res://PixelMotherFuckerArts/modelo botao configuraçao.png" id="7_rcjjs"]
-[ext_resource type="Texture2D" uid="uid://1nfm0glk0fpk" path="res://PixelMotherFuckerArts/botao_seta.png" id="8_e636u"]
+[ext_resource type="Texture2D" uid="uid://1nfm0glk0fpk" path="res://PixelMotherFuckerArts/botao_seta_direita.png" id="8_e636u"]
 [ext_resource type="Texture2D" uid="uid://b2tfjkc7gqt3u" path="res://PixelMotherFuckerArts/mesa da tela inicial.jpeg" id="9_8cu4s"]
 
 [sub_resource type="Animation" id="Animation_l6577"]

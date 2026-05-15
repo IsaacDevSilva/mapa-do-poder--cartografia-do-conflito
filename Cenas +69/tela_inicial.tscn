@@ -7,10 +7,119 @@
 [ext_resource type="Texture2D" uid="uid://cv5fpmfummxq0" path="res://PixelMotherFuckerArts/botao_jogar_v2.png" id="4_0d1vl"]
 [ext_resource type="Texture2D" uid="uid://crln1rmlbhli0" path="res://PixelMotherFuckerArts/botao_credito.png" id="6_8cu4s"]
 [ext_resource type="Texture2D" uid="uid://cwi7jxeusansy" path="res://PixelMotherFuckerArts/Botao Voltar.png" id="6_n176t"]
-[ext_resource type="Texture2D" uid="uid://3w4nwmevuaxh" path="res://PixelMotherFuckerArts/configuracoesprites.png" id="7_e636u"]
 [ext_resource type="Texture2D" uid="uid://b7bbtym83n1ix" path="res://PixelMotherFuckerArts/rolo do pergaminho.png" id="7_l6577"]
+[ext_resource type="Texture2D" uid="uid://dlmhi6dictbwx" path="res://PixelMotherFuckerArts/modelo botao configuraçao.png" id="7_rcjjs"]
 [ext_resource type="Texture2D" uid="uid://1nfm0glk0fpk" path="res://PixelMotherFuckerArts/botao_seta_direita.png" id="8_e636u"]
 [ext_resource type="Texture2D" uid="uid://b2tfjkc7gqt3u" path="res://PixelMotherFuckerArts/mesa da tela inicial.jpeg" id="9_8cu4s"]
+
+[sub_resource type="Animation" id="Animation_l6577"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RoloDoPergaminho:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1169, 349)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1152, 89)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("tutorial_panel_01:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1392, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("tutorial_panel_02:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1144, -8)]
+}
+
+[sub_resource type="Animation" id="Animation_rcjjs"]
+resource_name = "animaçao pergaminho"
+length = 2.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RoloDoPergaminho:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1169, 349), Vector2(17, 349)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1160, -24), Vector2(-20, -24)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("tutorial_panel_01:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1152, 0), Vector2(0, -8)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("tutorial_panel_02:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1144, -8), Vector2(-8, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cnnx1"]
+_data = {
+&"RESET": SubResource("Animation_l6577"),
+&"animaçao tutorial": SubResource("Animation_rcjjs")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n176t"]
 draw_center = false
@@ -28,6 +137,9 @@ draw_center = false
 load_path = "res://.godot/imported/botao_tutorial.png-e66aa2c173f51f328fed7510689f21e4.ctex"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnnx1"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7itw3"]
 draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlf5j"]
@@ -50,6 +162,23 @@ draw_center = false
 
 [node name="TelaInicial" type="Node2D" unique_id=833326805]
 script = ExtResource("1_cwm6n")
+
+[node name="animaçao pergaminho" type="AnimationPlayer" parent="." unique_id=1863901168]
+libraries/ = SubResource("AnimationLibrary_cnnx1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1105752096]
+z_index = 1
+offset_left = 1152.0
+offset_top = 89.0
+offset_right = 2788.0156
+offset_bottom = 777.0
+color = Color(1, 1, 0.5019608, 1)
+
+[node name="RoloDoPergaminho" type="Sprite2D" parent="." unique_id=36899316]
+z_index = 2
+position = Vector2(1169, 349)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("7_l6577")
 
 [node name="painel_principal" type="Panel" parent="." unique_id=1350190482]
 offset_right = 1152.0
@@ -109,28 +238,23 @@ expand_icon = true
 
 [node name="configuraçoes" type="Button" parent="painel_principal" unique_id=533970823]
 layout_mode = 0
-offset_left = 104.0
-offset_top = 456.0
-offset_right = 312.0
-offset_bottom = 520.0
-icon = ExtResource("7_e636u")
+offset_left = 16.0
+offset_top = 560.0
+offset_right = 264.0
+offset_bottom = 640.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_7itw3")
+icon = ExtResource("7_rcjjs")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="RoloDoPergaminho" type="Sprite2D" parent="painel_principal" unique_id=36899316]
-position = Vector2(576, 352)
-texture = ExtResource("7_l6577")
-
 [node name="tutorial_panel_01" type="Panel" parent="." unique_id=1858428106]
 visible = false
-offset_right = 1154.0
+z_index = 1
+offset_left = 1392.0
+offset_right = 2545.9976
 offset_bottom = 649.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tlf5j")
-
-[node name="TexturaMesaV2" type="Sprite2D" parent="tutorial_panel_01" unique_id=1868328370]
-position = Vector2(536, 368)
-texture = ExtResource("3_0d1vl")
 
 [node name="titulo" type="Label" parent="tutorial_panel_01" unique_id=1741201571]
 layout_mode = 0
@@ -147,13 +271,14 @@ horizontal_alignment = 1
 layout_mode = 0
 offset_top = 128.0
 offset_right = 1152.0
-offset_bottom = 173.0
+offset_bottom = 184.0
 theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 12
 text = "O objetivo do jogo é ter um país com IDH maior que 0.9, ter um PIB maior que 20 Trilhões
 e ser respeitado por mais de 3 países."
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="regras2" type="Label" parent="tutorial_panel_01" unique_id=777910181]
 layout_mode = 0
@@ -235,11 +360,11 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="tutorial_panel_02" type="Panel" parent="." unique_id=671765777]
-visible = false
-offset_left = 1.0
-offset_top = -3.0
-offset_right = 1151.0
-offset_bottom = 651.0
+z_index = 1
+offset_left = 1144.0
+offset_top = -8.0
+offset_right = 2294.0
+offset_bottom = 646.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lvhjp")
 
 [node name="voltar_catalogo" type="Button" parent="tutorial_panel_02" unique_id=1111705869]
@@ -267,6 +392,23 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Label" type="Label" parent="tutorial_panel_02" unique_id=1327153012]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_cwldp")
+text = "4. Ações 
+O jogador pode fazer ações pré-determinadas pelo jogo, sendo elas:
+Vender:
+O jogador deve acessar o menu \"demandas\" e clicar em vender para escolher a oferta que preferir, aumentando o capital interno e melhorando a relação com o país comprador.
+Comprar:
+O jogador deve acessar o menu \"demandas\" e clicar em comprar para escolher a oferta que desejar, diminuindo o capital interno e melhorando a relação com o país vendedor.
+Sancionar:
+O jogador deve acessar o menu \"sansões\" e escolher um país para sancionar, quando um jogador sanciona um país seus aliados também fazem o mesmo, o jogador também é sancionado pelos aliados do determinado país, infligindo a economia dos países afetados, o jogador deve sancionar um país para enfraquece-lo quando ele se torna um inimigo econômico. Países podem deixar de aliar-se a você quando você sanciona um aliado dele. Uma sanção pode se se tornar uma guerra quando o relacionamento entre os países sancinados é menor que 10 pontos.
+Aliança:
+O jogador pode propor uma aliança com um país quando seu relacionamento com ele é maior que 75 pontos, países são neutros em relação ao jogador entre a faixa de 40 a 60 pontos, o país pode aceitar ou não sua aliança dependo a honra do jogador."
+horizontal_alignment = 1
+
 [node name="creditos" type="Panel" parent="." unique_id=1730618186]
 visible = false
 offset_right = 1152.0
@@ -276,6 +418,7 @@ offset_bottom = 648.0
 position = Vector2(520, 272)
 texture = ExtResource("9_8cu4s")
 
+[connection signal="animation_finished" from="animaçao pergaminho" to="." method="_on_animaçao_pergaminho_animation_finished"]
 [connection signal="pressed" from="painel_principal/jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="painel_principal/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="painel_principal/creditos" to="." method="_on_creditos_pressed"]

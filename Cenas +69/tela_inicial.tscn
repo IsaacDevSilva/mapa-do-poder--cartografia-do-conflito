@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b2tfjkc7gqt3u" path="res://PixelMotherFuckerArts/mesa da tela inicial.jpeg" id="9_8cu4s"]
 
 [sub_resource type="Animation" id="Animation_l6577"]
-length = 0.001
+length = 2.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -249,23 +249,11 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="tutorial_panel_01" type="Panel" parent="." unique_id=1858428106]
-visible = false
 z_index = 1
 offset_left = 1392.0
 offset_right = 2545.9976
 offset_bottom = 649.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tlf5j")
-
-[node name="titulo" type="Label" parent="tutorial_panel_01" unique_id=1741201571]
-layout_mode = 0
-offset_top = 43.0
-offset_right = 1144.0
-offset_bottom = 93.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
-theme_override_fonts/font = ExtResource("2_cwldp")
-theme_override_font_sizes/font_size = 21
-text = "Objetivo do jogo"
-horizontal_alignment = 1
 
 [node name="regras" type="Label" parent="tutorial_panel_01" unique_id=1040853684]
 layout_mode = 0
@@ -311,6 +299,18 @@ O jogador pode realizar certas ações em 1 turno, como:
 * Sancionar 
 * Propor aliança 
 * Investir"
+horizontal_alignment = 1
+
+[node name="titulo" type="Label" parent="tutorial_panel_01" unique_id=1741201571]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 26.0
+offset_right = 1157.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 21
+text = "Objetivo do jogo"
 horizontal_alignment = 1
 
 [node name="titulo2" type="Label" parent="tutorial_panel_01" unique_id=1684522447]
@@ -363,16 +363,16 @@ expand_icon = true
 z_index = 1
 offset_left = 1144.0
 offset_top = -8.0
-offset_right = 2294.0
-offset_bottom = 646.0
+offset_right = 2281.0
+offset_bottom = 650.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lvhjp")
 
 [node name="voltar_catalogo" type="Button" parent="tutorial_panel_02" unique_id=1111705869]
 layout_mode = 0
-offset_left = 144.54785
-offset_top = 438.4312
-offset_right = 274.54785
-offset_bottom = 568.4312
+offset_left = 125.0
+offset_top = 438.0
+offset_right = 255.0
+offset_bottom = 568.0
 rotation = 3.1415927
 theme_override_styles/normal = SubResource("StyleBoxFlat_jcdpc")
 icon = ExtResource("8_e636u")
@@ -394,10 +394,14 @@ expand_icon = true
 
 [node name="Label" type="Label" parent="tutorial_panel_02" unique_id=1327153012]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 133.0
+offset_top = 94.0
+offset_right = 989.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
-text = "4. Ações 
+theme_override_font_sizes/font_size = 13
+text = "
 O jogador pode fazer ações pré-determinadas pelo jogo, sendo elas:
 Vender:
 O jogador deve acessar o menu \"demandas\" e clicar em vender para escolher a oferta que preferir, aumentando o capital interno e melhorando a relação com o país comprador.
@@ -408,6 +412,31 @@ O jogador deve acessar o menu \"sansões\" e escolher um país para sancionar, q
 Aliança:
 O jogador pode propor uma aliança com um país quando seu relacionamento com ele é maior que 75 pontos, países são neutros em relação ao jogador entre a faixa de 40 a 60 pontos, o país pode aceitar ou não sua aliança dependo a honra do jogador."
 horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="titulo" type="Label" parent="tutorial_panel_02" unique_id=1434144096]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 22.0
+offset_right = 1165.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 21
+text = "Açoes"
+horizontal_alignment = 1
+
+[node name="proxima_pag_02" type="Button" parent="tutorial_panel_02" unique_id=918324961]
+layout_mode = 0
+offset_left = 989.0
+offset_top = 286.0
+offset_right = 1119.0
+offset_bottom = 416.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_jcdpc")
+icon = ExtResource("8_e636u")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="creditos" type="Panel" parent="." unique_id=1730618186]
 visible = false
@@ -418,6 +447,126 @@ offset_bottom = 648.0
 position = Vector2(520, 272)
 texture = ExtResource("9_8cu4s")
 
+[node name="tutorial_panel_03" type="Panel" parent="." unique_id=916512842]
+z_index = 1
+offset_left = 4183.0
+offset_top = 97.0
+offset_right = 5320.0
+offset_bottom = 755.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lvhjp")
+
+[node name="voltar_catalogo_02" type="Button" parent="tutorial_panel_03" unique_id=808105051]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 423.0
+offset_right = 259.0
+offset_bottom = 553.0
+rotation = 3.1415927
+theme_override_styles/normal = SubResource("StyleBoxFlat_jcdpc")
+icon = ExtResource("8_e636u")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="voltar_principal_02" type="Button" parent="tutorial_panel_03" unique_id=699462536]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 555.0
+offset_right = 150.0
+offset_bottom = 666.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6577")
+icon = ExtResource("6_n176t")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="tutorial_panel_03" unique_id=963226079]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 47.0
+offset_right = 1098.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 13
+text = "Os recursos, como matéria prima são ultiluzados para investir no seu próprio país"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="titulo" type="Label" parent="tutorial_panel_03" unique_id=462070616]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 7.0
+offset_right = 1209.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 21
+text = "Uso de recursos"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="tutorial_panel_03" unique_id=1060800545]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 159.0
+offset_right = 1090.0
+offset_bottom = 354.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 13
+text = "O jogador começa com 200 pontos de honra.
+O jogador aumenta sua honra melhorando seu país.
+A escala de honra vai de 0 a 1.000 pontos.
+A honra serve para países escolherem suas ofertas e fazerem ofertas melhores para o jogador.
+Quanto mais honra um país tiver mais confiável ele se torna.
+Além da honra do país, o jogador tem um status único de relacionamento com cada país, chamada de respeito, ela aumenta quando o país de relacionamento positivamente."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="titulo2" type="Label" parent="tutorial_panel_03" unique_id=1943041448]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 119.0
+offset_right = 1209.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 21
+text = "Honra"
+horizontal_alignment = 1
+
+[node name="titulo3" type="Label" parent="tutorial_panel_03" unique_id=1907034363]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 375.0
+offset_right = 1217.0
+offset_bottom = 421.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 21
+text = "IDH"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="tutorial_panel_03" unique_id=1402833797]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 399.0
+offset_right = 1137.0
+offset_bottom = 682.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 13
+text = "O IDH basea-se em:
+* Segurança: diminui a quantidade de crimes no seu país, aumentando a vida da população.
+* Saúde: faz os cidadãos contribuírem por mais tempo, aumentando a arrecadação de impostos.
+* Educação: melhora a especialização dos cidadãos, aumentando o valor pago de impostos e a criação de tecnologia em seu país.
+O jogador pode escolher no que investir, e quanto mais alta as características maior o IDH.
+O país do jogador pode ter cidadãos que não contribuem enconomicamente, como:
+Criminosos: o jogador deve investir em segurança 
+Aposentados e crianças: o jogador deve investir em educação, fazendo as pessoas trabalharem mais cedo e se aposentarem mais tarde."
+horizontal_alignment = 1
+autowrap_mode = 3
+
 [connection signal="animation_finished" from="animaçao pergaminho" to="." method="_on_animaçao_pergaminho_animation_finished"]
 [connection signal="pressed" from="painel_principal/jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="painel_principal/tutorial" to="." method="_on_tutorial_pressed"]
@@ -427,3 +576,4 @@ texture = ExtResource("9_8cu4s")
 [connection signal="pressed" from="tutorial_panel_01/voltar_principal_01" to="." method="_on_voltar_principal_01_pressed"]
 [connection signal="pressed" from="tutorial_panel_02/voltar_catalogo" to="." method="_on_voltar_catalogo_pressed"]
 [connection signal="pressed" from="tutorial_panel_02/voltar_principal_02" to="." method="_on_voltar_principal_02_pressed"]
+[connection signal="pressed" from="tutorial_panel_02/proxima_pag_02" to="." method="_on_proxima_pag_02_pressed"]

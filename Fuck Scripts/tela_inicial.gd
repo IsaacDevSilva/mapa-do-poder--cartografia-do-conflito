@@ -4,7 +4,7 @@ var tutorial_rodando = false
 func _ready() -> void:
 	$tutorial_panel_01.visible = false
 	$tutorial_panel_02.visible = false
-
+	$tutorial_panel_03.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -59,6 +59,7 @@ func escolher_texto_do_pergaminho():
 func _on_voltar_catalogo_pressed() -> void:
 	$tutorial_panel_02.visible = false
 	$tutorial_panel_01.visible = true
+	
 
 
 func _on_animaçao_pergaminho_animation_finished(anim_name: StringName) -> void:
@@ -67,3 +68,8 @@ func _on_animaçao_pergaminho_animation_finished(anim_name: StringName) -> void:
 		tutorial_rodando = false
 		
 		
+
+
+func _on_proxima_pag_02_pressed() -> void:
+	$tutorial_panel_02.visible = false
+	$tutorial_panel_03.visible = true

@@ -1,9 +1,113 @@
 [gd_scene format=3 uid="uid://dq6nclsp0wp8r"]
 
+[ext_resource type="Texture2D" uid="uid://wsjeexcsnil3" path="res://PixelMotherFuckerArts/titulo do jogo.png" id="1_xfguv"]
+[ext_resource type="FontFile" uid="uid://4lilrm62wdkj" path="res://Fonte 8 bit wonder/8-BIT WONDER.TTF" id="2_pujpp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pujpp"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2js5m"]
+draw_center = false
+
 [node name="Mundo" type="Node2D" unique_id=261724688]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1580745771]
-offset_left = 184.0
-offset_top = 96.0
-offset_right = 224.0
-offset_bottom = 136.0
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=256019499]
+
+[node name="Panel" type="Panel" parent="." unique_id=1663872525]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pujpp")
+
+[node name="TituloDoJogo" type="Sprite2D" parent="Panel" unique_id=571621952]
+position = Vector2(576, 136)
+scale = Vector2(4, 4.092)
+texture = ExtResource("1_xfguv")
+region_enabled = true
+region_rect = Rect2(0, 33.009655, 128, 12.263096)
+
+[node name="Label" type="Label" parent="Panel" unique_id=1542704421]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 16.0
+offset_right = 962.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_2js5m")
+text = "BEM-VINDO AO "
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel" unique_id=857700290]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 168.0
+offset_right = 1072.0
+offset_bottom = 255.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_2js5m")
+text = "Selecione seu pais:"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1929065331]
+layout_mode = 1
+offset_top = 256.0
+offset_right = 384.0
+offset_bottom = 648.0
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer" unique_id=118162372]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "Estados Unidos"
+flat = true
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer" unique_id=1384433519]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "China"
+flat = true
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer" unique_id=1929670020]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "reino unido"
+flat = true
+icon_alignment = 1
+
+[node name="Button4" type="Button" parent="Panel/VBoxContainer" unique_id=981852952]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "alemanha"
+flat = true
+icon_alignment = 1
+
+[node name="Button5" type="Button" parent="Panel/VBoxContainer" unique_id=1701476101]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "franca"
+flat = true
+icon_alignment = 1
+
+[node name="Button6" type="Button" parent="Panel/VBoxContainer" unique_id=689342804]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "japao"
+flat = true
+icon_alignment = 1
+
+[node name="Button7" type="Button" parent="Panel/VBoxContainer" unique_id=1931304231]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+flat = true
+icon_alignment = 1

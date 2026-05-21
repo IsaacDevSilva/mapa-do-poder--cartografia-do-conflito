@@ -119,7 +119,8 @@ var paises = {
 "seguranca":58,
 
 "idh":0.70
-},#Japão → rei do IDH/tecnologia, poucos commodities, militar moderado.
+},
+#Japão → rei do IDH/tecnologia, poucos commodities, militar moderado.
 #EUA → build de potência total: militar + tech absurdos, mas saúde/segurança reduzem IDH.
 #China → quase rival direta dos EUA, população gigantesca.
 #Alemanha → país “econômico/qualidade de vida”.

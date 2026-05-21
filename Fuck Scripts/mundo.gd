@@ -1,7 +1,7 @@
 extends Node2D
 var botao
 var vbox
-var pais
+var pais = null
 
 func _ready() -> void:
 	for vbox in $escolha.get_children():
@@ -12,7 +12,8 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
-	print(paises.paises["RUSSIA"]["pib"])
+	if pais != null:
+		print(paises.paises[pais]["pib"])
 func _botao_clicado(botao):
 	pais = botao.name
 	$escolha.visible = false

@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://dq6nclsp0wp8r"]
 
+[ext_resource type="Script" uid="uid://d3rt3cf02epu3" path="res://Fuck Scripts/mundo.gd" id="1_ek21q"]
 [ext_resource type="Texture2D" uid="uid://wsjeexcsnil3" path="res://PixelMotherFuckerArts/titulo do jogo.png" id="1_xfguv"]
 [ext_resource type="FontFile" uid="uid://4lilrm62wdkj" path="res://Fonte 8 bit wonder/8-BIT WONDER.TTF" id="2_pujpp"]
+[ext_resource type="Texture2D" uid="uid://dv3lo02totfnn" path="res://PixelMotherFuckerArts/textura_mesa_v2.png" id="2_q3100"]
+[ext_resource type="Texture2D" uid="uid://bo3vjkh1qtxbv" path="res://PixelMotherFuckerArts/mapa mundi.png" id="3_2js5m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pujpp"]
 draw_center = false
@@ -10,22 +13,36 @@ draw_center = false
 draw_center = false
 
 [node name="Mundo" type="Node2D" unique_id=261724688]
+script = ExtResource("1_ek21q")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=256019499]
+position = Vector2(576, 320)
+scale = Vector2(0.690989, 0.72570765)
+texture = ExtResource("2_q3100")
 
-[node name="Panel" type="Panel" parent="." unique_id=1663872525]
+[node name="MapaMundi" type="Sprite2D" parent="." unique_id=1275534284]
+position = Vector2(576, 320.00003)
+scale = Vector2(0.64419186, 0.56192905)
+texture = ExtResource("3_2js5m")
+
+[node name="escolha" type="Panel" parent="." unique_id=1663872525]
 offset_right = 1152.0
 offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_pujpp")
 
-[node name="TituloDoJogo" type="Sprite2D" parent="Panel" unique_id=571621952]
+[node name="Sprite2D" type="Sprite2D" parent="escolha" unique_id=845180921]
+position = Vector2(584, 320)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_q3100")
+
+[node name="TituloDoJogo" type="Sprite2D" parent="escolha" unique_id=571621952]
 position = Vector2(576, 136)
 scale = Vector2(4, 4.092)
 texture = ExtResource("1_xfguv")
 region_enabled = true
 region_rect = Rect2(0, 33.009655, 128, 12.263096)
 
-[node name="Label" type="Label" parent="Panel" unique_id=1542704421]
+[node name="Label" type="Label" parent="escolha" unique_id=1542704421]
 layout_mode = 0
 offset_left = 232.0
 offset_top = 16.0
@@ -38,7 +55,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2js5m")
 text = "BEM-VINDO AO "
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Panel" unique_id=857700290]
+[node name="Label2" type="Label" parent="escolha" unique_id=857700290]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 168.0
@@ -51,13 +68,14 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2js5m")
 text = "Selecione seu pais:"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1929065331]
+[node name="desenvolvidos" type="VBoxContainer" parent="escolha" unique_id=1929065331]
 layout_mode = 1
 offset_top = 256.0
 offset_right = 384.0
 offset_bottom = 648.0
+theme_override_constants/separation = 15
 
-[node name="Button" type="Button" parent="Panel/VBoxContainer" unique_id=118162372]
+[node name="Button" type="Button" parent="escolha/desenvolvidos" unique_id=118162372]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
@@ -65,7 +83,7 @@ text = "Estados Unidos"
 flat = true
 icon_alignment = 1
 
-[node name="Button2" type="Button" parent="Panel/VBoxContainer" unique_id=1384433519]
+[node name="Button2" type="Button" parent="escolha/desenvolvidos" unique_id=1384433519]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
@@ -73,7 +91,7 @@ text = "China"
 flat = true
 icon_alignment = 1
 
-[node name="Button3" type="Button" parent="Panel/VBoxContainer" unique_id=1929670020]
+[node name="Button3" type="Button" parent="escolha/desenvolvidos" unique_id=1929670020]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
@@ -81,7 +99,7 @@ text = "reino unido"
 flat = true
 icon_alignment = 1
 
-[node name="Button4" type="Button" parent="Panel/VBoxContainer" unique_id=981852952]
+[node name="Button4" type="Button" parent="escolha/desenvolvidos" unique_id=981852952]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
@@ -89,7 +107,7 @@ text = "alemanha"
 flat = true
 icon_alignment = 1
 
-[node name="Button5" type="Button" parent="Panel/VBoxContainer" unique_id=1701476101]
+[node name="Button5" type="Button" parent="escolha/desenvolvidos" unique_id=1701476101]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
@@ -97,7 +115,7 @@ text = "franca"
 flat = true
 icon_alignment = 1
 
-[node name="Button6" type="Button" parent="Panel/VBoxContainer" unique_id=689342804]
+[node name="Button6" type="Button" parent="escolha/desenvolvidos" unique_id=689342804]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
@@ -105,9 +123,162 @@ text = "japao"
 flat = true
 icon_alignment = 1
 
-[node name="Button7" type="Button" parent="Panel/VBoxContainer" unique_id=1931304231]
+[node name="Button7" type="Button" parent="escolha/desenvolvidos" unique_id=1931304231]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
+text = "india"
+flat = true
+icon_alignment = 1
+
+[node name="Button8" type="Button" parent="escolha/desenvolvidos" unique_id=1203999101]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "russia"
+flat = true
+icon_alignment = 1
+
+[node name="desenvolvimento" type="VBoxContainer" parent="escolha" unique_id=1399137842]
+layout_mode = 1
+offset_left = 384.0
+offset_top = 256.0
+offset_right = 768.0
+offset_bottom = 648.0
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="escolha/desenvolvimento" unique_id=1060671638]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82000756, 0.7541016, 0.14851916, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "brasil"
+flat = true
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="escolha/desenvolvimento" unique_id=1312343363]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82000756, 0.7541016, 0.14851916, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "mexico"
+flat = true
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="escolha/desenvolvimento" unique_id=1104707651]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82000756, 0.7541016, 0.14851916, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "africa do sul"
+flat = true
+icon_alignment = 1
+
+[node name="Button4" type="Button" parent="escolha/desenvolvimento" unique_id=1560912036]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82000756, 0.7541016, 0.14851916, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "arabia saudita"
+flat = true
+icon_alignment = 1
+
+[node name="Button5" type="Button" parent="escolha/desenvolvimento" unique_id=704981289]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82000756, 0.7541016, 0.14851916, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "argentina"
+flat = true
+icon_alignment = 1
+
+[node name="Button6" type="Button" parent="escolha/desenvolvimento" unique_id=669643899]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82000756, 0.7541016, 0.14851916, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "australia"
+flat = true
+icon_alignment = 1
+
+[node name="Button7" type="Button" parent="escolha/desenvolvimento" unique_id=459772429]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82000756, 0.7541016, 0.14851916, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "turquia"
+flat = true
+icon_alignment = 1
+
+[node name="Button8" type="Button" parent="escolha/desenvolvimento" unique_id=1107291404]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82000756, 0.7541016, 0.14851916, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = " indonesia"
+flat = true
+icon_alignment = 1
+
+[node name="subdesenvolvidos" type="VBoxContainer" parent="escolha" unique_id=1381747113]
+layout_mode = 1
+offset_left = 768.0
+offset_top = 256.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="escolha/subdesenvolvidos" unique_id=750744868]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81960785, 0.2509804, 0.14901961, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "haiti"
+flat = true
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="escolha/subdesenvolvidos" unique_id=1710808831]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81960785, 0.2509804, 0.14901961, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "afeganistao"
+flat = true
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="escolha/subdesenvolvidos" unique_id=2126017875]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81960785, 0.2509804, 0.14901961, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "siria"
+flat = true
+icon_alignment = 1
+
+[node name="Button4" type="Button" parent="escolha/subdesenvolvidos" unique_id=1710409423]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81960785, 0.2509804, 0.14901961, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "venezuela"
+flat = true
+icon_alignment = 1
+
+[node name="Button5" type="Button" parent="escolha/subdesenvolvidos" unique_id=1993192629]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81960785, 0.2509804, 0.14901961, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "congo"
+flat = true
+icon_alignment = 1
+
+[node name="Button6" type="Button" parent="escolha/subdesenvolvidos" unique_id=657787479]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81960785, 0.2509804, 0.14901961, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "cuba"
+flat = true
+icon_alignment = 1
+
+[node name="Button7" type="Button" parent="escolha/subdesenvolvidos" unique_id=1435496257]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81960785, 0.2509804, 0.14901961, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "paquistao"
+flat = true
+icon_alignment = 1
+
+[node name="Button8" type="Button" parent="escolha/subdesenvolvidos" unique_id=1807636773]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81960785, 0.2509804, 0.14901961, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+text = "coreia do norte"
 flat = true
 icon_alignment = 1

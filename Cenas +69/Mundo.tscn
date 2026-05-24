@@ -12,11 +12,110 @@ draw_center = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2js5m"]
 draw_center = false
 
+[sub_resource type="Animation" id="Animation_ek21q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(152, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("estatisticas_informaçoes:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("estatisticas_informaçoes:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(152, 23)]
+}
+
+[sub_resource type="Animation" id="Animation_q3100"]
+resource_name = "estatisticas"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(152, 0), Vector2(152, 264)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("estatisticas_informaçoes:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0009999999, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1e-05), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("estatisticas_informaçoes:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(152, 23), Vector2(152, 264)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1k42u"]
+_data = {
+&"RESET": SubResource("Animation_ek21q"),
+&"estatisticas": SubResource("Animation_q3100")
+}
+
 [node name="Mundo" type="Node2D" unique_id=261724688]
 script = ExtResource("1_ek21q")
 
+[node name="HudV3TelaMundo" type="Sprite2D" parent="." unique_id=197123943]
+position = Vector2(576, 326)
+texture = ExtResource("5_ek21q")
+
+[node name="pais_nome" type="Label" parent="." unique_id=646060268]
+offset_left = 24.0
+offset_top = 96.0
+offset_right = 184.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="escolha" type="Panel" parent="." unique_id=1663872525]
-visible = false
+z_index = 1
 offset_right = 1152.0
 offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_pujpp")
@@ -274,6 +373,35 @@ text = "coreia do norte"
 flat = true
 icon_alignment = 1
 
-[node name="HudV3TelaMundo" type="Sprite2D" parent="." unique_id=197123943]
-position = Vector2(576, 326)
-texture = ExtResource("5_ek21q")
+[node name="estatisticas_botao" type="Button" parent="." unique_id=1619114674]
+offset_left = 16.0
+offset_top = 168.0
+offset_right = 112.0
+offset_bottom = 200.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 17
+text = "Estatiscas"
+flat = true
+icon_alignment = 1
+
+[node name="animaçoes_geral" type="AnimationPlayer" parent="." unique_id=634595259]
+libraries/ = SubResource("AnimationLibrary_1k42u")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=842905961]
+offset_left = 24.0
+offset_top = 200.0
+offset_right = 176.0
+offset_bottom = 200.0
+color = Color(0.3666178, 0.21009266, 0.13549381, 1)
+
+[node name="estatisticas_informaçoes" type="Label" parent="." unique_id=1787748635]
+offset_left = 24.0
+offset_top = 200.0
+offset_right = 176.0
+offset_bottom = 223.0
+scale = Vector2(1, 1e-05)
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+horizontal_alignment = 1
+
+[connection signal="pressed" from="estatisticas_botao" to="." method="_on_estatisticas_pressed"]

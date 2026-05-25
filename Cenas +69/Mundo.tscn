@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://4lilrm62wdkj" path="res://Fonte 8 bit wonder/8-BIT WONDER.TTF" id="2_pujpp"]
 [ext_resource type="Texture2D" uid="uid://dv3lo02totfnn" path="res://PixelMotherFuckerArts/textura_mesa_v2.png" id="2_q3100"]
 [ext_resource type="Texture2D" uid="uid://mpc4n64x7lhk" path="res://PixelMotherFuckerArts/hud v3 tela mundo.png" id="5_ek21q"]
+[ext_resource type="Texture2D" uid="uid://0coslxkn1l4l" path="res://PixelMotherFuckerArts/botao_conflitarV2.png" id="6_q3100"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pujpp"]
 draw_center = false
@@ -95,6 +96,12 @@ _data = {
 &"RESET": SubResource("Animation_ek21q"),
 &"estatisticas": SubResource("Animation_q3100")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3100"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ek21q"]
+draw_center = false
 
 [node name="Mundo" type="Node2D" unique_id=261724688]
 script = ExtResource("1_ek21q")
@@ -404,4 +411,49 @@ scale = Vector2(1, 1e-05)
 theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
 horizontal_alignment = 1
 
+[node name="conflitar" type="Button" parent="." unique_id=46860701]
+offset_left = 16.0
+offset_top = 408.0
+offset_right = 192.0
+offset_bottom = 472.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_q3100")
+icon = ExtResource("6_q3100")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="dia" type="Label" parent="." unique_id=2075429758]
+offset_left = 24.0
+offset_top = 496.0
+offset_right = 184.0
+offset_bottom = 528.0
+theme_override_colors/font_color = Color(0.49788624, 0.20059884, 3.3691526e-07, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ek21q")
+horizontal_alignment = 1
+
+[node name="mes" type="Label" parent="." unique_id=886283734]
+offset_left = 24.0
+offset_top = 552.0
+offset_right = 176.0
+offset_bottom = 584.0
+theme_override_colors/font_color = Color(0.49788624, 0.20059884, 3.3691526e-07, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ek21q")
+horizontal_alignment = 1
+
+[node name="ano" type="Label" parent="." unique_id=1623147127]
+offset_left = 24.0
+offset_top = 608.0
+offset_right = 184.0
+offset_bottom = 632.0
+theme_override_colors/font_color = Color(0.49788624, 0.20059884, 3.3691526e-07, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ek21q")
+horizontal_alignment = 1
+
 [connection signal="pressed" from="estatisticas_botao" to="." method="_on_estatisticas_pressed"]
+[connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]

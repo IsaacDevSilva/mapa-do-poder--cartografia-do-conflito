@@ -6,7 +6,7 @@ var estatisticas_aberto = false
 var data
 var dia_atual 
 var mes_atual
-var ano_atual = 2025
+var ano_atual = 2026
 
 func _ready() -> void:
 	for vbox in $escolha.get_children():
@@ -14,6 +14,9 @@ func _ready() -> void:
 			for botao in vbox.get_children():
 				if botao is Button:
 					botao.pressed.connect(_botao_clicado.bind(botao))
+	$dia.text = str(randi_range(1,30))
+	$mes.text = str("janeiro")
+	$ano.text = str(2026)
 	
 
 func _process(delta: float) -> void:
@@ -29,7 +32,7 @@ func _botao_clicado(botao):
 
 func _on_estatisticas_pressed() -> void:
 	if estatisticas_aberto == false:
-		$"animaçoes_geral".play("estatisticas")
+		$"animaçoes_geral".play("estatisticas_animaçao")
 		estatisticas_aberto = true
 		var texto = ""
 		for chave in paises.paises[pais]:
@@ -39,9 +42,9 @@ func _on_estatisticas_pressed() -> void:
 			elif chave == "populacao":
 				valor = str(valor) + " M"
 			texto += str(chave) + ": " + str(valor) + "\n"
-		$"estatisticas_informaçoes".text = texto
+		$info_estatisticas.text = texto
 	elif estatisticas_aberto:
-		$"animaçoes_geral".play_backwards("estatisticas")
+		$"animaçoes_geral".play_backwards("estatisticas_animaçao")
 		estatisticas_aberto = false
 		
 func _turnos(dia_atual,mes_atual,ano_atual):

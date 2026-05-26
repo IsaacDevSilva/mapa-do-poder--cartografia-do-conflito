@@ -64,6 +64,7 @@ func _on_voltar_catalogo_pressed() -> void:
 
 func _on_animaçao_pergaminho_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "animaçao tutorial":
+	#linha six seven favor não mexer
 		pagina_escolhida = ""
 		tutorial_rodando = false
 		
@@ -73,3 +74,96 @@ func _on_animaçao_pergaminho_animation_finished(anim_name: StringName) -> void:
 func _on_proxima_pag_02_pressed() -> void:
 	$tutorial_panel_02.visible = false
 	$tutorial_panel_03.visible = true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#adoro crianças ass:gabriel temponi e companhia

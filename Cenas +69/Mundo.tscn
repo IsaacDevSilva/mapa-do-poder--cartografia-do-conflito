@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://mpc4n64x7lhk" path="res://PixelMotherFuckerArts/hud v3 tela mundo.png" id="5_ek21q"]
 [ext_resource type="Texture2D" uid="uid://0coslxkn1l4l" path="res://PixelMotherFuckerArts/botao_conflitarV2.png" id="6_q3100"]
 [ext_resource type="Texture2D" uid="uid://oge4tutranqb" path="res://PixelMotherFuckerArts/pergaminho_dados_pais.png" id="7_1k42u"]
+[ext_resource type="Texture2D" uid="uid://b7bbtym83n1ix" path="res://PixelMotherFuckerArts/rolo do pergaminho.png" id="8_x611g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pujpp"]
 draw_center = false
@@ -26,6 +27,106 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(40, -240)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RoloDoPergaminho:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-144, 336)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RoloDoPergaminho2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1272.0001, 336)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PergaminhoDadosPais2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-504, 328.00003)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PergaminhoDadosPais3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1656, 328)]
+}
+
+[sub_resource type="Animation" id="Animation_h2qi4"]
+resource_name = "demandas_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RoloDoPergaminho:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-144, 336), Vector2(424, 336)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RoloDoPergaminho2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1272.0001, 336), Vector2(704.0001, 336)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PergaminhoDadosPais2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-504, 328.00003), Vector2(64, 328)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PergaminhoDadosPais3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1656, 328), Vector2(1104, 328)]
 }
 
 [sub_resource type="Animation" id="Animation_1k42u"]
@@ -58,6 +159,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1k42u"]
 _data = {
 &"RESET": SubResource("Animation_ek21q"),
+&"demandas_animation": SubResource("Animation_h2qi4"),
 &"estatisticas_animaçao": SubResource("Animation_1k42u")
 }
 
@@ -68,6 +170,9 @@ draw_center = false
 draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1k42u"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsjnt"]
 draw_center = false
 
 [node name="Mundo" type="Node2D" unique_id=261724688]
@@ -421,5 +526,40 @@ theme_override_font_sizes/font_size = 11
 theme_override_styles/normal = SubResource("StyleBoxFlat_1k42u")
 horizontal_alignment = 1
 
+[node name="demandas" type="Button" parent="." unique_id=830437450]
+offset_left = 24.0
+offset_top = 296.0
+offset_right = 176.0
+offset_bottom = 335.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wsjnt")
+text = "demandas"
+flat = true
+icon_alignment = 1
+
+[node name="PergaminhoDadosPais2" type="Sprite2D" parent="." unique_id=1303991872]
+position = Vector2(-504, 328.00003)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = ExtResource("7_1k42u")
+
+[node name="PergaminhoDadosPais3" type="Sprite2D" parent="." unique_id=293354547]
+position = Vector2(1656, 328)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = ExtResource("7_1k42u")
+
+[node name="RoloDoPergaminho" type="Sprite2D" parent="." unique_id=2019882346]
+position = Vector2(-144, 336)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("8_x611g")
+
+[node name="RoloDoPergaminho2" type="Sprite2D" parent="." unique_id=1717245337]
+position = Vector2(1272.0001, 336)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("8_x611g")
+
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]
 [connection signal="pressed" from="estatisticas_botao" to="." method="_on_estatisticas_pressed"]
+[connection signal="pressed" from="demandas" to="." method="_on_demandas_pressed"]

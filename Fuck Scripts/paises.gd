@@ -64,6 +64,7 @@ var paises = {
 "FRANCA":{
 "pib":3.2,
 "populacao":65,
+#linha six seven favor não mexer
 "militar":82,
 "honra":840,
 "tecnologia":90,
@@ -381,11 +382,11 @@ var paises = {
 #Afeganistão/Haiti → modo sofrimento máximo kkkkk.
 }
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	pass # Replace with function body.
+	pass 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	pass

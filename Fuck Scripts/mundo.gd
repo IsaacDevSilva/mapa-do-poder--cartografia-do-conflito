@@ -7,7 +7,7 @@ var data
 var dia_atual 
 var mes_atual
 var ano_atual = 2026
-
+#assasinar o gabriel temponi
 func _ready() -> void:
 	for vbox in $escolha.get_children():
 		if vbox is VBoxContainer:
@@ -64,4 +64,7 @@ func _on_conflitar_pressed() -> void:
 	mes_atual = int(randi_range(1,12))
 	ano_atual = int(ano_atual+ 1)
 	_turnos(dia_atual,mes_atual,ano_atual)
-	
+#linha six seven favor não mexer
+
+func _on_demandas_pressed() -> void:
+	$"animaçoes_geral".play("demandas_animation")

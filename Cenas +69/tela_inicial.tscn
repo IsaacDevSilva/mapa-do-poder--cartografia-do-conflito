@@ -12,57 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://1nfm0glk0fpk" path="res://PixelMotherFuckerArts/botao_seta_direita.png" id="8_e636u"]
 [ext_resource type="Texture2D" uid="uid://b2tfjkc7gqt3u" path="res://PixelMotherFuckerArts/mesa da tela inicial.jpeg" id="9_8cu4s"]
 
-[sub_resource type="Animation" id="Animation_l6577"]
-length = 2.0333333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RoloDoPergaminho:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1169, 349), Vector2(-210, 349)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.033333335, 2.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1152, 0), Vector2(-100, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("tutorial_panel_01:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1392, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("tutorial_panel_02:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1144, -8)]
-}
-
 [sub_resource type="Animation" id="Animation_rcjjs"]
 resource_name = "animaçao pergaminho"
 length = 2.0333333
@@ -76,7 +25,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1169, 349), Vector2(17, 349)]
+"values": [Vector2(1169, 349), Vector2(-210, 349)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -88,7 +37,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 2.0333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1160, -24), Vector2(-20, -24)]
+"values": [Vector2(1160, -24), Vector2(-201, -24)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -117,7 +66,6 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cnnx1"]
 _data = {
-&"RESET": SubResource("Animation_l6577"),
 &"animaçao tutorial": SubResource("Animation_rcjjs")
 }
 
@@ -168,9 +116,10 @@ libraries/ = SubResource("AnimationLibrary_cnnx1")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1105752096]
 z_index = 1
-offset_left = 1152.0
-offset_right = 2788.0095
-offset_bottom = 688.0
+offset_left = 1160.0
+offset_top = -24.0
+offset_right = 2796.0073
+offset_bottom = 664.0
 color = Color(1, 1, 0.5019608, 1)
 
 [node name="RoloDoPergaminho" type="Sprite2D" parent="." unique_id=36899316]
@@ -248,9 +197,10 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="tutorial_panel_01" type="Panel" parent="." unique_id=1858428106]
+visible = false
 z_index = 1
-offset_left = 1392.0
-offset_right = 2545.9976
+offset_left = 1152.0
+offset_right = 2305.9976
 offset_bottom = 649.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tlf5j")
 
@@ -348,9 +298,9 @@ expand_icon = true
 
 [node name="voltar_principal_01" type="Button" parent="tutorial_panel_01" unique_id=1460976381]
 layout_mode = 0
-offset_left = 1008.0
+offset_left = 956.0
 offset_top = 568.0
-offset_right = 1139.0
+offset_right = 1087.0
 offset_bottom = 635.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_e636u")
 icon = ExtResource("6_n176t")
@@ -359,6 +309,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="tutorial_panel_02" type="Panel" parent="." unique_id=671765777]
+visible = false
 z_index = 1
 offset_left = 1144.0
 offset_top = -8.0
@@ -437,19 +388,12 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="creditos" type="Panel" parent="." unique_id=1730618186]
-visible = false
-offset_right = 1152.0
-offset_bottom = 648.0
-
-[node name="MesaDaTelaInicial" type="Sprite2D" parent="creditos" unique_id=1150203631]
-position = Vector2(520, 272)
-texture = ExtResource("9_8cu4s")
-
 [node name="tutorial_panel_03" type="Panel" parent="." unique_id=916512842]
 z_index = 1
-offset_right = 1136.9976
-offset_bottom = 658.0
+offset_left = 4.0
+offset_top = -6.0
+offset_right = 1140.9976
+offset_bottom = 652.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lvhjp")
 
 [node name="voltar_catalogo_02" type="Button" parent="tutorial_panel_03" unique_id=808105051]
@@ -467,10 +411,10 @@ expand_icon = true
 
 [node name="voltar_principal_02" type="Button" parent="tutorial_panel_03" unique_id=699462536]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 555.0
-offset_right = 150.0
-offset_bottom = 666.0
+offset_left = 1.0
+offset_top = 557.0
+offset_right = 136.0
+offset_bottom = 668.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_l6577")
 icon = ExtResource("6_n176t")
 flat = true
@@ -479,10 +423,10 @@ expand_icon = true
 
 [node name="Label" type="Label" parent="tutorial_panel_03" unique_id=963226079]
 layout_mode = 0
-offset_left = 185.0
-offset_top = 47.0
-offset_right = 1098.0
-offset_bottom = 96.0
+offset_left = 156.0
+offset_top = 57.0
+offset_right = 1069.0
+offset_bottom = 106.0
 theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 13
@@ -492,10 +436,10 @@ autowrap_mode = 3
 
 [node name="titulo" type="Label" parent="tutorial_panel_03" unique_id=462070616]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 7.0
-offset_right = 1209.0
-offset_bottom = 53.0
+offset_left = 18.0
+offset_top = 26.0
+offset_right = 1162.0
+offset_bottom = 72.0
 theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 21
@@ -504,10 +448,10 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="tutorial_panel_03" unique_id=1060800545]
 layout_mode = 0
-offset_left = 177.0
-offset_top = 159.0
-offset_right = 1090.0
-offset_bottom = 354.0
+offset_left = 142.0
+offset_top = 165.0
+offset_right = 1012.0
+offset_bottom = 360.0
 theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 13
@@ -522,10 +466,10 @@ autowrap_mode = 3
 
 [node name="titulo2" type="Label" parent="tutorial_panel_03" unique_id=1943041448]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 119.0
-offset_right = 1209.0
-offset_bottom = 165.0
+offset_left = 36.0
+offset_top = 125.0
+offset_right = 1180.0
+offset_bottom = 171.0
 theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 21
@@ -546,6 +490,139 @@ horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="tutorial_panel_03" unique_id=1402833797]
 layout_mode = 0
+offset_left = 101.0
+offset_top = 393.0
+offset_right = 1133.0
+offset_bottom = 676.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 13
+text = "O IDH basea-se em:
+* Segurança: diminui a quantidade de crimes no seu país, aumentando a vida da população.
+* Saúde: faz os cidadãos contribuírem por mais tempo, aumentando a arrecadação de impostos.
+* Educação: melhora a especialização dos cidadãos, aumentando o valor pago de impostos e a criação de tecnologia em seu país.
+O jogador pode escolher no que investir, e quanto mais alta as características maior o IDH.
+O país do jogador pode ter cidadãos que não contribuem enconomicamente, como:
+Criminosos: o jogador deve investir em segurança 
+Aposentados e crianças: o jogador deve investir em educação, fazendo as pessoas trabalharem mais cedo e se aposentarem mais tarde."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="proxima_pag_03" type="Button" parent="tutorial_panel_03" unique_id=1982840779]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 255.0
+offset_right = 1130.0
+offset_bottom = 385.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_jcdpc")
+icon = ExtResource("8_e636u")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="tutorial_panel_04" type="Panel" parent="." unique_id=1068273450]
+visible = false
+z_index = 1
+offset_left = 4.0
+offset_top = -6.0
+offset_right = 1140.9976
+offset_bottom = 652.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lvhjp")
+
+[node name="voltar_catalogo_02" type="Button" parent="tutorial_panel_04" unique_id=127206987]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 423.0
+offset_right = 259.0
+offset_bottom = 553.0
+rotation = 3.1415927
+theme_override_styles/normal = SubResource("StyleBoxFlat_jcdpc")
+icon = ExtResource("8_e636u")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="voltar_principal_02" type="Button" parent="tutorial_panel_04" unique_id=1395549554]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 555.0
+offset_right = 150.0
+offset_bottom = 666.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6577")
+icon = ExtResource("6_n176t")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="tutorial_panel_04" unique_id=1180721361]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 47.0
+offset_right = 1098.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 13
+text = "Os recursos, como matéria prima são ultiluzados para investir no seu próprio país"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="titulo" type="Label" parent="tutorial_panel_04" unique_id=1887972338]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 7.0
+offset_right = 1209.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 21
+text = "Uso de recursos"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="tutorial_panel_04" unique_id=576524246]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 159.0
+offset_right = 1090.0
+offset_bottom = 354.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 13
+text = "O jogador começa com 200 pontos de honra.
+O jogador aumenta sua honra melhorando seu país.
+A escala de honra vai de 0 a 1.000 pontos.
+A honra serve para países escolherem suas ofertas e fazerem ofertas melhores para o jogador.
+Quanto mais honra um país tiver mais confiável ele se torna.
+Além da honra do país, o jogador tem um status único de relacionamento com cada país, chamada de respeito, ela aumenta quando o país de relacionamento positivamente."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="titulo2" type="Label" parent="tutorial_panel_04" unique_id=768055790]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 119.0
+offset_right = 1209.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 21
+text = "Honra"
+horizontal_alignment = 1
+
+[node name="titulo3" type="Label" parent="tutorial_panel_04" unique_id=1126259683]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 375.0
+offset_right = 1217.0
+offset_bottom = 421.0
+theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_fonts/font = ExtResource("2_cwldp")
+theme_override_font_sizes/font_size = 21
+text = "IDH"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="tutorial_panel_04" unique_id=1094524430]
+layout_mode = 0
 offset_left = 105.0
 offset_top = 399.0
 offset_right = 1137.0
@@ -564,6 +641,15 @@ Aposentados e crianças: o jogador deve investir em educação, fazendo as pesso
 horizontal_alignment = 1
 autowrap_mode = 3
 
+[node name="creditos" type="Panel" parent="." unique_id=1730618186]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="MesaDaTelaInicial" type="Sprite2D" parent="creditos" unique_id=1150203631]
+position = Vector2(520, 272)
+texture = ExtResource("9_8cu4s")
+
 [connection signal="animation_finished" from="animaçao pergaminho" to="." method="_on_animaçao_pergaminho_animation_finished"]
 [connection signal="pressed" from="painel_principal/jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="painel_principal/tutorial" to="." method="_on_tutorial_pressed"]
@@ -574,3 +660,4 @@ autowrap_mode = 3
 [connection signal="pressed" from="tutorial_panel_02/voltar_catalogo" to="." method="_on_voltar_catalogo_pressed"]
 [connection signal="pressed" from="tutorial_panel_02/voltar_principal_02" to="." method="_on_voltar_principal_02_pressed"]
 [connection signal="pressed" from="tutorial_panel_02/proxima_pag_02" to="." method="_on_proxima_pag_02_pressed"]
+[connection signal="pressed" from="tutorial_panel_03/proxima_pag_03" to="." method="_on_proxima_pag_03_pressed"]

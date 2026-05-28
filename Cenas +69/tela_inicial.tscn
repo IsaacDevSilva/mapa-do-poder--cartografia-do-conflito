@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bl6gmb00mqlbb" path="res://Fuck Scripts/tela_inicial.gd" id="1_cwm6n"]
 [ext_resource type="FontFile" uid="uid://4lilrm62wdkj" path="res://Fonte 8 bit wonder/8-BIT WONDER.TTF" id="2_cwldp"]
+[ext_resource type="Texture2D" uid="uid://ghcupy7bdi25" path="res://PixelMotherFuckerArts/pergaminho_sem_borda_dados_pais.png" id="2_rcjjs"]
 [ext_resource type="Texture2D" uid="uid://dv3lo02totfnn" path="res://PixelMotherFuckerArts/textura_mesa_v2.png" id="3_0d1vl"]
 [ext_resource type="Texture2D" uid="uid://wsjeexcsnil3" path="res://PixelMotherFuckerArts/titulo do jogo.png" id="3_jp81f"]
 [ext_resource type="Texture2D" uid="uid://cv5fpmfummxq0" path="res://PixelMotherFuckerArts/botao_jogar_v2.png" id="4_0d1vl"]
@@ -11,6 +12,21 @@
 [ext_resource type="Texture2D" uid="uid://dlmhi6dictbwx" path="res://PixelMotherFuckerArts/modelo botao configuraçao.png" id="7_rcjjs"]
 [ext_resource type="Texture2D" uid="uid://1nfm0glk0fpk" path="res://PixelMotherFuckerArts/botao_seta_direita.png" id="8_e636u"]
 [ext_resource type="Texture2D" uid="uid://b2tfjkc7gqt3u" path="res://PixelMotherFuckerArts/mesa da tela inicial.jpeg" id="9_8cu4s"]
+
+[sub_resource type="Animation" id="Animation_cnnx1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1830.0884, 360.59534)]
+}
 
 [sub_resource type="Animation" id="Animation_rcjjs"]
 resource_name = "animaçao pergaminho"
@@ -37,7 +53,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 2.0333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1160, -24), Vector2(-201, -24)]
+"values": [Vector2(1900, 323), Vector2(563, 323.00003)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -66,6 +82,7 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cnnx1"]
 _data = {
+&"RESET": SubResource("Animation_cnnx1"),
 &"animaçao tutorial": SubResource("Animation_rcjjs")
 }
 
@@ -114,13 +131,12 @@ script = ExtResource("1_cwm6n")
 [node name="animaçao pergaminho" type="AnimationPlayer" parent="." unique_id=1863901168]
 libraries/ = SubResource("AnimationLibrary_cnnx1")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1105752096]
+[node name="ColorRect" type="Sprite2D" parent="." unique_id=1123809282]
 z_index = 1
-offset_left = 1160.0
-offset_top = -24.0
-offset_right = 2796.0073
-offset_bottom = 664.0
-color = Color(1, 1, 0.5019608, 1)
+position = Vector2(1830.0884, 360.59534)
+rotation = 1.5707964
+scale = Vector2(3.7025297, 6.454696)
+texture = ExtResource("2_rcjjs")
 
 [node name="RoloDoPergaminho" type="Sprite2D" parent="." unique_id=36899316]
 z_index = 2
@@ -197,10 +213,9 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="tutorial_panel_01" type="Panel" parent="." unique_id=1858428106]
-visible = false
 z_index = 1
 offset_left = 1152.0
-offset_right = 2305.9976
+offset_right = 2305.994
 offset_bottom = 649.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tlf5j")
 
@@ -209,7 +224,7 @@ layout_mode = 0
 offset_top = 128.0
 offset_right = 1152.0
 offset_bottom = 184.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 12
 text = "O objetivo do jogo é ter um país com IDH maior que 0.9, ter um PIB maior que 20 Trilhões
@@ -222,7 +237,7 @@ layout_mode = 0
 offset_top = 280.0
 offset_right = 1152.0
 offset_bottom = 377.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.4353772, 0.25432006, 0.16811514, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 12
 text = "Como começa a partida.
@@ -237,7 +252,7 @@ layout_mode = 0
 offset_top = 488.0
 offset_right = 1152.0
 offset_bottom = 625.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 12
 text = "Um turno pode ser realizado a cada ano.
@@ -256,7 +271,7 @@ offset_left = 13.0
 offset_top = 26.0
 offset_right = 1157.0
 offset_bottom = 76.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 21
 text = "Objetivo do jogo"
@@ -267,7 +282,7 @@ layout_mode = 0
 offset_top = 216.0
 offset_right = 1152.0
 offset_bottom = 266.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 21
 text = "Preparacao"
@@ -278,7 +293,7 @@ layout_mode = 0
 offset_top = 416.0
 offset_right = 1152.0
 offset_bottom = 466.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 21
 text = "turno"
@@ -309,11 +324,10 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="tutorial_panel_02" type="Panel" parent="." unique_id=671765777]
-visible = false
 z_index = 1
 offset_left = 1144.0
 offset_top = -8.0
-offset_right = 2281.0
+offset_right = 2280.9963
 offset_bottom = 650.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lvhjp")
 
@@ -348,7 +362,7 @@ offset_left = 133.0
 offset_top = 94.0
 offset_right = 989.0
 offset_bottom = 619.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 13
 text = "
@@ -370,7 +384,7 @@ offset_left = 21.0
 offset_top = 22.0
 offset_right = 1165.0
 offset_bottom = 78.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 21
 text = "Açoes"
@@ -409,7 +423,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="voltar_principal_02" type="Button" parent="tutorial_panel_03" unique_id=699462536]
+[node name="voltar_principal_03" type="Button" parent="tutorial_panel_03" unique_id=699462536]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 557.0
@@ -427,7 +441,7 @@ offset_left = 156.0
 offset_top = 57.0
 offset_right = 1069.0
 offset_bottom = 106.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 13
 text = "Os recursos, como matéria prima são ultiluzados para investir no seu próprio país"
@@ -440,7 +454,7 @@ offset_left = 18.0
 offset_top = 26.0
 offset_right = 1162.0
 offset_bottom = 72.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 21
 text = "Uso de recursos"
@@ -452,7 +466,7 @@ offset_left = 142.0
 offset_top = 165.0
 offset_right = 1012.0
 offset_bottom = 360.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 13
 text = "O jogador começa com 200 pontos de honra.
@@ -470,7 +484,7 @@ offset_left = 36.0
 offset_top = 125.0
 offset_right = 1180.0
 offset_bottom = 171.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 21
 text = "Honra"
@@ -482,7 +496,7 @@ offset_left = 73.0
 offset_top = 375.0
 offset_right = 1217.0
 offset_bottom = 421.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 21
 text = "IDH"
@@ -494,7 +508,7 @@ offset_left = 101.0
 offset_top = 393.0
 offset_right = 1133.0
 offset_bottom = 676.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 13
 text = "O IDH basea-se em:
@@ -520,8 +534,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="tutorial_panel_04" type="Panel" parent="." unique_id=1068273450]
-visible = false
+[node name="tutorial_panel_04" type="Panel" parent="." unique_id=602217122]
 z_index = 1
 offset_left = 4.0
 offset_top = -6.0
@@ -529,7 +542,7 @@ offset_right = 1140.9976
 offset_bottom = 652.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lvhjp")
 
-[node name="voltar_catalogo_02" type="Button" parent="tutorial_panel_04" unique_id=127206987]
+[node name="voltar_catalogo_03" type="Button" parent="tutorial_panel_04" unique_id=1439976041]
 layout_mode = 0
 offset_left = 129.0
 offset_top = 423.0
@@ -542,50 +555,50 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="voltar_principal_02" type="Button" parent="tutorial_panel_04" unique_id=1395549554]
+[node name="voltar_principal_04" type="Button" parent="tutorial_panel_04" unique_id=1640177680]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 555.0
-offset_right = 150.0
-offset_bottom = 666.0
+offset_left = 1.0
+offset_top = 557.0
+offset_right = 136.0
+offset_bottom = 668.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_l6577")
 icon = ExtResource("6_n176t")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Label" type="Label" parent="tutorial_panel_04" unique_id=1180721361]
+[node name="Label" type="Label" parent="tutorial_panel_04" unique_id=1299709114]
 layout_mode = 0
-offset_left = 185.0
-offset_top = 47.0
-offset_right = 1098.0
-offset_bottom = 96.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+offset_left = 156.0
+offset_top = 57.0
+offset_right = 1069.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 13
 text = "Os recursos, como matéria prima são ultiluzados para investir no seu próprio país"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="titulo" type="Label" parent="tutorial_panel_04" unique_id=1887972338]
+[node name="titulo" type="Label" parent="tutorial_panel_04" unique_id=2109198256]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 7.0
-offset_right = 1209.0
-offset_bottom = 53.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+offset_left = 18.0
+offset_top = 26.0
+offset_right = 1162.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 21
 text = "Uso de recursos"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="tutorial_panel_04" unique_id=576524246]
+[node name="Label2" type="Label" parent="tutorial_panel_04" unique_id=2042750045]
 layout_mode = 0
-offset_left = 177.0
-offset_top = 159.0
-offset_right = 1090.0
-offset_bottom = 354.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+offset_left = 142.0
+offset_top = 165.0
+offset_right = 1012.0
+offset_bottom = 360.0
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 13
 text = "O jogador começa com 200 pontos de honra.
@@ -597,37 +610,37 @@ Além da honra do país, o jogador tem um status único de relacionamento com ca
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="titulo2" type="Label" parent="tutorial_panel_04" unique_id=768055790]
+[node name="titulo2" type="Label" parent="tutorial_panel_04" unique_id=1504699432]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 119.0
-offset_right = 1209.0
-offset_bottom = 165.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+offset_left = 36.0
+offset_top = 125.0
+offset_right = 1180.0
+offset_bottom = 171.0
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 21
 text = "Honra"
 horizontal_alignment = 1
 
-[node name="titulo3" type="Label" parent="tutorial_panel_04" unique_id=1126259683]
+[node name="titulo3" type="Label" parent="tutorial_panel_04" unique_id=1724214609]
 layout_mode = 0
 offset_left = 73.0
 offset_top = 375.0
 offset_right = 1217.0
 offset_bottom = 421.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 21
 text = "IDH"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="tutorial_panel_04" unique_id=1094524430]
+[node name="Label3" type="Label" parent="tutorial_panel_04" unique_id=1483216384]
 layout_mode = 0
-offset_left = 105.0
-offset_top = 399.0
-offset_right = 1137.0
-offset_bottom = 682.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+offset_left = 101.0
+offset_top = 393.0
+offset_right = 1133.0
+offset_bottom = 676.0
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 13
 text = "O IDH basea-se em:
@@ -640,6 +653,18 @@ Criminosos: o jogador deve investir em segurança
 Aposentados e crianças: o jogador deve investir em educação, fazendo as pessoas trabalharem mais cedo e se aposentarem mais tarde."
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="proxima_pag_04" type="Button" parent="tutorial_panel_04" unique_id=1511649368]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 255.0
+offset_right = 1130.0
+offset_bottom = 385.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_jcdpc")
+icon = ExtResource("8_e636u")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="creditos" type="Panel" parent="." unique_id=1730618186]
 visible = false
@@ -660,4 +685,8 @@ texture = ExtResource("9_8cu4s")
 [connection signal="pressed" from="tutorial_panel_02/voltar_catalogo" to="." method="_on_voltar_catalogo_pressed"]
 [connection signal="pressed" from="tutorial_panel_02/voltar_principal_02" to="." method="_on_voltar_principal_02_pressed"]
 [connection signal="pressed" from="tutorial_panel_02/proxima_pag_02" to="." method="_on_proxima_pag_02_pressed"]
+[connection signal="pressed" from="tutorial_panel_03/voltar_catalogo_02" to="." method="_on_voltar_catalogo_02_pressed"]
+[connection signal="pressed" from="tutorial_panel_03/voltar_principal_03" to="." method="_on_voltar_principal_03_pressed"]
 [connection signal="pressed" from="tutorial_panel_03/proxima_pag_03" to="." method="_on_proxima_pag_03_pressed"]
+[connection signal="pressed" from="tutorial_panel_04/voltar_catalogo_03" to="." method="_on_voltar_catalogo_03_pressed"]
+[connection signal="pressed" from="tutorial_panel_04/voltar_principal_04" to="." method="_on_voltar_principal_04_pressed"]

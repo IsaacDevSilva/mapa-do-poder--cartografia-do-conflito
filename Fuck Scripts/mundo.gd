@@ -3,10 +3,12 @@ var botao
 var vbox
 var pais = null
 var estatisticas_aberto = false
+var demandas_aberto = false
 var data
 var dia_atual 
 var mes_atual
 var ano_atual = 2026
+var turno = 1
 #assasinar o gabriel temponi
 func _ready() -> void:
 	for vbox in $escolha.get_children():
@@ -64,7 +66,22 @@ func _on_conflitar_pressed() -> void:
 	mes_atual = int(randi_range(1,12))
 	ano_atual = int(ano_atual+ 1)
 	_turnos(dia_atual,mes_atual,ano_atual)
+	turno += 1
 #linha six seven favor não mexer
 
 func _on_demandas_pressed() -> void:
-	$"animaçoes_geral".play("demandas_animation")
+	if not demandas_aberto:
+		$"animaçoes_geral".play("demandas_animation")
+		demandas_aberto = true
+	elif demandas_aberto:
+		$"animaçoes_geral".play_backwards("demandas_animation")
+		demandas_aberto = false
+
+
+func _on_voltar_demandas_pressed() -> void:
+	if demandas_aberto:
+		$"animaçoes_geral".play_backwards("demandas_animation")
+		demandas_aberto = false
+func demandas(turno):
+	pass
+	

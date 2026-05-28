@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://mpc4n64x7lhk" path="res://PixelMotherFuckerArts/hud v3 tela mundo.png" id="5_ek21q"]
 [ext_resource type="Texture2D" uid="uid://0coslxkn1l4l" path="res://PixelMotherFuckerArts/botao_conflitarV2.png" id="6_q3100"]
 [ext_resource type="Texture2D" uid="uid://oge4tutranqb" path="res://PixelMotherFuckerArts/pergaminho_dados_pais.png" id="7_1k42u"]
-[ext_resource type="Texture2D" uid="uid://b7bbtym83n1ix" path="res://PixelMotherFuckerArts/rolo do pergaminho.png" id="8_x611g"]
+[ext_resource type="Texture2D" uid="uid://cwi7jxeusansy" path="res://PixelMotherFuckerArts/Botao Voltar.png" id="8_x611g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pujpp"]
 draw_center = false
@@ -31,50 +31,38 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RoloDoPergaminho:position")
+tracks/1/path = NodePath("PergaminhoDadosPais2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-144, 336)]
+"values": [Vector2(-504, 328.00003)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("RoloDoPergaminho2:position")
+tracks/2/path = NodePath("PergaminhoDadosPais3:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1272.0001, 336)]
+"values": [Vector2(1656, 328)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("PergaminhoDadosPais2:position")
+tracks/3/path = NodePath("voltar_demandas:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-504, 328.00003)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("PergaminhoDadosPais3:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1656, 328)]
+"values": [Vector2(1336, 472)]
 }
 
 [sub_resource type="Animation" id="Animation_h2qi4"]
@@ -83,50 +71,38 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RoloDoPergaminho:position")
+tracks/0/path = NodePath("PergaminhoDadosPais2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-144, 336), Vector2(424, 336)]
+"values": [Vector2(-504, 328.00003), Vector2(160, 328)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RoloDoPergaminho2:position")
+tracks/1/path = NodePath("PergaminhoDadosPais3:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1272.0001, 336), Vector2(704.0001, 336)]
+"values": [Vector2(1656, 328), Vector2(1000, 328.00003)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PergaminhoDadosPais2:position")
+tracks/2/path = NodePath("voltar_demandas:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-504, 328.00003), Vector2(64, 328)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PergaminhoDadosPais3:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1656, 328), Vector2(1104, 328)]
+"values": [Vector2(-728, 440), Vector2(-24, 440)]
 }
 
 [sub_resource type="Animation" id="Animation_1k42u"]
@@ -175,6 +151,12 @@ draw_center = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsjnt"]
 draw_center = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x611g"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2qi4"]
+draw_center = false
+
 [node name="Mundo" type="Node2D" unique_id=261724688]
 script = ExtResource("1_ek21q")
 
@@ -194,6 +176,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="escolha" type="Panel" parent="." unique_id=1663872525]
+visible = false
 z_index = 1
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -544,22 +527,44 @@ rotation = 1.5707964
 scale = Vector2(3, 3)
 texture = ExtResource("7_1k42u")
 
+[node name="Panel" type="Panel" parent="PergaminhoDadosPais2" unique_id=1842341893]
+offset_left = -109.33335
+offset_top = -168.0
+offset_right = 102.14324
+offset_bottom = 314.92267
+theme_override_styles/panel = SubResource("StyleBoxFlat_x611g")
+
 [node name="PergaminhoDadosPais3" type="Sprite2D" parent="." unique_id=293354547]
 position = Vector2(1656, 328)
 rotation = 1.5707964
 scale = Vector2(3, 3)
 texture = ExtResource("7_1k42u")
 
-[node name="RoloDoPergaminho" type="Sprite2D" parent="." unique_id=2019882346]
-position = Vector2(-144, 336)
-scale = Vector2(1.15, 1.15)
-texture = ExtResource("8_x611g")
+[node name="titulo_compra" type="Label" parent="." unique_id=1658681394]
+offset_left = -472.0
+offset_top = -48.0
+offset_right = -432.0
+offset_bottom = -25.0
+text = "jggggggggggggggggggggggggggggg"
+horizontal_alignment = 1
 
-[node name="RoloDoPergaminho2" type="Sprite2D" parent="." unique_id=1717245337]
-position = Vector2(1272.0001, 336)
-scale = Vector2(1.15, 1.15)
-texture = ExtResource("8_x611g")
+[node name="voltar_demandas" type="Button" parent="." unique_id=255976870]
+offset_left = 1336.0
+offset_top = 472.0
+offset_right = 1552.0
+offset_bottom = 551.9995
+theme_override_styles/normal = SubResource("StyleBoxFlat_h2qi4")
+icon = ExtResource("8_x611g")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="demanda compra" type="Label" parent="." unique_id=1495976745]
+offset_top = 136.0
+offset_right = 168.0
+offset_bottom = 200.0
 
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]
 [connection signal="pressed" from="estatisticas_botao" to="." method="_on_estatisticas_pressed"]
 [connection signal="pressed" from="demandas" to="." method="_on_demandas_pressed"]
+[connection signal="pressed" from="voltar_demandas" to="." method="_on_voltar_demandas_pressed"]

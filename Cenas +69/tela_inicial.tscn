@@ -18,14 +18,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:position")
+tracks/0/path = NodePath("tutorial_panel_03:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1830.0884, 360.59534)]
+"values": [Vector2(1379, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tutorial_panel_04:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1379, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_rcjjs"]
@@ -65,7 +77,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 2.0333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1152, 0), Vector2(0, -8)]
+"values": [Vector2(1379, 0), Vector2(0, -8)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -74,10 +86,34 @@ tracks/3/path = NodePath("tutorial_panel_02:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(-0.033333335, 2.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1379, 0), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("tutorial_panel_03:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0, 2.0333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1144, -8), Vector2(-8, 0)]
+"values": [Vector2(1379, 0), Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("tutorial_panel_04:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1379, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cnnx1"]
@@ -133,7 +169,7 @@ libraries/ = SubResource("AnimationLibrary_cnnx1")
 
 [node name="ColorRect" type="Sprite2D" parent="." unique_id=1123809282]
 z_index = 1
-position = Vector2(1830.0884, 360.59534)
+position = Vector2(1900, 323)
 rotation = 1.5707964
 scale = Vector2(3.7025297, 6.454696)
 texture = ExtResource("2_rcjjs")
@@ -214,8 +250,8 @@ expand_icon = true
 
 [node name="tutorial_panel_01" type="Panel" parent="." unique_id=1858428106]
 z_index = 1
-offset_left = 1152.0
-offset_right = 2305.994
+offset_left = 1379.0
+offset_right = 2532.9995
 offset_bottom = 649.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tlf5j")
 
@@ -325,10 +361,9 @@ expand_icon = true
 
 [node name="tutorial_panel_02" type="Panel" parent="." unique_id=671765777]
 z_index = 1
-offset_left = 1144.0
-offset_top = -8.0
-offset_right = 2280.9963
-offset_bottom = 650.0
+offset_left = 1356.758
+offset_right = 2493.7512
+offset_bottom = 658.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lvhjp")
 
 [node name="voltar_catalogo" type="Button" parent="tutorial_panel_02" unique_id=1111705869]
@@ -403,11 +438,11 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="tutorial_panel_03" type="Panel" parent="." unique_id=916512842]
+visible = false
 z_index = 1
-offset_left = 4.0
-offset_top = -6.0
-offset_right = 1140.9976
-offset_bottom = 652.0
+offset_left = 1379.0
+offset_right = 2515.997
+offset_bottom = 658.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lvhjp")
 
 [node name="voltar_catalogo_02" type="Button" parent="tutorial_panel_03" unique_id=808105051]
@@ -536,10 +571,9 @@ expand_icon = true
 
 [node name="tutorial_panel_04" type="Panel" parent="." unique_id=602217122]
 z_index = 1
-offset_left = 4.0
-offset_top = -6.0
-offset_right = 1140.9976
-offset_bottom = 652.0
+offset_left = 1379.0
+offset_right = 2515.9941
+offset_bottom = 658.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lvhjp")
 
 [node name="voltar_catalogo_03" type="Button" parent="tutorial_panel_04" unique_id=1439976041]
@@ -569,14 +603,16 @@ expand_icon = true
 
 [node name="Label" type="Label" parent="tutorial_panel_04" unique_id=1299709114]
 layout_mode = 0
-offset_left = 156.0
-offset_top = 57.0
-offset_right = 1069.0
-offset_bottom = 106.0
+offset_left = 144.0
+offset_top = 69.0
+offset_right = 1057.0
+offset_bottom = 220.0
 theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 13
-text = "Os recursos, como matéria prima são ultiluzados para investir no seu próprio país"
+text = "Condições aleatórias, como:
+Países aliados pedirem ajuda em conflitos( o jogador pode escolher ajudar ou não seu aliado, caso ajude ele entra no conflito, caso não ajude ele pede todo o respeito pelo país e sua honra é diminuída em 50 pontos.
+Desastres naturais podem comprometer a produção de seu próprio país, como os de outros no mundo, caso isso ocorra as demandas do país vão aumentar e suas ofertas vão aumentar o valor."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -589,82 +625,64 @@ offset_bottom = 72.0
 theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 21
-text = "Uso de recursos"
+text = "Adversidades"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="tutorial_panel_04" unique_id=2042750045]
 layout_mode = 0
-offset_left = 142.0
-offset_top = 165.0
-offset_right = 1012.0
-offset_bottom = 360.0
+offset_left = 162.0
+offset_top = 270.0
+offset_right = 1032.0
+offset_bottom = 465.0
 theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 13
-text = "O jogador começa com 200 pontos de honra.
-O jogador aumenta sua honra melhorando seu país.
-A escala de honra vai de 0 a 1.000 pontos.
-A honra serve para países escolherem suas ofertas e fazerem ofertas melhores para o jogador.
-Quanto mais honra um país tiver mais confiável ele se torna.
-Além da honra do país, o jogador tem um status único de relacionamento com cada país, chamada de respeito, ela aumenta quando o país de relacionamento positivamente."
+text = "O jogador determina quanto cada cidadão deve pagar de imposto para o governo, caso o jogador aumente os impostos sem melhorar o país podem se iniciar rebeliões e guerra civil, oque compromete a produção do país.
+O jogador deve aumentar os impostos conforme o país demanda de mais dinheiro."
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="titulo2" type="Label" parent="tutorial_panel_04" unique_id=1504699432]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 125.0
-offset_right = 1180.0
-offset_bottom = 171.0
+offset_left = -1.0
+offset_top = 228.0
+offset_right = 1143.0
+offset_bottom = 274.0
 theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 21
-text = "Honra"
+text = "Impostos
+"
 horizontal_alignment = 1
 
 [node name="titulo3" type="Label" parent="tutorial_panel_04" unique_id=1724214609]
 layout_mode = 0
-offset_left = 73.0
-offset_top = 375.0
-offset_right = 1217.0
-offset_bottom = 421.0
+offset_left = -6.0
+offset_top = 414.0
+offset_right = 1138.0
+offset_bottom = 462.0
 theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 21
-text = "IDH"
+text = "Finais"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="tutorial_panel_04" unique_id=1483216384]
 layout_mode = 0
-offset_left = 101.0
-offset_top = 393.0
-offset_right = 1133.0
-offset_bottom = 676.0
+offset_left = 64.0
+offset_top = 452.0
+offset_right = 1096.0
+offset_bottom = 735.0
 theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
 theme_override_fonts/font = ExtResource("2_cwldp")
 theme_override_font_sizes/font_size = 13
-text = "O IDH basea-se em:
-* Segurança: diminui a quantidade de crimes no seu país, aumentando a vida da população.
-* Saúde: faz os cidadãos contribuírem por mais tempo, aumentando a arrecadação de impostos.
-* Educação: melhora a especialização dos cidadãos, aumentando o valor pago de impostos e a criação de tecnologia em seu país.
-O jogador pode escolher no que investir, e quanto mais alta as características maior o IDH.
-O país do jogador pode ter cidadãos que não contribuem enconomicamente, como:
-Criminosos: o jogador deve investir em segurança 
-Aposentados e crianças: o jogador deve investir em educação, fazendo as pessoas trabalharem mais cedo e se aposentarem mais tarde."
+text = "A cada 10 turnos, se o jogador não tenha conseguido no mínimo:
+Aumentar o PIB em 10%
+Aumentar o IDH em 10%
+Nao ter aumentado a honra em 5%
+O mundo acabará de uma forma aleatória e misteriosa."
 horizontal_alignment = 1
 autowrap_mode = 3
-
-[node name="proxima_pag_04" type="Button" parent="tutorial_panel_04" unique_id=1511649368]
-layout_mode = 0
-offset_left = 1000.0
-offset_top = 255.0
-offset_right = 1130.0
-offset_bottom = 385.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_jcdpc")
-icon = ExtResource("8_e636u")
-flat = true
-icon_alignment = 1
-expand_icon = true
 
 [node name="creditos" type="Panel" parent="." unique_id=1730618186]
 visible = false

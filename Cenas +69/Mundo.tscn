@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://0coslxkn1l4l" path="res://PixelMotherFuckerArts/botao_conflitarV2.png" id="6_q3100"]
 [ext_resource type="Texture2D" uid="uid://oge4tutranqb" path="res://PixelMotherFuckerArts/pergaminho_dados_pais.png" id="7_1k42u"]
 [ext_resource type="Texture2D" uid="uid://cwi7jxeusansy" path="res://PixelMotherFuckerArts/Botao Voltar.png" id="8_x611g"]
+[ext_resource type="Texture2D" uid="uid://2qcnxhxu6ey1" path="res://PixelMotherFuckerArts/botao_comprar.png" id="9_wsjnt"]
+[ext_resource type="Texture2D" uid="uid://cij7ypkrk5mxy" path="res://PixelMotherFuckerArts/botao vender.png" id="10_qspml"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pujpp"]
 draw_center = false
@@ -64,6 +66,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(1336, 472)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("titulo_compra:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-480, 128)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("titulo_venda:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1664, 128)]
+}
 
 [sub_resource type="Animation" id="Animation_h2qi4"]
 resource_name = "demandas_animation"
@@ -103,6 +129,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-728, 440), Vector2(-24, 440)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("titulo_compra:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-448, 128), Vector2(256, 128)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("titulo_venda:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1600, 128), Vector2(960, 128)]
 }
 
 [sub_resource type="Animation" id="Animation_1k42u"]
@@ -176,7 +226,6 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="escolha" type="Panel" parent="." unique_id=1663872525]
-visible = false
 z_index = 1
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -510,10 +559,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1k42u")
 horizontal_alignment = 1
 
 [node name="demandas" type="Button" parent="." unique_id=830437450]
-offset_left = 24.0
-offset_top = 296.0
-offset_right = 176.0
-offset_bottom = 335.0
+offset_left = 8.0
+offset_top = 288.0
+offset_right = 175.27272
+offset_bottom = 338.9091
+scale = Vector2(1.1, 1.1)
 theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wsjnt")
@@ -540,14 +590,6 @@ rotation = 1.5707964
 scale = Vector2(3, 3)
 texture = ExtResource("7_1k42u")
 
-[node name="titulo_compra" type="Label" parent="." unique_id=1658681394]
-offset_left = -472.0
-offset_top = -48.0
-offset_right = -432.0
-offset_bottom = -25.0
-text = "jggggggggggggggggggggggggggggg"
-horizontal_alignment = 1
-
 [node name="voltar_demandas" type="Button" parent="." unique_id=255976870]
 offset_left = 1336.0
 offset_top = 472.0
@@ -563,6 +605,16 @@ expand_icon = true
 offset_top = 136.0
 offset_right = 168.0
 offset_bottom = 200.0
+
+[node name="titulo_compra" type="Sprite2D" parent="." unique_id=1793199655]
+position = Vector2(-480, 128)
+scale = Vector2(3, 3)
+texture = ExtResource("9_wsjnt")
+
+[node name="titulo_venda" type="Sprite2D" parent="." unique_id=1357983626]
+position = Vector2(1664, 128)
+scale = Vector2(4, 4)
+texture = ExtResource("10_qspml")
 
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]
 [connection signal="pressed" from="estatisticas_botao" to="." method="_on_estatisticas_pressed"]

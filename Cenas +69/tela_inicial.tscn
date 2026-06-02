@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dlmhi6dictbwx" path="res://PixelMotherFuckerArts/modelo botao configuraçao.png" id="7_rcjjs"]
 [ext_resource type="Texture2D" uid="uid://1nfm0glk0fpk" path="res://PixelMotherFuckerArts/botao_seta_direita.png" id="8_e636u"]
 [ext_resource type="Texture2D" uid="uid://b2tfjkc7gqt3u" path="res://PixelMotherFuckerArts/mesa da tela inicial.jpeg" id="9_8cu4s"]
+[ext_resource type="AudioStream" uid="uid://cygu7me8sesvm" path="res://Sounds Sensuais/som-botao.mp3" id="13_cnnx1"]
 
 [sub_resource type="Animation" id="Animation_cnnx1"]
 length = 0.001
@@ -692,6 +693,10 @@ offset_bottom = 648.0
 [node name="MesaDaTelaInicial" type="Sprite2D" parent="creditos" unique_id=1150203631]
 position = Vector2(520, 272)
 texture = ExtResource("9_8cu4s")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=962203537]
+stream = ExtResource("13_cnnx1")
+volume_db = 24.0
 
 [connection signal="animation_finished" from="animaçao pergaminho" to="." method="_on_animaçao_pergaminho_animation_finished"]
 [connection signal="pressed" from="painel_principal/jogar" to="." method="_on_jogar_pressed"]

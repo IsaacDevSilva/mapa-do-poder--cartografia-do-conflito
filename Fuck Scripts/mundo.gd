@@ -10,6 +10,8 @@ var mes_atual
 var ano_atual = 2026
 var turno = 1
 var soma_pesos = 0
+var pais_compra
+var turno_atual = 0
 #assasinar o gabriel temponi
 func _ready() -> void:
 	for vbox in $escolha.get_children():
@@ -69,8 +71,7 @@ func _on_conflitar_pressed() -> void:
 	_turnos(dia_atual,mes_atual,ano_atual)
 	turno += 1
 	demandas(turno)
-#linha six seven favor não mexer
-
+	
 func _on_demandas_pressed() -> void:
 	if not demandas_aberto:
 		$"animaçoes_geral".play("demandas_animation")
@@ -78,22 +79,29 @@ func _on_demandas_pressed() -> void:
 	elif demandas_aberto:
 		$"animaçoes_geral".play_backwards("demandas_animation")
 		demandas_aberto = false
-
-
-func _on_voltar_demandas_pressed() -> void:
+		
+func _on_botao_voltar_com_corrente_pressed() -> void:
 	if demandas_aberto:
 		$"animaçoes_geral".play_backwards("demandas_animation")
 		demandas_aberto = false
-	
+		
 func demandas(turno):
-
-	for pais_venda in len(paises.paises):
-		soma_pesos += paises.paises[pais_venda]["comodits"]
-	var sorteio_venda = randf_range(0, soma_pesos)
-	var acumulado = 0
-	for pais_venda in paises:
-		acumulado += paises[pais]["comodits"]
-
-		if sorteio_venda <= acumulado:
-			return pais
-	
+	if turno_atual != turno:
+		turno_atual = turno
+		var paises_compra_escolhidos = []
+		while paises_compra_escolhidos.size() < 5:
+			var acumulado = 0
+			soma_pesos = 0
+			for pais_compra in paises.paises:
+				if not pais_compra in paises_compra_escolhidos:
+					soma_pesos += paises.paises[pais_compra]["comodits"]
+			var sorteio_compra = randf_range(0, soma_pesos)
+			for pais_compra in paises.paises:
+				if pais_compra in paises_compra_escolhidos:
+					continue
+				acumulado += paises.paises[pais_compra]["comodits"]
+				if sorteio_compra <= acumulado:
+					paises_compra_escolhidos.append(pais_compra)
+					break
+	else:
+		pass

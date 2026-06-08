@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://oge4tutranqb" path="res://PixelMotherFuckerArts/pergaminho_dados_pais.png" id="7_1k42u"]
 [ext_resource type="Texture2D" uid="uid://2qcnxhxu6ey1" path="res://PixelMotherFuckerArts/botao_comprar.png" id="9_wsjnt"]
 [ext_resource type="Texture2D" uid="uid://cij7ypkrk5mxy" path="res://PixelMotherFuckerArts/botao vender.png" id="10_qspml"]
+[ext_resource type="Texture2D" uid="uid://cro45wd43dg62" path="res://PixelMotherFuckerArts/painel_compra_venda.png" id="11_31gsa"]
 [ext_resource type="Texture2D" uid="uid://u6gv8y6d5dj7" path="res://PixelMotherFuckerArts/Botao Voltar_com_corrente.png" id="11_qspml"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pujpp"]
@@ -90,6 +91,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(472, -208)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PainelCompraVenda:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 344)]
+}
 
 [sub_resource type="Animation" id="Animation_h2qi4"]
 resource_name = "demandas_animation"
@@ -153,6 +166,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(472, -176), Vector2(472, -8)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PainelCompraVenda:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-256, 344), Vector2(480.00006, 344)]
 }
 
 [sub_resource type="Animation" id="Animation_1k42u"]
@@ -223,6 +248,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="escolha" type="Panel" parent="." unique_id=1663872525]
+visible = false
 z_index = 1
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -614,6 +640,35 @@ icon_alignment = 1
 [node name="Label" type="Label" parent="." unique_id=369484322]
 offset_right = 328.0
 offset_bottom = 584.0
+
+[node name="PainelCompraVenda" type="Sprite2D" parent="." unique_id=2147018801]
+position = Vector2(-256, 344)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("11_31gsa")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1837810450]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label_compra1" type="Label" parent="HBoxContainer" unique_id=906921961]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label_compra2" type="Label" parent="HBoxContainer" unique_id=1819762107]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label_compra3" type="Label" parent="HBoxContainer" unique_id=833116297]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label_compra4" type="Label" parent="HBoxContainer" unique_id=543854361]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label_compra5" type="Label" parent="HBoxContainer" unique_id=1664137485]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
 
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]
 [connection signal="pressed" from="estatisticas_botao" to="." method="_on_estatisticas_pressed"]

@@ -12,6 +12,29 @@ var turno = 1
 var soma_pesos = 0
 var pais_compra
 var turno_atual = 0
+@onready var labels_compra = [
+	$Label_compra1,
+	$Label_compra2,
+	$Label_compra3,
+	$Label_compra4,
+	$Label_compra5
+]
+
+@onready var labels_quantidade = [
+	$Label_quantidade1,
+	$Label_quantidade2,
+	$Label_quantidade3,
+	$Label_quantidade4,
+	$Label_quantidade5
+]
+
+@onready var labels_preco = [
+	$Label_preco1,
+	$Label_preco2,
+	$Label_preco3,
+	$Label_preco4,
+	$Label_preco5
+]
 #assasinar o gabriel temponi
 func _ready() -> void:
 	for vbox in $escolha.get_children():
@@ -31,7 +54,6 @@ func _process(delta: float) -> void:
 func _botao_clicado(botao):
 	pais = botao.name
 	$escolha.visible = false
-	print(botao)
 	print(pais)
 
 
@@ -92,10 +114,12 @@ func demandas(turno):
 		while paises_compra_escolhidos.size() < 5:
 			var acumulado = 0
 			soma_pesos = 0
+			# Soma os pesos dos países ainda não escolhidos
 			for pais_compra in paises.paises:
 				if not pais_compra in paises_compra_escolhidos:
 					soma_pesos += paises.paises[pais_compra]["comodits"]
 			var sorteio_compra = randf_range(0, soma_pesos)
+			# Sorteio ponderado
 			for pais_compra in paises.paises:
 				if pais_compra in paises_compra_escolhidos:
 					continue
@@ -103,5 +127,23 @@ func demandas(turno):
 				if sorteio_compra <= acumulado:
 					paises_compra_escolhidos.append(pais_compra)
 					break
-	else:
-		pass
+		# Gerar ofertas dos 5 países sorteados
+		for pais_nome in paises_compra_escolhidos:
+			var pib = paises.paises[pais_nome]["pib"]
+			var comodits = paises.paises[pais_nome]["comodits"]
+			# País rico vende menos
+			var quantidade_base = (comodits * 1000) / max(pib, 1)
+			var quantidade = int(quantidade_base * randf_range(0.7, 1.3))
+			# País rico vende mais caro
+			var preco_base = (pib * 10.0) / max(comodits, 1)
+			var preco = snapped(preco_base * randf_range(0.9, 1.1),0.01)
+			#labels_compra[i].text = pais_nome
+			#labels_quantidade[i].text = str(quantidade)
+			#labels_preco[i].text = "$" + str(preco)
+			print(
+				pais_nome,
+				" | Quantidade: ",
+				quantidade,
+				" | Preço: ",
+				preco
+			)

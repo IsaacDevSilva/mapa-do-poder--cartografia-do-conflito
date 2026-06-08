@@ -12,8 +12,6 @@ func _ready() -> void:
 
 
 func _on_jogar_pressed() -> void:
-	$AudioStreamPlayer2D.play()
-	await $AudioStreamPlayer2D.finished
 	get_tree().change_scene_to_file("res://Cenas +69/Mundo.tscn")
 
 func _on_creditos_pressed() -> void:
@@ -68,22 +66,14 @@ func voltar_ao_principal(painel: Node) -> void:
 
 func _slide_entre_paineis(saindo: Panel, entrando: Panel, voltar: bool) -> void:
 	var largura = 1152.0
-
-
 	entrando.position.x = -largura if voltar else largura
 	entrando.visible = true
-
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_SINE)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_parallel(true)
-
-
 	tween.tween_property(entrando, "position:x", 0.0, 0.35)
-
 	tween.tween_property(saindo, "position:x", largura if voltar else -largura, 0.35)
-
-
 	tween.set_parallel(false)
 	tween.tween_callback(func(): saindo.visible = false; saindo.position.x = 0.0)
 
@@ -94,3 +84,15 @@ func _on_animaçao_pergaminho_animation_finished(anim_name: StringName) -> void:
 			painel_tutorial_ativo.visible = false
 			painel_tutorial_ativo = null
 		$painel_principal.visible = true
+
+
+func _on_jogar_mouse_entered() -> void:
+	$AudioStreamPlayer2D.play()
+
+
+func _on_tutorial_mouse_entered() -> void:
+	$AudioStreamPlayer2D.play()
+
+
+func _on_creditos_mouse_entered() -> void:
+	$AudioStreamPlayer2D.play()

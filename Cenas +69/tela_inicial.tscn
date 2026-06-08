@@ -699,8 +699,11 @@ stream = ExtResource("13_cnnx1")
 volume_db = 24.0
 
 [connection signal="animation_finished" from="animaçao pergaminho" to="." method="_on_animaçao_pergaminho_animation_finished"]
+[connection signal="mouse_entered" from="painel_principal/jogar" to="." method="_on_jogar_mouse_entered"]
 [connection signal="pressed" from="painel_principal/jogar" to="." method="_on_jogar_pressed"]
+[connection signal="mouse_entered" from="painel_principal/tutorial" to="." method="_on_tutorial_mouse_entered"]
 [connection signal="pressed" from="painel_principal/tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="mouse_entered" from="painel_principal/creditos" to="." method="_on_creditos_mouse_entered"]
 [connection signal="pressed" from="painel_principal/creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="painel_principal/configuraçoes" to="." method="_on_configuraçoes_pressed"]
 [connection signal="pressed" from="tutorial_panel_01/proxima_pag" to="." method="_on_proxima_pag_pressed"]

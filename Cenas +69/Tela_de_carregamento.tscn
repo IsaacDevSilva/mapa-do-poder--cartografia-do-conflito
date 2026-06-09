@@ -1,0 +1,267 @@
+[gd_scene format=3 uid="uid://dbyh1maturxx0"]
+
+[ext_resource type="Texture2D" uid="uid://o72as14vnf5a" path="res://PixelMotherFuckerArts/Tela de carregamento base-alterada.png" id="1_d1oj3"]
+[ext_resource type="Texture2D" uid="uid://mp2yw604tj80" path="res://PixelMotherFuckerArts/pixel-art-sun-icon-png-removebg-preview.png" id="2_v63ox"]
+[ext_resource type="Texture2D" uid="uid://dv4obysienbpf" path="res://PixelMotherFuckerArts/cometas da tela de carregamento.png" id="3_srq2a"]
+[ext_resource type="Texture2D" uid="uid://cd166ukk27uci" path="res://PixelMotherFuckerArts/Lua_para a tela de carregamento_formato correto.png" id="4_0y05f"]
+[ext_resource type="Texture2D" uid="uid://bsbij35xgvfol" path="res://PixelMotherFuckerArts/planeta.png" id="5_v63ox"]
+[ext_resource type="Texture2D" uid="uid://craxckwgvs238" path="res://particula_meteoro.png" id="6_srq2a"]
+
+[sub_resource type="Animation" id="Animation_d1oj3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LuaParaATelaDeCarregamentoFormatoCorreto:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CometasDaTelaDeCarregamento:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1200, -8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CometasDaTelaDeCarregamento2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1176, 656)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CometasDaTelaDeCarregamento4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 672)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CometasDaTelaDeCarregamento3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-16, 640)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ParticulaMeteoro:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(648, -80)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ParticulaMeteoro:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ParticulaMeteoro:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_v63ox"]
+resource_name = "animaçao_carregamento"
+length = 11.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LuaParaATelaDeCarregamentoFormatoCorreto:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CometasDaTelaDeCarregamento:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8, 11),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1200, -8), Vector2(-24, 672), Vector2(-24, 672)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CometasDaTelaDeCarregamento2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6.0666666, 11),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1176, 656), Vector2(-32, -40), Vector2(-32, -40)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CometasDaTelaDeCarregamento4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 9, 11),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1248, -32), Vector2(8, 672), Vector2(8, 672)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CometasDaTelaDeCarregamento3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 7.266667, 11),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1208, -40), Vector2(-16, 640), Vector2(-16, 640)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ParticulaMeteoro:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4.9666667, 11),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(648, -80), Vector2(648, -80), Vector2(376, 496)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ParticulaMeteoro:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4.96, 11),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(4, 4)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ParticulaMeteoro:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(4.98, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.1415927]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_srq2a"]
+_data = {
+&"RESET": SubResource("Animation_d1oj3"),
+&"animaçao_carregamento": SubResource("Animation_v63ox")
+}
+
+[node name="TelaDeCarregamento" type="Node2D" unique_id=626720303]
+
+[node name="TelaDeCarregamentoBaseAlterada" type="Sprite2D" parent="." unique_id=1437756562]
+position = Vector2(576, 328)
+texture = ExtResource("1_d1oj3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1537831227]
+libraries/ = SubResource("AnimationLibrary_srq2a")
+autoplay = &"animaçao_carregamento"
+
+[node name="PixelArtSunIconPngRemovebgPreview" type="Sprite2D" parent="." unique_id=130888799]
+position = Vector2(136, 128)
+rotation = -6.2831855
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_v63ox")
+
+[node name="CometasDaTelaDeCarregamento2" type="Sprite2D" parent="." unique_id=365972484]
+position = Vector2(1176, 656)
+rotation = 1.5707964
+texture = ExtResource("3_srq2a")
+
+[node name="CometasDaTelaDeCarregamento" type="Sprite2D" parent="." unique_id=406875730]
+position = Vector2(1200, -8)
+texture = ExtResource("3_srq2a")
+
+[node name="CometasDaTelaDeCarregamento4" type="Sprite2D" parent="." unique_id=1216656548]
+position = Vector2(8, 672)
+texture = ExtResource("3_srq2a")
+
+[node name="LuaParaATelaDeCarregamentoFormatoCorreto" type="Sprite2D" parent="." unique_id=1673283139]
+position = Vector2(576.00006, 320)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_0y05f")
+
+[node name="Planeta" type="Sprite2D" parent="." unique_id=1658784501]
+position = Vector2(576, 328)
+texture = ExtResource("5_v63ox")
+
+[node name="CometasDaTelaDeCarregamento3" type="Sprite2D" parent="." unique_id=1309325935]
+position = Vector2(-16, 640)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("3_srq2a")
+
+[node name="CometasDaTelaDeCarregamento5" type="Sprite2D" parent="." unique_id=555590619]
+position = Vector2(-336, -312)
+rotation = -0.34208453
+scale = Vector2(10, 10)
+texture = ExtResource("3_srq2a")
+
+[node name="ParticulaMeteoro" type="Sprite2D" parent="." unique_id=657134274]
+position = Vector2(648, -80)
+texture = ExtResource("6_srq2a")

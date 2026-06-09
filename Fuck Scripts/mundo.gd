@@ -31,7 +31,6 @@ func _process(delta: float) -> void:
 func _botao_clicado(botao):
 	pais = botao.name
 	$escolha.visible = false
-	print(botao)
 	print(pais)
 
 
@@ -92,10 +91,12 @@ func demandas(turno):
 		while paises_compra_escolhidos.size() < 5:
 			var acumulado = 0
 			soma_pesos = 0
+			# Soma os pesos dos países ainda não escolhidos
 			for pais_compra in paises.paises:
 				if not pais_compra in paises_compra_escolhidos:
 					soma_pesos += paises.paises[pais_compra]["comodits"]
 			var sorteio_compra = randf_range(0, soma_pesos)
+			# Sorteio ponderado
 			for pais_compra in paises.paises:
 				if pais_compra in paises_compra_escolhidos:
 					continue
@@ -103,5 +104,26 @@ func demandas(turno):
 				if sorteio_compra <= acumulado:
 					paises_compra_escolhidos.append(pais_compra)
 					break
-	else:
-		pass
+		$Control/label_qtd_compra.text = ""
+		$Control/Label_paises_compra.text =  ""
+		$Control/Label_preco_compra.text = ""
+		# Gerar ofertas dos 5 países sorteados
+		for pais_nome in paises_compra_escolhidos:
+			var pib = paises.paises[pais_nome]["pib"]
+			var comodits = paises.paises[pais_nome]["comodits"]
+			# País rico vende menos
+			var quantidade_base = (comodits * 1000) / max(pib, 1)
+			var quantidade = int(quantidade_base * randf_range(0.7, 1.3))
+			# País rico vende mais caro
+			var preco_base = (pib * 10.0) / max(comodits, 1)
+			var preco = snapped(preco_base * randf_range(0.9, 1.1),0.01)
+			$Control/Label_paises_compra.text +=  pais_nome + "\n" 
+			$Control/label_qtd_compra.text += str(quantidade) + "\n" 
+			$Control/Label_preco_compra.text +=  "$" + str(preco) + "\n" 
+			print(
+				pais_nome,
+				" | Quantidade: ",
+				quantidade,
+				" | Preço: ",
+				preco
+			)

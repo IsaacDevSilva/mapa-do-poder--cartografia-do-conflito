@@ -12,29 +12,6 @@ var turno = 1
 var soma_pesos = 0
 var pais_compra
 var turno_atual = 0
-@onready var labels_compra = [
-	$Label_compra1,
-	$Label_compra2,
-	$Label_compra3,
-	$Label_compra4,
-	$Label_compra5
-]
-
-@onready var labels_quantidade = [
-	$Label_quantidade1,
-	$Label_quantidade2,
-	$Label_quantidade3,
-	$Label_quantidade4,
-	$Label_quantidade5
-]
-
-@onready var labels_preco = [
-	$Label_preco1,
-	$Label_preco2,
-	$Label_preco3,
-	$Label_preco4,
-	$Label_preco5
-]
 #assasinar o gabriel temponi
 func _ready() -> void:
 	for vbox in $escolha.get_children():
@@ -127,6 +104,9 @@ func demandas(turno):
 				if sorteio_compra <= acumulado:
 					paises_compra_escolhidos.append(pais_compra)
 					break
+		$Control/label_qtd_compra.text = ""
+		$Control/Label_paises_compra.text =  ""
+		$Control/Label_preco_compra.text = ""
 		# Gerar ofertas dos 5 países sorteados
 		for pais_nome in paises_compra_escolhidos:
 			var pib = paises.paises[pais_nome]["pib"]
@@ -137,9 +117,9 @@ func demandas(turno):
 			# País rico vende mais caro
 			var preco_base = (pib * 10.0) / max(comodits, 1)
 			var preco = snapped(preco_base * randf_range(0.9, 1.1),0.01)
-			#labels_compra[i].text = pais_nome
-			#labels_quantidade[i].text = str(quantidade)
-			#labels_preco[i].text = "$" + str(preco)
+			$Control/Label_paises_compra.text +=  pais_nome + "\n" 
+			$Control/label_qtd_compra.text += str(quantidade) + "\n" 
+			$Control/Label_preco_compra.text +=  "$" + str(preco) + "\n" 
 			print(
 				pais_nome,
 				" | Quantidade: ",

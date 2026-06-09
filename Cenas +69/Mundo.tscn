@@ -103,6 +103,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector2(-256, 344)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-712, 168)]
+}
 
 [sub_resource type="Animation" id="Animation_h2qi4"]
 resource_name = "demandas_animation"
@@ -179,6 +191,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(-256, 344), Vector2(480.00006, 344)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-712, 168), Vector2(24, 176)]
+}
 
 [sub_resource type="Animation" id="Animation_1k42u"]
 resource_name = "estatisticas_animaçao"
@@ -248,7 +272,6 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="escolha" type="Panel" parent="." unique_id=1663872525]
-visible = false
 z_index = 1
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -646,29 +669,47 @@ position = Vector2(-256, 344)
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("11_31gsa")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1837810450]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Control" type="Control" parent="." unique_id=1599363582]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -712.0
+offset_top = 168.0
+offset_right = -328.0
+offset_bottom = 536.0
 
-[node name="Label_compra1" type="Label" parent="HBoxContainer" unique_id=906921961]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
+[node name="label_qtd_compra" type="Label" parent="Control" unique_id=2051006320]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 0
+offset_left = 208.0
+offset_top = 16.0
+offset_right = 256.0
+offset_bottom = 344.0
+theme_override_constants/line_spacing = 58
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 13
+horizontal_alignment = 1
+autowrap_mode = 2
 
-[node name="Label_compra2" type="Label" parent="HBoxContainer" unique_id=1819762107]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
+[node name="Label_preco_compra" type="Label" parent="Control" unique_id=167860736]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 16.0
+offset_right = 360.0
+offset_bottom = 344.0
+theme_override_constants/line_spacing = 50
+theme_override_fonts/font = ExtResource("2_pujpp")
+horizontal_alignment = 1
 
-[node name="Label_compra3" type="Label" parent="HBoxContainer" unique_id=833116297]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Label_compra4" type="Label" parent="HBoxContainer" unique_id=543854361]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Label_compra5" type="Label" parent="HBoxContainer" unique_id=1664137485]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
+[node name="Label_paises_compra" type="Label" parent="Control" unique_id=476210062]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 176.0
+offset_bottom = 344.0
+theme_override_constants/line_spacing = 58
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 11
+autowrap_mode = 2
 
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]
 [connection signal="pressed" from="estatisticas_botao" to="." method="_on_estatisticas_pressed"]

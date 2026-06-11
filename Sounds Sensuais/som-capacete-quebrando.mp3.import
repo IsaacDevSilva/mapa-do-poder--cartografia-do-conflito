@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://148y0pcd3mt2"
+path="res://.godot/imported/som-capacete-quebrando.mp3-308b5f8e64ea9d2b06867d5b12237fe1.mp3str"
+
+[deps]
+
+source_file="res://Sounds Sensuais/som-capacete-quebrando.mp3"
+dest_files=["res://.godot/imported/som-capacete-quebrando.mp3-308b5f8e64ea9d2b06867d5b12237fe1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

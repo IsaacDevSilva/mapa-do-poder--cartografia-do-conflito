@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsanidd1wfygh"
+path="res://.godot/imported/ALERTA_CHRISTIAN.mp3-02fff7f9af492e9737e19e5027897303.mp3str"
+
+[deps]
+
+source_file="res://Sounds Sensuais/ALERTA_CHRISTIAN.mp3"
+dest_files=["res://.godot/imported/ALERTA_CHRISTIAN.mp3-02fff7f9af492e9737e19e5027897303.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

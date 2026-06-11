@@ -5,7 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://dv4obysienbpf" path="res://PixelMotherFuckerArts/cometas da tela de carregamento.png" id="3_srq2a"]
 [ext_resource type="Texture2D" uid="uid://cd166ukk27uci" path="res://PixelMotherFuckerArts/Lua_para a tela de carregamento_formato correto.png" id="4_0y05f"]
 [ext_resource type="Texture2D" uid="uid://bsbij35xgvfol" path="res://PixelMotherFuckerArts/planeta.png" id="5_v63ox"]
-[ext_resource type="Texture2D" uid="uid://craxckwgvs238" path="res://particula_meteoro.png" id="6_srq2a"]
+[ext_resource type="Texture2D" uid="uid://02ubxwt0qmr4" path="res://PixelMotherFuckerArts/particula_meteoro_rework11111.png" id="6_srq2a"]
+[ext_resource type="AudioStream" uid="uid://2mvdvsdcd2r5" path="res://Sounds Sensuais/RESPIRAÇÃO_CHRISTIAN.mp3" id="7_0y05f"]
+[ext_resource type="AudioStream" uid="uid://dsanidd1wfygh" path="res://Sounds Sensuais/ALERTA_CHRISTIAN.mp3" id="8_xo1oy"]
+[ext_resource type="Texture2D" uid="uid://dssqvlymoxkc" path="res://PixelMotherFuckerArts/trincado tela de carregamento.png" id="9_cb66w"]
+[ext_resource type="AudioStream" uid="uid://148y0pcd3mt2" path="res://Sounds Sensuais/som-capacete-quebrando.mp3" id="10_7saoq"]
 
 [sub_resource type="Animation" id="Animation_d1oj3"]
 length = 0.001
@@ -36,79 +40,115 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CometasDaTelaDeCarregamento2:position")
+tracks/2/path = NodePath("CometasDaTelaDeCarregamento4:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1176, 656)]
+"values": [Vector2(8, 672)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CometasDaTelaDeCarregamento4:position")
+tracks/3/path = NodePath("CometasDaTelaDeCarregamento3:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(8, 672)]
+"values": [Vector2(-16, 640)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("CometasDaTelaDeCarregamento3:position")
+tracks/4/path = NodePath("ParticulaMeteoro:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-16, 640)]
+"values": [Vector2(648, -80)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("ParticulaMeteoro:position")
+tracks/5/path = NodePath("ParticulaMeteoro:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(648, -80)]
+"values": [Vector2(1, 1)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("ParticulaMeteoro:scale")
+tracks/6/path = NodePath("ParticulaMeteoro:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [0.0]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("ParticulaMeteoro:rotation")
+tracks/7/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AudioStreamPlayer2D2:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TrincadoTelaDeCarregamento:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AudioStreamPlayer2D3:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_v63ox"]
 resource_name = "animaçao_carregamento"
-length = 11.0
+length = 13.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -117,7 +157,7 @@ tracks/0/path = NodePath("LuaParaATelaDeCarregamentoFormatoCorreto:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 11),
+"times": PackedFloat32Array(0, 13),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 6.2831855]
@@ -129,82 +169,118 @@ tracks/1/path = NodePath("CometasDaTelaDeCarregamento:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 8, 11),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 8, 11, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1200, -8), Vector2(-24, 672), Vector2(-24, 672)]
+"values": [Vector2(1200, -8), Vector2(-24, 672), Vector2(-24, 672), Vector2(-24, 672)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CometasDaTelaDeCarregamento2:position")
+tracks/2/path = NodePath("CometasDaTelaDeCarregamento4:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 6.0666666, 11),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 9, 11, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1176, 656), Vector2(-32, -40), Vector2(-32, -40)]
+"values": [Vector2(1248, -32), Vector2(8, 672), Vector2(8, 672), Vector2(8, 672)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CometasDaTelaDeCarregamento4:position")
+tracks/3/path = NodePath("CometasDaTelaDeCarregamento3:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 9, 11),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 7.266667, 11, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1248, -32), Vector2(8, 672), Vector2(8, 672)]
+"values": [Vector2(1208, -40), Vector2(-16, 640), Vector2(-16, 640), Vector2(-16, 640)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("CometasDaTelaDeCarregamento3:position")
+tracks/4/path = NodePath("ParticulaMeteoro:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 7.266667, 11),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 4.99, 11, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1208, -40), Vector2(-16, 640), Vector2(-16, 640)]
+"values": [Vector2(1215, -37), Vector2(1215, -37), Vector2(384, 547), Vector2(384, 547)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("ParticulaMeteoro:position")
+tracks/5/path = NodePath("ParticulaMeteoro:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 4.9666667, 11),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 5.6, 11, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(648, -80), Vector2(648, -80), Vector2(376, 496)]
+"values": [Vector2(0.3, 0.3), Vector2(0.3, 0.3), Vector2(2, 2), Vector2(1.5, 1.5)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("ParticulaMeteoro:scale")
+tracks/6/path = NodePath("ParticulaMeteoro:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 4.96, 11),
+"times": PackedFloat32Array(4.98, 11, 13),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(4, 4)]
+"values": [0.0, 3.1415927, 3.1415927]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("ParticulaMeteoro:rotation")
+tracks/7/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(4.98, 11),
+"times": PackedFloat32Array(0, 11.00033),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 3.1415927]
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AudioStreamPlayer2D2:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 10.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TrincadoTelaDeCarregamento:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 11.010165),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AudioStreamPlayer2D3:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(10.966666),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_srq2a"]
@@ -228,11 +304,6 @@ position = Vector2(136, 128)
 rotation = -6.2831855
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_v63ox")
-
-[node name="CometasDaTelaDeCarregamento2" type="Sprite2D" parent="." unique_id=365972484]
-position = Vector2(1176, 656)
-rotation = 1.5707964
-texture = ExtResource("3_srq2a")
 
 [node name="CometasDaTelaDeCarregamento" type="Sprite2D" parent="." unique_id=406875730]
 position = Vector2(1200, -8)
@@ -265,3 +336,21 @@ texture = ExtResource("3_srq2a")
 [node name="ParticulaMeteoro" type="Sprite2D" parent="." unique_id=657134274]
 position = Vector2(648, -80)
 texture = ExtResource("6_srq2a")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=340945116]
+stream = ExtResource("7_0y05f")
+volume_db = 20.0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=2074159238]
+stream = ExtResource("8_xo1oy")
+volume_db = 24.0
+
+[node name="TrincadoTelaDeCarregamento" type="Sprite2D" parent="." unique_id=1761238562]
+visible = false
+position = Vector2(576, 328)
+texture = ExtResource("9_cb66w")
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="." unique_id=163913925]
+visible = false
+stream = ExtResource("10_7saoq")
+volume_db = 24.0

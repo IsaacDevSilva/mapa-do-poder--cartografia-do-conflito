@@ -1,6 +1,4 @@
 extends Node2D
-var botao
-var vbox
 var pais = null
 var estatisticas_aberto = false
 var demandas_aberto = false
@@ -115,7 +113,7 @@ func demandas(turno):
 			var quantidade_base = (comodits * 1000) / max(pib, 1)
 			var quantidade = int(quantidade_base * randf_range(0.7, 1.3))
 			# País rico vende mais caro
-			var preco_base = (pib * 10.0) / max(comodits, 1)
+			var preco_base = (pib * 100.0) / max(comodits, 1)
 			var preco = snapped(preco_base * randf_range(0.9, 1.1),0.01)
 			$Control/Label_paises_compra.text +=  pais_nome + "\n" 
 			$Control/label_qtd_compra.text += str(quantidade) + "\n" 

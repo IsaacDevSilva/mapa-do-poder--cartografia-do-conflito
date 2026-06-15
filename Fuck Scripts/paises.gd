@@ -8,6 +8,9 @@ var paises = {
 "honra":720,
 "tecnologia":100,
 "comodits":65,
+#"armazenamento_max":2000,
+#"materia_prima":1500,
+
 
 "saude":78,
 "educacao":86,

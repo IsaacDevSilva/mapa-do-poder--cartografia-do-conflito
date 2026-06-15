@@ -272,6 +272,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="escolha" type="Panel" parent="." unique_id=1663872525]
+visible = false
 z_index = 1
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -675,7 +676,7 @@ anchors_preset = 0
 offset_left = -712.0
 offset_top = 168.0
 offset_right = -328.0
-offset_bottom = 536.0
+offset_bottom = 536.00024
 
 [node name="label_qtd_compra" type="Label" parent="Control" unique_id=2051006320]
 custom_minimum_size = Vector2(0, 200)

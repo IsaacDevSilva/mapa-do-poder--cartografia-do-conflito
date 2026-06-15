@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://dsanidd1wfygh" path="res://Sounds Sensuais/ALERTA_CHRISTIAN.mp3" id="8_xo1oy"]
 [ext_resource type="Texture2D" uid="uid://dssqvlymoxkc" path="res://PixelMotherFuckerArts/trincado tela de carregamento.png" id="9_cb66w"]
 [ext_resource type="AudioStream" uid="uid://148y0pcd3mt2" path="res://Sounds Sensuais/som-capacete-quebrando.mp3" id="10_7saoq"]
+[ext_resource type="Texture2D" uid="uid://dsqq0dnl4fcli" path="res://PixelMotherFuckerArts/capacete_teladecarregamento.png" id="11_7saoq"]
 
 [sub_resource type="Animation" id="Animation_d1oj3"]
 length = 0.001
@@ -354,3 +355,7 @@ texture = ExtResource("9_cb66w")
 visible = false
 stream = ExtResource("10_7saoq")
 volume_db = 24.0
+
+[node name="CapaceteTeladecarregamento" type="Sprite2D" parent="." unique_id=1115096311]
+position = Vector2(576, 328)
+texture = ExtResource("11_7saoq")

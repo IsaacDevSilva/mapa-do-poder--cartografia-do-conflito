@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://wsjeexcsnil3" path="res://PixelMotherFuckerArts/titulo do jogo.png" id="1_xfguv"]
 [ext_resource type="FontFile" uid="uid://4lilrm62wdkj" path="res://Fonte 8 bit wonder/8-BIT WONDER.TTF" id="2_pujpp"]
 [ext_resource type="Texture2D" uid="uid://dv3lo02totfnn" path="res://PixelMotherFuckerArts/textura_mesa_v2.png" id="2_q3100"]
-[ext_resource type="Texture2D" uid="uid://mpc4n64x7lhk" path="res://PixelMotherFuckerArts/hud v3 tela mundo.png" id="5_ek21q"]
+[ext_resource type="Texture2D" uid="uid://bo3vjkh1qtxbv" path="res://PixelMotherFuckerArts/mapa mundi.png" id="3_otxd1"]
 [ext_resource type="Texture2D" uid="uid://0coslxkn1l4l" path="res://PixelMotherFuckerArts/botao_conflitarV2.png" id="6_q3100"]
 [ext_resource type="Texture2D" uid="uid://oge4tutranqb" path="res://PixelMotherFuckerArts/pergaminho_dados_pais.png" id="7_1k42u"]
 [ext_resource type="Texture2D" uid="uid://2qcnxhxu6ey1" path="res://PixelMotherFuckerArts/botao_comprar.png" id="9_wsjnt"]
@@ -143,6 +143,34 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(992, -416)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("MapaMundi:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1e442"]
+resource_name = "animaçao_mapa"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MapaMundi:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.5, 0.5)]
 }
 
 [sub_resource type="Animation" id="Animation_h2qi4"]
@@ -323,10 +351,23 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(-512, 136), Vector2(8, 138)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/PainelCompraVenda:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(479.99994, 168), Vector2(455.99994, 166)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1k42u"]
 _data = {
 &"RESET": SubResource("Animation_ek21q"),
+&"animaçao_mapa": SubResource("Animation_1e442"),
 &"demandas_animation": SubResource("Animation_h2qi4"),
 &"estatisticas_animaçao": SubResource("Animation_1k42u"),
 &"painel_compra": SubResource("Animation_qspml")
@@ -350,23 +391,29 @@ draw_center = false
 [node name="Mundo" type="Node2D" unique_id=261724688]
 script = ExtResource("1_ek21q")
 
-[node name="HudV3TelaMundo" type="Sprite2D" parent="." unique_id=197123943]
-position = Vector2(576, 326)
-texture = ExtResource("5_ek21q")
+[node name="TexturaMesaV2" type="Sprite2D" parent="." unique_id=226496044]
+position = Vector2(624, 344)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_q3100")
+
+[node name="MapaMundi" type="Sprite2D" parent="." unique_id=406280827]
+position = Vector2(728, 336)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("3_otxd1")
 
 [node name="pais_nome" type="Label" parent="." unique_id=646060268]
-offset_left = 24.0
-offset_top = 96.0
-offset_right = 184.0
-offset_bottom = 152.0
+offset_left = 352.0
+offset_top = 40.0
+offset_right = 864.0
+offset_bottom = 168.0
 theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="escolha" type="Panel" parent="." unique_id=1663872525]
-visible = false
 z_index = 1
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -673,7 +720,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ek21q")
 horizontal_alignment = 1
 
 [node name="PergaminhoDadosPais" type="Sprite2D" parent="." unique_id=1916988905]
-position = Vector2(112, 144)
+position = Vector2(112, -178)
 texture = ExtResource("7_1k42u")
 
 [node name="estatisticas_botao" type="Button" parent="." unique_id=1619114674]
@@ -760,15 +807,6 @@ offset_right = 36.0
 offset_bottom = 8.0
 flat = true
 
-[node name="BotaoVoltarComCorrente" type="Button" parent="." unique_id=1749173027]
-offset_left = 472.0
-offset_top = -208.0
-offset_right = 680.0004
-offset_bottom = 3.0517578e-05
-icon = ExtResource("11_qspml")
-flat = true
-icon_alignment = 1
-
 [node name="Label" type="Label" parent="." unique_id=369484322]
 offset_right = 328.0
 offset_bottom = 584.0
@@ -816,6 +854,11 @@ offset_top = 168.0
 offset_right = -328.0
 offset_bottom = 535.9999
 
+[node name="PainelCompraVenda" type="Sprite2D" parent="Control" unique_id=2147018801]
+position = Vector2(-256, 344)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("11_31gsa")
+
 [node name="label_qtd_compra" type="Label" parent="Control" unique_id=2051006320]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 0
@@ -849,11 +892,6 @@ theme_override_constants/line_spacing = 58
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_font_sizes/font_size = 11
 autowrap_mode = 2
-
-[node name="PainelCompraVenda" type="Sprite2D" parent="Control" unique_id=2147018801]
-position = Vector2(-256, 344)
-scale = Vector2(0.85, 0.85)
-texture = ExtResource("11_31gsa")
 
 [node name="materia_prima_label" type="Label" parent="Control" unique_id=347060732]
 layout_mode = 0
@@ -890,6 +928,15 @@ theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_font_sizes/font_size = 20
 text = "militar"
 horizontal_alignment = 1
+
+[node name="BotaoVoltarComCorrente" type="Button" parent="." unique_id=1749173027]
+offset_left = 472.0
+offset_top = -208.0
+offset_right = 680.0005
+offset_bottom = 3.0517578e-05
+icon = ExtResource("11_qspml")
+flat = true
+icon_alignment = 1
 
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]
 [connection signal="pressed" from="estatisticas_botao" to="." method="_on_estatisticas_pressed"]

@@ -74,15 +74,14 @@ func _on_demandas_pressed() -> void:
 	if not demandas_aberto:
 		$"animaçoes_geral".play("demandas_animation")
 		demandas_aberto = true
-	elif demandas_aberto:
-		$"animaçoes_geral".play_backwards("demandas_animation")
-		demandas_aberto = false
+
 		
 func _on_botao_voltar_com_corrente_pressed() -> void:
-	if demandas_aberto:
+	if demandas_aberto and not demanda_compra_aberto:
 		$"animaçoes_geral".play_backwards("demandas_animation")
 		demandas_aberto = false
-	if demanda_compra_aberto:
+
+	elif demanda_compra_aberto:
 		$"animaçoes_geral".play_backwards("painel_compra")
 		demanda_compra_aberto = false
 	
@@ -112,6 +111,7 @@ func demandas(turno):
 		$Control/Label_preco_compra.text = ""
 		# Gerar ofertas dos 5 países sorteados
 		for pais_nome in paises_compra_escolhidos:
+			var variavel_para_controle_super_especifico_para_o_espaçamento_dos_labels_com_o_nome_desnecessariamente_grande = 1
 			var pib = paises.paises[pais_nome]["pib"]
 			var comodits = paises.paises[pais_nome]["comodits"]
 			# País rico vende menos
@@ -120,9 +120,18 @@ func demandas(turno):
 			# País rico vende mais caro
 			var preco_base = (pib * 100.0) / max(comodits, 1)
 			var preco = snapped(preco_base * randf_range(0.9, 1.1),0.01)
-			$Control/Label_paises_compra.text +=  pais_nome + "\n" 
-			$Control/label_qtd_compra.text += str(quantidade) + "\n" 
-			$Control/Label_preco_compra.text +=  "$" + str(preco) + "\n" 
+			if variavel_para_controle_super_especifico_para_o_espaçamento_dos_labels_com_o_nome_desnecessariamente_grande == 1 or variavel_para_controle_super_especifico_para_o_espaçamento_dos_labels_com_o_nome_desnecessariamente_grande == 2:
+				$Control/Label_paises_compra.text +=  pais_nome + "\n" 
+				$Control/label_qtd_compra.text += str(quantidade) + "\n" 
+				$Control/Label_preco_compra.text +=  "$" + str(preco) + "\n" 
+			elif variavel_para_controle_super_especifico_para_o_espaçamento_dos_labels_com_o_nome_desnecessariamente_grande == 3 or variavel_para_controle_super_especifico_para_o_espaçamento_dos_labels_com_o_nome_desnecessariamente_grande == 4:
+				$Control/Label_paises_compra.text +=  pais_nome + "\n" + "\n" 
+				$Control/label_qtd_compra.text += str(quantidade) + "\n" + "\n" 
+				$Control/Label_preco_compra.text +=  "$" + str(preco) + "\n" + "\n" 
+			elif variavel_para_controle_super_especifico_para_o_espaçamento_dos_labels_com_o_nome_desnecessariamente_grande == 5:
+				$Control/Label_paises_compra.text +=  pais_nome + "\n" 
+				$Control/label_qtd_compra.text += str(quantidade) + "\n"
+				$Control/Label_preco_compra.text +=  "$" + str(preco) + "\n" 
 			print(
 				pais_nome,
 				" | Quantidade: ",
@@ -130,6 +139,7 @@ func demandas(turno):
 				" | Preço: ",
 				preco
 			)
+			variavel_para_controle_super_especifico_para_o_espaçamento_dos_labels_com_o_nome_desnecessariamente_grande +=1
 
 
 func _on_botao_comprar_pressed() -> void:

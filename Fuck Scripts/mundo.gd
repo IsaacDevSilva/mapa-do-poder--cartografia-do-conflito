@@ -2,6 +2,7 @@ extends Node2D
 var pais = null
 var estatisticas_aberto = false
 var demandas_aberto = false
+var demanda_compra_aberto = false
 var data
 var dia_atual 
 var mes_atual
@@ -81,6 +82,10 @@ func _on_botao_voltar_com_corrente_pressed() -> void:
 	if demandas_aberto:
 		$"animaçoes_geral".play_backwards("demandas_animation")
 		demandas_aberto = false
+	if demanda_compra_aberto:
+		$"animaçoes_geral".play_backwards("painel_compra")
+		demanda_compra_aberto = false
+	
 		
 func demandas(turno):
 	if turno_atual != turno:
@@ -125,3 +130,12 @@ func demandas(turno):
 				" | Preço: ",
 				preco
 			)
+
+
+func _on_botao_comprar_pressed() -> void:
+	$"animaçoes_geral".play("painel_compra")
+	demanda_compra_aberto = true
+
+
+func _on_botao_vender_pressed() -> void:
+	pass # Replace with function body.

@@ -10,7 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://2qcnxhxu6ey1" path="res://PixelMotherFuckerArts/botao_comprar.png" id="9_wsjnt"]
 [ext_resource type="Texture2D" uid="uid://cij7ypkrk5mxy" path="res://PixelMotherFuckerArts/botao vender.png" id="10_qspml"]
 [ext_resource type="Texture2D" uid="uid://cro45wd43dg62" path="res://PixelMotherFuckerArts/painel_compra_venda.png" id="11_31gsa"]
+[ext_resource type="Texture2D" uid="uid://7q02de4d7128" path="res://PixelMotherFuckerArts/Materia Prima 1.png" id="11_otxd1"]
 [ext_resource type="Texture2D" uid="uid://u6gv8y6d5dj7" path="res://PixelMotherFuckerArts/Botao Voltar_com_corrente.png" id="11_qspml"]
+[ext_resource type="Texture2D" uid="uid://ccwq4b2sy8apx" path="res://PixelMotherFuckerArts/Materia Prima 21.png" id="12_1e442"]
+[ext_resource type="Texture2D" uid="uid://dojdpig641fco" path="res://PixelMotherFuckerArts/Materia Prima 3.png" id="13_ci8bq"]
+[ext_resource type="Texture2D" uid="uid://dxux525wshy3y" path="res://PixelMotherFuckerArts/materia prima 4.png" id="14_u4305"]
+[ext_resource type="Texture2D" uid="uid://b74k2ssi3ugsl" path="res://PixelMotherFuckerArts/Materia Prima 5.png" id="15_qxcpo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pujpp"]
 draw_center = false
@@ -94,7 +99,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("PainelCompraVenda:position")
+tracks/6/path = NodePath("Control/PainelCompraVenda:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -114,6 +119,30 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-712, 168)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("painel_compra_esquerda:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(160, -416.00003)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("painel_compra_direita:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(992, -416)]
 }
 
 [sub_resource type="Animation" id="Animation_h2qi4"]
@@ -153,7 +182,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-448, 128), Vector2(256, 128)]
+"values": [Vector2(-448.00003, 320), Vector2(256, 320)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -165,7 +194,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1600, 128), Vector2(960, 128)]
+"values": [Vector2(1600, 320), Vector2(960, 320)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -182,14 +211,14 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("PainelCompraVenda:position")
+tracks/5/path = NodePath("Control/PainelCompraVenda:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-256, 344), Vector2(480.00006, 344)]
+"values": [Vector2(-1808.0002, 360), Vector2(-1808.0002, 360)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -201,7 +230,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-712, 168), Vector2(24, 176)]
+"values": [Vector2(-1800, 120), Vector2(-1800, 120)]
 }
 
 [sub_resource type="Animation" id="Animation_1k42u"]
@@ -231,11 +260,76 @@ tracks/1/keys = {
 "values": [Vector2(40, -240), Vector2(40, 40)]
 }
 
+[sub_resource type="Animation" id="Animation_qspml"]
+resource_name = "painel_compra"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PergaminhoDadosPais2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(160, 328)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PergaminhoDadosPais3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, 328.00003)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("painel_compra_esquerda:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(192, -416), Vector2(192, 320)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("painel_compra_direita:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(952, -416), Vector2(952.00006, 320)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-512, 136), Vector2(8, 138)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1k42u"]
 _data = {
 &"RESET": SubResource("Animation_ek21q"),
 &"demandas_animation": SubResource("Animation_h2qi4"),
-&"estatisticas_animaçao": SubResource("Animation_1k42u")
+&"estatisticas_animaçao": SubResource("Animation_1k42u"),
+&"painel_compra": SubResource("Animation_qspml")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3100"]
@@ -579,7 +673,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ek21q")
 horizontal_alignment = 1
 
 [node name="PergaminhoDadosPais" type="Sprite2D" parent="." unique_id=1916988905]
-position = Vector2(112, -144)
+position = Vector2(112, 144)
 texture = ExtResource("7_1k42u")
 
 [node name="estatisticas_botao" type="Button" parent="." unique_id=1619114674]
@@ -647,10 +741,24 @@ position = Vector2(-480, 128)
 scale = Vector2(3, 3)
 texture = ExtResource("9_wsjnt")
 
+[node name="botao_comprar" type="Button" parent="titulo_compra" unique_id=1883970193]
+offset_left = -72.0
+offset_top = -10.666672
+offset_right = 47.000008
+offset_bottom = 10.666664
+flat = true
+
 [node name="titulo_venda" type="Sprite2D" parent="." unique_id=1357983626]
 position = Vector2(1664, 128)
 scale = Vector2(4, 4)
 texture = ExtResource("10_qspml")
+
+[node name="botao_vender" type="Button" parent="titulo_venda" unique_id=1671576498]
+offset_left = -42.0
+offset_top = -8.0
+offset_right = 36.0
+offset_bottom = 8.0
+flat = true
 
 [node name="BotaoVoltarComCorrente" type="Button" parent="." unique_id=1749173027]
 offset_left = 472.0
@@ -665,10 +773,40 @@ icon_alignment = 1
 offset_right = 328.0
 offset_bottom = 584.0
 
-[node name="PainelCompraVenda" type="Sprite2D" parent="." unique_id=2147018801]
-position = Vector2(-256, 344)
-scale = Vector2(0.85, 0.85)
-texture = ExtResource("11_31gsa")
+[node name="painel_compra_esquerda" type="Sprite2D" parent="." unique_id=556160178]
+position = Vector2(160, -416.00003)
+scale = Vector2(3, 3)
+texture = ExtResource("7_1k42u")
+
+[node name="MateriaPrima1" type="Sprite2D" parent="painel_compra_esquerda" unique_id=1685129586]
+position = Vector2(77.333336, -74.66665)
+scale = Vector2(0.33333334, 0.33333334)
+texture = ExtResource("11_otxd1")
+
+[node name="MateriaPrima21" type="Sprite2D" parent="painel_compra_esquerda" unique_id=540119463]
+position = Vector2(80, -47.999992)
+scale = Vector2(0.33333334, 0.33333334)
+texture = ExtResource("12_1e442")
+
+[node name="MateriaPrima3" type="Sprite2D" parent="painel_compra_esquerda" unique_id=1665623308]
+position = Vector2(80, 9.059906e-06)
+scale = Vector2(0.33333334, 0.33333334)
+texture = ExtResource("13_ci8bq")
+
+[node name="MateriaPrima4" type="Sprite2D" parent="painel_compra_esquerda" unique_id=992977176]
+position = Vector2(80, 21.333342)
+scale = Vector2(0.33333334, 0.33333334)
+texture = ExtResource("14_u4305")
+
+[node name="MateriaPrima5" type="Sprite2D" parent="painel_compra_esquerda" unique_id=1133139906]
+position = Vector2(77.333336, 64.000015)
+scale = Vector2(0.33333334, 0.33333334)
+texture = ExtResource("15_qxcpo")
+
+[node name="painel_compra_direita" type="Sprite2D" parent="." unique_id=133202378]
+position = Vector2(992, -416)
+scale = Vector2(3, 3)
+texture = ExtResource("7_1k42u")
 
 [node name="Control" type="Control" parent="." unique_id=1599363582]
 layout_mode = 3
@@ -676,7 +814,7 @@ anchors_preset = 0
 offset_left = -712.0
 offset_top = 168.0
 offset_right = -328.0
-offset_bottom = 536.00024
+offset_bottom = 535.9999
 
 [node name="label_qtd_compra" type="Label" parent="Control" unique_id=2051006320]
 custom_minimum_size = Vector2(0, 200)
@@ -712,7 +850,50 @@ theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_font_sizes/font_size = 11
 autowrap_mode = 2
 
+[node name="PainelCompraVenda" type="Sprite2D" parent="Control" unique_id=2147018801]
+position = Vector2(-256, 344)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("11_31gsa")
+
+[node name="materia_prima_label" type="Label" parent="Control" unique_id=347060732]
+layout_mode = 0
+offset_left = 72.0
+offset_top = -106.0
+offset_right = 322.0
+offset_bottom = -83.0
+theme_override_colors/font_color = Color(0.4, 0.22352941, 0.19215687, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 20
+text = "materia prima"
+horizontal_alignment = 1
+
+[node name="tecnologia_label" type="Label" parent="Control" unique_id=771979556]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 102.0
+offset_right = 314.0
+offset_bottom = 125.0
+theme_override_colors/font_color = Color(0.4, 0.22352941, 0.19215687, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 20
+text = "tecnologia"
+horizontal_alignment = 1
+
+[node name="militar_label" type="Label" parent="Control" unique_id=890185327]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 302.0
+offset_right = 314.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.4, 0.22352941, 0.19215687, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 20
+text = "militar"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]
 [connection signal="pressed" from="estatisticas_botao" to="." method="_on_estatisticas_pressed"]
 [connection signal="pressed" from="demandas" to="." method="_on_demandas_pressed"]
+[connection signal="pressed" from="titulo_compra/botao_comprar" to="." method="_on_botao_comprar_pressed"]
+[connection signal="pressed" from="titulo_venda/botao_vender" to="." method="_on_botao_vender_pressed"]
 [connection signal="pressed" from="BotaoVoltarComCorrente" to="." method="_on_botao_voltar_com_corrente_pressed"]

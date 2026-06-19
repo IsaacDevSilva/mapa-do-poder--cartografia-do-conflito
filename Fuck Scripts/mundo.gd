@@ -3,6 +3,7 @@ var pais = null
 var estatisticas_aberto = false
 var demandas_aberto = false
 var demanda_compra_aberto = false
+var mapa_aberto = false
 var data
 var dia_atual 
 var mes_atual
@@ -21,6 +22,7 @@ func _ready() -> void:
 	$dia.text = str(randi_range(1,30))
 	$mes.text = str("janeiro")
 	$ano.text = str(2026)
+	$escolha.visible = true
 	
 
 func _process(delta: float) -> void:
@@ -33,22 +35,8 @@ func _botao_clicado(botao):
 	print(pais)
 
 
-func _on_estatisticas_pressed() -> void:
-	if estatisticas_aberto == false:
-		$"animaçoes_geral".play("estatisticas_animaçao")
-		estatisticas_aberto = true
-		var texto = ""
-		for chave in paises.paises[pais]:
-			var valor = paises.paises[pais][chave]
-			if chave == "pib":
-				valor = str(valor) + " T"
-			elif chave == "populacao":
-				valor = str(valor) + " M"
-			texto += str(chave) + ": " + str(valor) + "\n"
-		$info_estatisticas.text = texto
-	elif estatisticas_aberto:
-		$"animaçoes_geral".play_backwards("estatisticas_animaçao")
-		estatisticas_aberto = false
+
+
 		
 func _turnos(dia_atual,mes_atual,ano_atual):
 	var meses = [
@@ -70,10 +58,8 @@ func _on_conflitar_pressed() -> void:
 	turno += 1
 	demandas(turno)
 	
-func _on_demandas_pressed() -> void:
-	if not demandas_aberto:
-		$"animaçoes_geral".play("demandas_animation")
-		demandas_aberto = true
+
+
 
 		
 func _on_botao_voltar_com_corrente_pressed() -> void:
@@ -149,3 +135,36 @@ func _on_botao_comprar_pressed() -> void:
 
 func _on_botao_vender_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_botao_lateral_mapa_pressed() -> void:
+	if not mapa_aberto:
+		$"animaçoes_geral".play("animaçao_mapa")
+		mapa_aberto = true
+	elif mapa_aberto:
+		$"animaçoes_geral".play_backwards("animaçao_mapa")
+		mapa_aberto = false
+
+
+func _on_botao_lateral_demandas_pressed() -> void:
+	if not demandas_aberto:
+		$"animaçoes_geral".play("demandas_animation")
+		demandas_aberto = true
+
+
+func _on_botao_lateral_estatisticas_pressed() -> void:
+	if estatisticas_aberto == false:
+		$"animaçoes_geral".play("estatisticas_animaçao")
+		estatisticas_aberto = true
+		var texto = ""
+		for chave in paises.paises[pais]:
+			var valor = paises.paises[pais][chave]
+			if chave == "pib":
+				valor = str(valor) + " T"
+			elif chave == "populacao":
+				valor = str(valor) + " M"
+			texto += str(chave) + ": " + str(valor) + "\n"
+		$info_estatisticas.text = texto
+	elif estatisticas_aberto:
+		$"animaçoes_geral".play_backwards("estatisticas_animaçao")
+		estatisticas_aberto = false

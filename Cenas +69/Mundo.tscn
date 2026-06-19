@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dojdpig641fco" path="res://PixelMotherFuckerArts/Materia Prima 3.png" id="13_ci8bq"]
 [ext_resource type="Texture2D" uid="uid://dxux525wshy3y" path="res://PixelMotherFuckerArts/materia prima 4.png" id="14_u4305"]
 [ext_resource type="Texture2D" uid="uid://b74k2ssi3ugsl" path="res://PixelMotherFuckerArts/Materia Prima 5.png" id="15_qxcpo"]
+[ext_resource type="Texture2D" uid="uid://c32ribv13dyxr" path="res://PixelMotherFuckerArts/botao_lateral_menu.png" id="17_1e442"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pujpp"]
 draw_center = false
@@ -156,6 +157,18 @@ tracks/10/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("PergaminhoDadosPais:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(136, 480)]
+}
 
 [sub_resource type="Animation" id="Animation_1e442"]
 resource_name = "animaçao_mapa"
@@ -170,7 +183,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(0.5, 0.5)]
+"values": [Vector2(0, 0), Vector2(0.5, 0.5)]
 }
 
 [sub_resource type="Animation" id="Animation_h2qi4"]
@@ -270,10 +283,10 @@ tracks/0/path = NodePath("PergaminhoDadosPais:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.001, 1),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(112, -144), Vector2(112, 144)]
+"values": [Vector2(144, 464), Vector2(144, 464)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -285,7 +298,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(40, -240), Vector2(40, 40)]
+"values": [Vector2(88, 384), Vector2(88, 384)]
 }
 
 [sub_resource type="Animation" id="Animation_qspml"]
@@ -382,10 +395,10 @@ draw_center = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1k42u"]
 draw_center = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsjnt"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x611g"]
 draw_center = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x611g"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ne36"]
 draw_center = false
 
 [node name="Mundo" type="Node2D" unique_id=261724688]
@@ -397,23 +410,25 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_q3100")
 
 [node name="MapaMundi" type="Sprite2D" parent="." unique_id=406280827]
-position = Vector2(728, 336)
+position = Vector2(608, 336)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("3_otxd1")
 
 [node name="pais_nome" type="Label" parent="." unique_id=646060268]
-offset_left = 352.0
-offset_top = 40.0
-offset_right = 864.0
-offset_bottom = 168.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
+offset_left = 320.0
+offset_top = 8.0
+offset_right = 832.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.7764706, 0.37254903, 0, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
+text = "tytyhukt"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="escolha" type="Panel" parent="." unique_id=1663872525]
+visible = false
 z_index = 1
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -676,10 +691,10 @@ icon_alignment = 1
 libraries/ = SubResource("AnimationLibrary_1k42u")
 
 [node name="conflitar" type="Button" parent="." unique_id=46860701]
-offset_left = 16.0
-offset_top = 408.0
-offset_right = 192.0
-offset_bottom = 472.0
+offset_left = 488.0
+offset_top = 576.0
+offset_right = 664.0
+offset_bottom = 640.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_q3100")
 icon = ExtResource("6_q3100")
 flat = true
@@ -688,9 +703,9 @@ expand_icon = true
 
 [node name="dia" type="Label" parent="." unique_id=2075429758]
 offset_left = 24.0
-offset_top = 496.0
+offset_top = 64.0
 offset_right = 184.0
-offset_bottom = 528.0
+offset_bottom = 96.0
 theme_override_colors/font_color = Color(0.49788624, 0.20059884, 3.3691526e-07, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_font_sizes/font_size = 20
@@ -699,9 +714,9 @@ horizontal_alignment = 1
 
 [node name="mes" type="Label" parent="." unique_id=886283734]
 offset_left = 24.0
-offset_top = 552.0
+offset_top = 104.0
 offset_right = 176.0
-offset_bottom = 584.0
+offset_bottom = 136.0
 theme_override_colors/font_color = Color(0.49788624, 0.20059884, 3.3691526e-07, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_font_sizes/font_size = 20
@@ -710,9 +725,9 @@ horizontal_alignment = 1
 
 [node name="ano" type="Label" parent="." unique_id=1623147127]
 offset_left = 24.0
-offset_top = 608.0
+offset_top = 144.0
 offset_right = 184.0
-offset_bottom = 632.0
+offset_bottom = 168.0
 theme_override_colors/font_color = Color(0.49788624, 0.20059884, 3.3691526e-07, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_font_sizes/font_size = 20
@@ -720,44 +735,21 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ek21q")
 horizontal_alignment = 1
 
 [node name="PergaminhoDadosPais" type="Sprite2D" parent="." unique_id=1916988905]
-position = Vector2(112, -178)
+position = Vector2(136, 480)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_1k42u")
-
-[node name="estatisticas_botao" type="Button" parent="." unique_id=1619114674]
-offset_left = 16.0
-offset_top = 344.0
-offset_right = 186.0
-offset_bottom = 376.0
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
-theme_override_fonts/font = ExtResource("2_pujpp")
-theme_override_font_sizes/font_size = 17
-text = "Estatiscas"
-flat = true
-icon_alignment = 1
 
 [node name="info_estatisticas" type="Label" parent="." unique_id=873403738]
 offset_left = 40.0
 offset_top = -240.0
 offset_right = 184.0
 offset_bottom = -40.0
+scale = Vector2(0.8, 0.8)
 theme_override_colors/font_color = Color(0.48008138, 0.18046287, 0.087177806, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_font_sizes/font_size = 11
 theme_override_styles/normal = SubResource("StyleBoxFlat_1k42u")
 horizontal_alignment = 1
-
-[node name="demandas" type="Button" parent="." unique_id=830437450]
-offset_left = 8.0
-offset_top = 288.0
-offset_right = 175.27272
-offset_bottom = 338.9091
-scale = Vector2(1.1, 1.1)
-theme_override_colors/font_color = Color(0.7254902, 0.45882353, 0.33333334, 1)
-theme_override_fonts/font = ExtResource("2_pujpp")
-theme_override_styles/normal = SubResource("StyleBoxFlat_wsjnt")
-text = "demandas"
-flat = true
-icon_alignment = 1
 
 [node name="PergaminhoDadosPais2" type="Sprite2D" parent="." unique_id=1303991872]
 position = Vector2(-504, 328.00003)
@@ -938,9 +930,88 @@ icon = ExtResource("11_qspml")
 flat = true
 icon_alignment = 1
 
+[node name="BotaoLateralMenu" type="Sprite2D" parent="." unique_id=324336064]
+position = Vector2(576, 304)
+texture = ExtResource("17_1e442")
+
+[node name="botao_lateral_mapa" type="Button" parent="BotaoLateralMenu" unique_id=1849097554]
+offset_left = 544.0
+offset_top = 188.0
+offset_right = 576.0
+offset_bottom = 284.0
+flat = true
+
+[node name="Label" type="Label" parent="BotaoLateralMenu" unique_id=388920889]
+offset_left = 575.9026
+offset_top = 188.31592
+offset_right = 671.27826
+offset_bottom = 218.06189
+rotation = 1.5707964
+theme_override_colors/font_color = Color(0.7294118, 0.05490196, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ne36")
+text = "mapa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoLateraldemandas" type="Sprite2D" parent="." unique_id=538671943]
+position = Vector2(585, 32.000004)
+scale = Vector2(0.98485136, 1.4193562)
+texture = ExtResource("17_1e442")
+
+[node name="botao_lateral_demandas" type="Button" parent="BotaoLateraldemandas" unique_id=222454096]
+offset_left = 544.0
+offset_top = 188.0
+offset_right = 576.0
+offset_bottom = 284.0
+flat = true
+
+[node name="Label" type="Label" parent="BotaoLateraldemandas" unique_id=1511399951]
+offset_left = 575.7214
+offset_top = 187.4089
+offset_right = 700.58954
+offset_bottom = 219.19345
+rotation = 1.5707964
+scale = Vector2(0.7985933, 0.8989867)
+theme_override_colors/font_color = Color(0.7294118, 0.05490196, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ne36")
+text = "demandas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoLateralestatisticas" type="Sprite2D" parent="." unique_id=1589600064]
+position = Vector2(584, -176.00002)
+scale = Vector2(0.98485136, 1.4193562)
+texture = ExtResource("17_1e442")
+
+[node name="botao_lateral_estatisticas" type="Button" parent="BotaoLateralestatisticas" unique_id=663345659]
+offset_left = 544.0
+offset_top = 188.0
+offset_right = 576.0
+offset_bottom = 284.0
+flat = true
+
+[node name="Label" type="Label" parent="BotaoLateralestatisticas" unique_id=1289447298]
+offset_left = 573.6906
+offset_top = 185.99983
+offset_right = 698.5588
+offset_bottom = 217.78438
+rotation = 1.5707964
+scale = Vector2(0.7985933, 0.8989867)
+theme_override_colors/font_color = Color(0.7294118, 0.05490196, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ne36")
+text = "estatisticas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]
-[connection signal="pressed" from="estatisticas_botao" to="." method="_on_estatisticas_pressed"]
-[connection signal="pressed" from="demandas" to="." method="_on_demandas_pressed"]
 [connection signal="pressed" from="titulo_compra/botao_comprar" to="." method="_on_botao_comprar_pressed"]
 [connection signal="pressed" from="titulo_venda/botao_vender" to="." method="_on_botao_vender_pressed"]
 [connection signal="pressed" from="BotaoVoltarComCorrente" to="." method="_on_botao_voltar_com_corrente_pressed"]
+[connection signal="pressed" from="BotaoLateralMenu/botao_lateral_mapa" to="." method="_on_botao_lateral_mapa_pressed"]
+[connection signal="pressed" from="BotaoLateraldemandas/botao_lateral_demandas" to="." method="_on_botao_lateral_demandas_pressed"]
+[connection signal="pressed" from="BotaoLateralestatisticas/botao_lateral_estatisticas" to="." method="_on_botao_lateral_estatisticas_pressed"]

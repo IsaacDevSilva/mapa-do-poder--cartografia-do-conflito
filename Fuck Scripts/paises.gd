@@ -1,7 +1,7 @@
 extends Node
 var paises = {
 
-"EUA":{
+"ESTADOS UNIDOS":{
 "pib":29.0,
 "populacao":341,
 "militar":100,

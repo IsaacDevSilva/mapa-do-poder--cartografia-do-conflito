@@ -12,6 +12,7 @@ var turno = 1
 var soma_pesos = 0
 var pais_compra
 var turno_atual = 0
+var capital 
 #assasinar o gabriel temponi
 func _ready() -> void:
 	for vbox in $escolha.get_children():
@@ -29,6 +30,7 @@ func _process(delta: float) -> void:
 	if pais != null:
 		$pais_nome.text = pais
 		
+		$capital.text = formatar_dinheiro(capital)
 func _botao_clicado(botao):
 	pais = botao.name
 	$escolha.visible = false
@@ -57,6 +59,15 @@ func _on_conflitar_pressed() -> void:
 	_turnos(dia_atual,mes_atual,ano_atual)
 	turno += 1
 	demandas(turno)
+	var texto = ""
+	for chave in paises.paises[pais]:
+		var valor = paises.paises[pais][chave]
+		if chave == "pib":
+			valor = str(valor) + " T"
+		elif chave == "populacao":
+			valor = str(valor) + " M"
+		texto += str(chave) + ": " + str(valor) + "\n"
+	$info_estatisticas.text = texto
 	
 
 
@@ -152,19 +163,9 @@ func _on_botao_lateral_demandas_pressed() -> void:
 		demandas_aberto = true
 
 
-func _on_botao_lateral_estatisticas_pressed() -> void:
-	if estatisticas_aberto == false:
-		$"animaçoes_geral".play("estatisticas_animaçao")
-		estatisticas_aberto = true
-		var texto = ""
-		for chave in paises.paises[pais]:
-			var valor = paises.paises[pais][chave]
-			if chave == "pib":
-				valor = str(valor) + " T"
-			elif chave == "populacao":
-				valor = str(valor) + " M"
-			texto += str(chave) + ": " + str(valor) + "\n"
-		$info_estatisticas.text = texto
-	elif estatisticas_aberto:
-		$"animaçoes_geral".play_backwards("estatisticas_animaçao")
-		estatisticas_aberto = false
+func formatar_dinheiro(capital):
+	capital = paises.paises[pais]["pib"] / 2
+	if capital >= 1000:
+		return str(snapped(capital / 1000.0, 0.01)) + " T"
+	else:
+		return str(snapped(capital, 0.01)) + " B"

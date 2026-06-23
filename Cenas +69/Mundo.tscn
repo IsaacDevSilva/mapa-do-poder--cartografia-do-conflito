@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dxux525wshy3y" path="res://PixelMotherFuckerArts/materia prima 4.png" id="14_u4305"]
 [ext_resource type="Texture2D" uid="uid://b74k2ssi3ugsl" path="res://PixelMotherFuckerArts/Materia Prima 5.png" id="15_qxcpo"]
 [ext_resource type="Texture2D" uid="uid://c32ribv13dyxr" path="res://PixelMotherFuckerArts/botao_lateral_menu.png" id="17_1e442"]
+[ext_resource type="Texture2D" uid="uid://tfjtevqripxx" path="res://PixelMotherFuckerArts/CartoCoins.png" id="18_ci8bq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pujpp"]
 draw_center = false
@@ -35,7 +36,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(40, -240)]
+"values": [Vector2(38, 440)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -167,7 +168,7 @@ tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(136, 480)]
+"values": [Vector2(96, 520)]
 }
 
 [sub_resource type="Animation" id="Animation_1e442"]
@@ -422,7 +423,6 @@ offset_bottom = 96.0
 theme_override_colors/font_color = Color(0.7764706, 0.37254903, 0, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_font_sizes/font_size = 40
-text = "tytyhukt"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -735,15 +735,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ek21q")
 horizontal_alignment = 1
 
 [node name="PergaminhoDadosPais" type="Sprite2D" parent="." unique_id=1916988905]
-position = Vector2(136, 480)
+position = Vector2(96, 520)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_1k42u")
 
 [node name="info_estatisticas" type="Label" parent="." unique_id=873403738]
-offset_left = 40.0
-offset_top = -240.0
-offset_right = 184.0
-offset_bottom = -40.0
+offset_left = 38.0
+offset_top = 440.0
+offset_right = 182.0
+offset_bottom = 640.0
 scale = Vector2(0.8, 0.8)
 theme_override_colors/font_color = Color(0.48008138, 0.18046287, 0.087177806, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
@@ -981,32 +981,20 @@ text = "demandas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BotaoLateralestatisticas" type="Sprite2D" parent="." unique_id=1589600064]
-position = Vector2(584, -176.00002)
-scale = Vector2(0.98485136, 1.4193562)
-texture = ExtResource("17_1e442")
-
-[node name="botao_lateral_estatisticas" type="Button" parent="BotaoLateralestatisticas" unique_id=663345659]
-offset_left = 544.0
-offset_top = 188.0
-offset_right = 576.0
-offset_bottom = 284.0
-flat = true
-
-[node name="Label" type="Label" parent="BotaoLateralestatisticas" unique_id=1289447298]
-offset_left = 573.6906
-offset_top = 185.99983
-offset_right = 698.5588
-offset_bottom = 217.78438
-rotation = 1.5707964
-scale = Vector2(0.7985933, 0.8989867)
-theme_override_colors/font_color = Color(0.7294118, 0.05490196, 0.09019608, 1)
+[node name="capital" type="Label" parent="." unique_id=1573925535]
+offset_left = 66.0
+offset_top = 379.0
+offset_right = 168.0
+offset_bottom = 402.0
+theme_override_colors/font_color = Color(0.2489819, 0.5469873, 0.14773285, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
-theme_override_font_sizes/font_size = 10
-theme_override_styles/normal = SubResource("StyleBoxFlat_0ne36")
-text = "estatisticas"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CartoCoins" type="Sprite2D" parent="." unique_id=1052814361]
+position = Vector2(40, 384)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("18_ci8bq")
 
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]
 [connection signal="pressed" from="titulo_compra/botao_comprar" to="." method="_on_botao_comprar_pressed"]
@@ -1014,4 +1002,3 @@ vertical_alignment = 1
 [connection signal="pressed" from="BotaoVoltarComCorrente" to="." method="_on_botao_voltar_com_corrente_pressed"]
 [connection signal="pressed" from="BotaoLateralMenu/botao_lateral_mapa" to="." method="_on_botao_lateral_mapa_pressed"]
 [connection signal="pressed" from="BotaoLateraldemandas/botao_lateral_demandas" to="." method="_on_botao_lateral_demandas_pressed"]
-[connection signal="pressed" from="BotaoLateralestatisticas/botao_lateral_estatisticas" to="." method="_on_botao_lateral_estatisticas_pressed"]

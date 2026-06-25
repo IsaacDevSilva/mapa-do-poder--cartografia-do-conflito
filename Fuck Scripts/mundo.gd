@@ -87,57 +87,69 @@ func demandas(turno):
 	if turno_atual != turno:
 		turno_atual = turno
 		var paises_compra_escolhidos = []
+
 		while paises_compra_escolhidos.size() < 5:
 			var acumulado = 0
 			soma_pesos = 0
-			# Soma os pesos dos países ainda não escolhidos
+
 			for pais_compra in paises.paises:
 				if not pais_compra in paises_compra_escolhidos:
 					soma_pesos += paises.paises[pais_compra]["comodits"]
+
 			var sorteio_compra = randf_range(0, soma_pesos)
-			# Sorteio ponderado
+
 			for pais_compra in paises.paises:
 				if pais_compra in paises_compra_escolhidos:
 					continue
+
 				acumulado += paises.paises[pais_compra]["comodits"]
+
 				if sorteio_compra <= acumulado:
 					paises_compra_escolhidos.append(pais_compra)
 					break
-		$Control/label_qtd_compra.text = ""
-		$Control/Label_paises_compra.text =  ""
-		$Control/Label_preco_compra.text = ""
-		# Gerar ofertas dos 5 países sorteados
-		for pais_nome in paises_compra_escolhidos:
-			var variavel_para_controle_super_especifico_para_o_espaçamento_dos_labels_com_o_nome_desnecessariamente_grande = 1
+
+
+		# Labels separados
+		var labels_nome = [
+			$Control/Label_compra1,
+			$Control/Label_compra2,
+			$Control/Label_compra3,
+			$Control/Label_compra4,
+			$Control/Label_compra5
+		]
+
+		var labels_qtd = [
+			$Control/Label_compra_qtd1,
+			$Control/Label_compra_qtd2,
+			$Control/Label_compra_qtd3,
+			$Control/Label_compra_qtd4,
+			$Control/Label_compra_qtd5
+		]
+
+		var labels_preco = [
+			$Control/Label_compra_pais1,
+			$Control/Label_compra_pais2,
+			$Control/Label_compra_pais3,
+			$Control/Label_compra_pais4,
+			$Control/Label_compra_pais5
+		]
+
+
+		for i in range(paises_compra_escolhidos.size()):
+			var pais_nome = paises_compra_escolhidos[i]
+
 			var pib = paises.paises[pais_nome]["pib"]
 			var comodits = paises.paises[pais_nome]["comodits"]
-			# País rico vende menos
+
 			var quantidade_base = (comodits * 1000) / max(pib, 1)
 			var quantidade = int(quantidade_base * randf_range(0.7, 1.3))
-			# País rico vende mais caro
-			var preco_base = (pib * 100.0) / max(comodits, 1)
-			var preco = snapped(preco_base * randf_range(0.9, 1.1),0.01)
-			if variavel_para_controle_super_especifico_para_o_espaçamento_dos_labels_com_o_nome_desnecessariamente_grande == 1 or variavel_para_controle_super_especifico_para_o_espaçamento_dos_labels_com_o_nome_desnecessariamente_grande == 2:
-				$Control/Label_paises_compra.text +=  pais_nome + "\n" 
-				$Control/label_qtd_compra.text += str(quantidade) + "\n" 
-				$Control/Label_preco_compra.text +=  "$" + str(preco) + "\n" 
-			elif variavel_para_controle_super_especifico_para_o_espaçamento_dos_labels_com_o_nome_desnecessariamente_grande == 3 or variavel_para_controle_super_especifico_para_o_espaçamento_dos_labels_com_o_nome_desnecessariamente_grande == 4:
-				$Control/Label_paises_compra.text +=  pais_nome + "\n" + "\n" 
-				$Control/label_qtd_compra.text += str(quantidade) + "\n" + "\n" 
-				$Control/Label_preco_compra.text +=  "$" + str(preco) + "\n" + "\n" 
-			elif variavel_para_controle_super_especifico_para_o_espaçamento_dos_labels_com_o_nome_desnecessariamente_grande == 5:
-				$Control/Label_paises_compra.text +=  pais_nome + "\n" 
-				$Control/label_qtd_compra.text += str(quantidade) + "\n"
-				$Control/Label_preco_compra.text +=  "$" + str(preco) + "\n" 
-			print(
-				pais_nome,
-				" | Quantidade: ",
-				quantidade,
-				" | Preço: ",
-				preco
-			)
-			variavel_para_controle_super_especifico_para_o_espaçamento_dos_labels_com_o_nome_desnecessariamente_grande +=1
 
+			var preco_base = (pib * 100.0) / max(comodits, 1)
+			var preco = snapped(preco_base * randf_range(0.9, 1.1), 0.01)
+
+			labels_nome[i].text = pais_nome
+			labels_qtd[i].text = str(quantidade)
+			labels_preco[i].text = "$" + str(preco)
 
 func _on_botao_comprar_pressed() -> void:
 	$"animaçoes_geral".play("painel_compra")

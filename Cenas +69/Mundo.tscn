@@ -399,6 +399,9 @@ draw_center = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x611g"]
 draw_center = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77o43"]
+draw_center = false
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ne36"]
 draw_center = false
 
@@ -426,6 +429,21 @@ theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="CartoCoins" type="Sprite2D" parent="." unique_id=1052814361]
+position = Vector2(40, 384)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("18_ci8bq")
+
+[node name="capital" type="Label" parent="." unique_id=1573925535]
+offset_left = 66.0
+offset_top = 379.0
+offset_right = 168.0
+offset_bottom = 402.0
+theme_override_colors/font_color = Color(0.2489819, 0.5469873, 0.14773285, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="escolha" type="Panel" parent="." unique_id=1663872525]
 visible = false
@@ -851,40 +869,6 @@ position = Vector2(-256, 344)
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("11_31gsa")
 
-[node name="label_qtd_compra" type="Label" parent="Control" unique_id=2051006320]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 0
-offset_left = 208.0
-offset_top = 16.0
-offset_right = 256.0
-offset_bottom = 344.0
-theme_override_constants/line_spacing = 58
-theme_override_fonts/font = ExtResource("2_pujpp")
-theme_override_font_sizes/font_size = 13
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Label_preco_compra" type="Label" parent="Control" unique_id=167860736]
-layout_mode = 0
-offset_left = 280.0
-offset_top = 16.0
-offset_right = 360.0
-offset_bottom = 344.0
-theme_override_constants/line_spacing = 50
-theme_override_fonts/font = ExtResource("2_pujpp")
-horizontal_alignment = 1
-
-[node name="Label_paises_compra" type="Label" parent="Control" unique_id=476210062]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 16.0
-offset_right = 176.0
-offset_bottom = 344.0
-theme_override_constants/line_spacing = 58
-theme_override_fonts/font = ExtResource("2_pujpp")
-theme_override_font_sizes/font_size = 11
-autowrap_mode = 2
-
 [node name="materia_prima_label" type="Label" parent="Control" unique_id=347060732]
 layout_mode = 0
 offset_left = 72.0
@@ -920,6 +904,171 @@ theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_font_sizes/font_size = 20
 text = "militar"
 horizontal_alignment = 1
+
+[node name="Label_compra1" type="Label" parent="Control" unique_id=244572184]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -50.0
+offset_right = 176.0
+offset_bottom = -2.0
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_compra2" type="Label" parent="Control" unique_id=946575323]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 176.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_compra3" type="Label" parent="Control" unique_id=1915149470]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 150.0
+offset_right = 184.0
+offset_bottom = 206.0
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_compra4" type="Label" parent="Control" unique_id=405657215]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 222.0
+offset_right = 176.0
+offset_bottom = 270.0
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_compra5" type="Label" parent="Control" unique_id=1823134064]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 350.0
+offset_right = 176.0
+offset_bottom = 406.0
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_compra_pais1" type="Label" parent="Control" unique_id=61485706]
+layout_mode = 0
+offset_left = 192.0
+offset_top = -50.0
+offset_right = 272.0
+offset_bottom = -2.0
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_compra_pais2" type="Label" parent="Control" unique_id=1098274947]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 22.0
+offset_right = 264.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_compra_pais3" type="Label" parent="Control" unique_id=621700264]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 150.0
+offset_right = 272.0
+offset_bottom = 206.0
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_compra_pais4" type="Label" parent="Control" unique_id=906783537]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 222.0
+offset_right = 272.0
+offset_bottom = 270.0
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_compra_pais5" type="Label" parent="Control" unique_id=253361257]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 350.0
+offset_right = 272.0
+offset_bottom = 398.0
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_compra_qtd1" type="Label" parent="Control" unique_id=1486755396]
+layout_mode = 0
+offset_left = 280.0
+offset_top = -50.0
+offset_right = 360.0
+offset_bottom = -2.0
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_compra_qtd2" type="Label" parent="Control" unique_id=1745550189]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 22.0
+offset_right = 360.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_compra_qtd3" type="Label" parent="Control" unique_id=1055689653]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 150.0
+offset_right = 360.0
+offset_bottom = 206.0
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_compra_qtd4" type="Label" parent="Control" unique_id=272877588]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 222.0
+offset_right = 360.0
+offset_bottom = 270.0
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_compra_qtd5" type="Label" parent="Control" unique_id=1555258853]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 350.0
+offset_right = 360.0
+offset_bottom = 406.0
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="BotaoVoltarComCorrente" type="Button" parent="." unique_id=1749173027]
 offset_left = 472.0
@@ -980,21 +1129,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0ne36")
 text = "demandas"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="capital" type="Label" parent="." unique_id=1573925535]
-offset_left = 66.0
-offset_top = 379.0
-offset_right = 168.0
-offset_bottom = 402.0
-theme_override_colors/font_color = Color(0.2489819, 0.5469873, 0.14773285, 1)
-theme_override_fonts/font = ExtResource("2_pujpp")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CartoCoins" type="Sprite2D" parent="." unique_id=1052814361]
-position = Vector2(40, 384)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("18_ci8bq")
 
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]
 [connection signal="pressed" from="titulo_compra/botao_comprar" to="." method="_on_botao_comprar_pressed"]

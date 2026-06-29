@@ -402,6 +402,12 @@ draw_center = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77o43"]
 draw_center = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kno2e"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t24sw"]
+bg_color = Color(0.6392157, 0.09411765, 0.08627451, 0.84313726)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ne36"]
 draw_center = false
 
@@ -914,6 +920,7 @@ offset_bottom = -2.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label_compra2" type="Label" parent="Control" unique_id=946575323]
@@ -925,6 +932,7 @@ offset_bottom = 70.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label_compra3" type="Label" parent="Control" unique_id=1915149470]
@@ -936,6 +944,7 @@ offset_bottom = 206.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label_compra4" type="Label" parent="Control" unique_id=405657215]
@@ -947,6 +956,7 @@ offset_bottom = 270.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label_compra5" type="Label" parent="Control" unique_id=1823134064]
@@ -958,6 +968,7 @@ offset_bottom = 406.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label_compra_pais1" type="Label" parent="Control" unique_id=61485706]
@@ -969,6 +980,7 @@ offset_bottom = -2.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label_compra_pais2" type="Label" parent="Control" unique_id=1098274947]
@@ -980,6 +992,7 @@ offset_bottom = 70.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label_compra_pais3" type="Label" parent="Control" unique_id=621700264]
@@ -991,6 +1004,7 @@ offset_bottom = 206.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label_compra_pais4" type="Label" parent="Control" unique_id=906783537]
@@ -1002,6 +1016,7 @@ offset_bottom = 270.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label_compra_pais5" type="Label" parent="Control" unique_id=253361257]
@@ -1013,6 +1028,7 @@ offset_bottom = 398.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label_compra_qtd1" type="Label" parent="Control" unique_id=1486755396]
@@ -1024,6 +1040,7 @@ offset_bottom = -2.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label_compra_qtd2" type="Label" parent="Control" unique_id=1745550189]
@@ -1035,6 +1052,7 @@ offset_bottom = 70.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label_compra_qtd3" type="Label" parent="Control" unique_id=1055689653]
@@ -1046,6 +1064,7 @@ offset_bottom = 206.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label_compra_qtd4" type="Label" parent="Control" unique_id=272877588]
@@ -1057,6 +1076,7 @@ offset_bottom = 270.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label_compra_qtd5" type="Label" parent="Control" unique_id=1555258853]
@@ -1068,7 +1088,53 @@ offset_bottom = 406.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Botao_compra" type="Button" parent="Control" unique_id=2109105497]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -52.0
+offset_right = 178.0
+offset_bottom = -1.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
+
+[node name="Botao_compra2" type="Button" parent="Control" unique_id=1881306654]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 18.0
+offset_right = 177.0
+offset_bottom = 70.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
+
+[node name="Botao_compra3" type="Button" parent="Control" unique_id=245872691]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 151.0
+offset_right = 179.0
+offset_bottom = 203.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
+
+[node name="Botao_compra4" type="Button" parent="Control" unique_id=1543089372]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 220.0
+offset_right = 179.0
+offset_bottom = 271.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
+
+[node name="Botao_compra5" type="Button" parent="Control" unique_id=154259281]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 350.0
+offset_right = 180.0
+offset_bottom = 402.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
 
 [node name="BotaoVoltarComCorrente" type="Button" parent="." unique_id=1749173027]
 offset_left = 472.0

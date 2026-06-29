@@ -141,7 +141,7 @@ func demandas(turno):
 			var pib = paises.paises[pais_nome]["pib"]
 			var comodits = paises.paises[pais_nome]["comodits"]
 
-			var quantidade_base = (comodits * 1000) / max(pib, 1)
+			var quantidade_base = (comodits * 10) / max(pib, 1)
 			var quantidade = int(quantidade_base * randf_range(0.7, 1.3))
 
 			var preco_base = (pib * 100.0) / max(comodits, 1)
@@ -181,3 +181,11 @@ func formatar_dinheiro(capital):
 		return str(snapped(capital / 1000.0, 0.01)) + " T"
 	else:
 		return str(snapped(capital, 0.01)) + " B"
+
+
+func _on_botao_compra_1_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_botao_compra_1_mouse_entered() -> void:
+	print("entrou")

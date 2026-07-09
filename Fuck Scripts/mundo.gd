@@ -13,6 +13,7 @@ var soma_pesos = 0
 var pais_compra
 var turno_atual = 0
 var capital 
+var ofertas = []
 #assasinar o gabriel temponi
 func _ready() -> void:
 	for vbox in $escolha.get_children():
@@ -30,11 +31,13 @@ func _process(delta: float) -> void:
 	if pais != null:
 		$pais_nome.text = pais
 		
-		$capital.text = formatar_dinheiro(capital)
+		
 func _botao_clicado(botao):
 	pais = botao.name
+	capital = paises.paises[pais]["pib"]
 	$escolha.visible = false
 	print(pais)
+	$capital.text = formatar_dinheiro(capital)
 
 
 
@@ -74,18 +77,23 @@ func _on_conflitar_pressed() -> void:
 
 		
 func _on_botao_voltar_com_corrente_pressed() -> void:
-	if demandas_aberto and not demanda_compra_aberto:
-		$"animaçoes_geral".play_backwards("demandas_animation")
-		demandas_aberto = false
+	if $"animaçoes_geral".is_playing():
+		return
 
-	elif demanda_compra_aberto:
+	if demanda_compra_aberto:
 		$"animaçoes_geral".play_backwards("painel_compra")
 		demanda_compra_aberto = false
+
+	elif demandas_aberto:
+		$"animaçoes_geral".play_backwards("demandas_animation")
+		demandas_aberto = false
 	
 		
 func demandas(turno):
 	if turno_atual != turno:
 		turno_atual = turno
+		ofertas.clear()
+
 		var paises_compra_escolhidos = []
 
 		while paises_compra_escolhidos.size() < 5:
@@ -107,7 +115,6 @@ func demandas(turno):
 				if sorteio_compra <= acumulado:
 					paises_compra_escolhidos.append(pais_compra)
 					break
-
 
 		# Labels separados
 		var labels_nome = [
@@ -134,7 +141,6 @@ func demandas(turno):
 			$Control/Label_compra_pais5
 		]
 
-
 		for i in range(paises_compra_escolhidos.size()):
 			var pais_nome = paises_compra_escolhidos[i]
 
@@ -146,6 +152,13 @@ func demandas(turno):
 
 			var preco_base = (pib * 100.0) / max(comodits, 1)
 			var preco = snapped(preco_base * randf_range(0.9, 1.1), 0.01)
+
+			# Salva a oferta
+			ofertas.append({
+				"pais": pais_nome,
+				"qtd": quantidade,
+				"preco": preco
+			})
 
 			labels_nome[i].text = pais_nome
 			labels_qtd[i].text = str(quantidade)
@@ -175,17 +188,41 @@ func _on_botao_lateral_demandas_pressed() -> void:
 		demandas_aberto = true
 
 
-func formatar_dinheiro(capital):
-	capital = paises.paises[pais]["pib"] / 2
-	if capital >= 1000:
-		return str(snapped(capital / 1000.0, 0.01)) + " T"
+func formatar_dinheiro(valor):
+	if valor >= 1000:
+		return str(snapped(valor / 1000.0, 0.01)) + " T"
 	else:
-		return str(snapped(capital, 0.01)) + " B"
+		return str(snapped(valor, 0.01)) + " B"
+
+
+
+func comprar(indice):
+	if indice >= ofertas.size():
+		return
+
+	var oferta = ofertas[indice]
+
+	if capital < oferta["preco"]:
+		print("Capital insuficiente!")
+		return
+
+	if paises.paises[pais]["materia_prima"] + oferta["qtd"] > paises.paises[pais]["armazenamento_max"]:
+		print("Armazém cheio!")
+		return
+
+	capital -= oferta["preco"]
+	paises.paises[pais]["materia_prima"] += oferta["qtd"]
+
+	$capital.text = formatar_dinheiro(capital)
 
 
 func _on_botao_compra_1_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_botao_compra_1_mouse_entered() -> void:
-	print("entrou")
+	comprar(0)
+func _on_botao_compra_2_pressed() -> void:
+	comprar(1)
+func _on_botao_compra_3_pressed() -> void:
+	comprar(2)
+func _on_botao_compra_4_pressed() -> void:
+	comprar(3)
+func _on_botao_compra_5_pressed() -> void:
+	comprar(4)

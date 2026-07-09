@@ -8,7 +8,7 @@ var paises = {
 "honra":720,
 "tecnologia":100,
 "comodits":65,
-"armazenamento_max":2000,
+"armazenamento_max":100000000000,
 "materia_prima":1500,
 "taxa_imposto": 5,
 "status_povo" : 90,
@@ -31,7 +31,7 @@ var paises = {
 "materia_prima":1500,
 "taxa_imposto": 5,
 "status_povo" : 90,
-
+"armazenamento_max":100000000000,
 "saude":76,
 "educacao":82,
 "seguranca":72,
@@ -49,7 +49,7 @@ var paises = {
 "materia_prima":1500,
 "taxa_imposto": 5,
 "status_povo" : 90,
-
+"armazenamento_max":100000000000,
 "saude":90,
 "educacao":89,
 "seguranca":84,
@@ -70,7 +70,7 @@ var paises = {
 "saude":93,
 "educacao":91,
 "seguranca":88,
-
+"armazenamento_max":100000000000,
 "idh":0.91
 },
 
@@ -88,7 +88,7 @@ var paises = {
 "saude":92,
 "educacao":87,
 "seguranca":80,
-
+"armazenamento_max":100000000000,
 "idh":0.86
 },
 
@@ -105,7 +105,7 @@ var paises = {
 "saude":97,
 "educacao":95,
 "seguranca":93,
-
+"armazenamento_max":100000000000,
 "idh":0.95
 },
 
@@ -122,7 +122,7 @@ var paises = {
 "saude":63,
 "educacao":68,
 "seguranca":60,
-
+"armazenamento_max":100000000000,
 "idh":0.64
 },
 
@@ -139,7 +139,7 @@ var paises = {
 "saude":68,
 "educacao":84,
 "seguranca":58,
-
+"armazenamento_max":100000000000,
 "idh":0.70
 },
 #Japão → rei do IDH/tecnologia, poucos commodities, militar moderado.
@@ -162,7 +162,7 @@ var paises = {
 "saude":72,
 "educacao":68,
 "seguranca":38,
-
+"armazenamento_max":100000000000,
 "idh":0.59
 },
 
@@ -179,7 +179,7 @@ var paises = {
 "saude":70,
 "educacao":67,
 "seguranca":45,
-
+"armazenamento_max":100000000000,
 "idh":0.61
 },
 
@@ -196,7 +196,7 @@ var paises = {
 "saude":58,
 "educacao":61,
 "seguranca":28,
-
+"armazenamento_max":100000000000,
 "idh":0.49
 },
 
@@ -213,7 +213,7 @@ var paises = {
 "saude":78,
 "educacao":72,
 "seguranca":82,
-
+"armazenamento_max":100000000000,
 "idh":0.77
 },
 
@@ -230,7 +230,7 @@ var paises = {
 "saude":78,
 "educacao":79,
 "seguranca":52,
-
+"armazenamento_max":100000000000,
 "idh":0.70
 },
 
@@ -247,7 +247,7 @@ var paises = {
 "saude":95,
 "educacao":92,
 "seguranca":90,
-
+"armazenamento_max":100000000000,
 "idh":0.92
 },
 
@@ -264,7 +264,7 @@ var paises = {
 "saude":74,
 "educacao":71,
 "seguranca":58,
-
+"armazenamento_max":100000000000,
 "idh":0.67
 },
 
@@ -281,7 +281,7 @@ var paises = {
 "saude":68,
 "educacao":66,
 "seguranca":55,
-
+"armazenamento_max":100000000000,
 "idh":0.63
 },
 #Austrália ficou absurdamente forte (quase verde premium escondido kkk), porque na vida real ela é bem poderosa em IDH + commodities + estabilidade.
@@ -305,7 +305,7 @@ var paises = {
 "saude":28,
 "educacao":32,
 "seguranca":12,
-
+"armazenamento_max":100000000000,
 "idh":0.24
 },
 
@@ -322,7 +322,7 @@ var paises = {
 "saude":24,
 "educacao":20,
 "seguranca":8,
-
+"armazenamento_max":100000000000,
 "idh":0.17
 },
 
@@ -339,7 +339,7 @@ var paises = {
 "saude":30,
 "educacao":45,
 "seguranca":10,
-
+"armazenamento_max":100000000000,
 "idh":0.28
 },
 
@@ -356,7 +356,7 @@ var paises = {
 "saude":52,
 "educacao":68,
 "seguranca":18,
-
+"armazenamento_max":100000000000,
 "idh":0.46
 },
 
@@ -373,7 +373,7 @@ var paises = {
 "saude":22,
 "educacao":28,
 "seguranca":15,
-
+"armazenamento_max":100000000000,
 "idh":0.22
 },
 
@@ -390,7 +390,7 @@ var paises = {
 "saude":82,
 "educacao":84,
 "seguranca":60,
-
+"armazenamento_max":100000000000,
 "idh":0.75
 },
 
@@ -407,7 +407,7 @@ var paises = {
 "saude":50,
 "educacao":46,
 "seguranca":35,
-
+"armazenamento_max":100000000000,
 "idh":0.44
 },
 
@@ -424,7 +424,7 @@ var paises = {
 "saude":58,
 "educacao":72,
 "seguranca":40,
-
+"armazenamento_max":100000000000,
 "idh":0.57
 }
 #Congo → quase sem infraestrutura, mas commodities absurdas. Pode virar monstro late-game.

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bo3vjkh1qtxbv" path="res://PixelMotherFuckerArts/mapa mundi.png" id="3_otxd1"]
 [ext_resource type="Texture2D" uid="uid://0coslxkn1l4l" path="res://PixelMotherFuckerArts/botao_conflitarV2.png" id="6_q3100"]
 [ext_resource type="Texture2D" uid="uid://oge4tutranqb" path="res://PixelMotherFuckerArts/pergaminho_dados_pais.png" id="7_1k42u"]
+[ext_resource type="Texture2D" uid="uid://bvpcuwgbtmurc" path="res://PixelMotherFuckerArts/acento-agudo.png" id="7_u4305"]
 [ext_resource type="Texture2D" uid="uid://2qcnxhxu6ey1" path="res://PixelMotherFuckerArts/botao_comprar.png" id="9_wsjnt"]
 [ext_resource type="Texture2D" uid="uid://cij7ypkrk5mxy" path="res://PixelMotherFuckerArts/botao vender.png" id="10_qspml"]
 [ext_resource type="Texture2D" uid="uid://cro45wd43dg62" path="res://PixelMotherFuckerArts/painel_compra_venda.png" id="11_31gsa"]
@@ -36,7 +37,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(38, 440)]
+"values": [Vector2(32, 432)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -711,6 +712,60 @@ text = "coreia do norte"
 flat = true
 icon_alignment = 1
 
+[node name="didiculdate_facil" type="Label" parent="escolha" unique_id=1872432378]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 192.0
+offset_right = 256.0
+offset_bottom = 252.0
+theme_override_colors/font_color = Color(0.23921569, 0.5803922, 0, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 28
+text = "facil"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="didiculdate_media" type="Label" parent="escolha" unique_id=2139284556]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 200.0
+offset_right = 644.0
+offset_bottom = 260.0
+theme_override_colors/font_color = Color(0.81960785, 0.7529412, 0.14901961, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 28
+text = "medio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="didiculdate_dificil" type="Label" parent="escolha" unique_id=1335423151]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 200.0
+offset_right = 1042.0
+offset_bottom = 260.0
+theme_override_colors/font_color = Color(0.81960785, 0.2509804, 0.14901961, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 28
+text = "dificil"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AcentoAgudo" type="Sprite2D" parent="escolha" unique_id=1530734648]
+position = Vector2(968, 208.00002)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("7_u4305")
+
+[node name="AcentoAgudo2" type="Sprite2D" parent="escolha" unique_id=2082785769]
+position = Vector2(564, 212)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("7_u4305")
+
+[node name="AcentoAgudo3" type="Sprite2D" parent="escolha" unique_id=1421732209]
+position = Vector2(176, 200)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("7_u4305")
+
 [node name="animaçoes_geral" type="AnimationPlayer" parent="." unique_id=634595259]
 libraries/ = SubResource("AnimationLibrary_1k42u")
 
@@ -764,14 +819,14 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_1k42u")
 
 [node name="info_estatisticas" type="Label" parent="." unique_id=873403738]
-offset_left = 38.0
-offset_top = 440.0
-offset_right = 182.0
-offset_bottom = 640.0
+offset_left = 32.0
+offset_top = 432.0
+offset_right = 176.0
+offset_bottom = 632.0
 scale = Vector2(0.8, 0.8)
 theme_override_colors/font_color = Color(0.48008138, 0.18046287, 0.087177806, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_1k42u")
 horizontal_alignment = 1
 
@@ -824,8 +879,9 @@ offset_bottom = 8.0
 flat = true
 
 [node name="Label" type="Label" parent="." unique_id=369484322]
+offset_top = -8.0
 offset_right = 328.0
-offset_bottom = 584.0
+offset_bottom = 576.0
 
 [node name="painel_compra_esquerda" type="Sprite2D" parent="." unique_id=556160178]
 position = Vector2(160, -416.00003)
@@ -1091,7 +1147,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Botao_compra" type="Button" parent="Control" unique_id=2109105497]
+[node name="Botao_compra1" type="Button" parent="Control" unique_id=2109105497]
 layout_mode = 0
 offset_left = 18.0
 offset_top = -52.0
@@ -1146,7 +1202,8 @@ flat = true
 icon_alignment = 1
 
 [node name="BotaoLateralMenu" type="Sprite2D" parent="." unique_id=324336064]
-position = Vector2(576, 304)
+position = Vector2(808, 576)
+rotation = 4.712389
 texture = ExtResource("17_1e442")
 
 [node name="botao_lateral_mapa" type="Button" parent="BotaoLateralMenu" unique_id=1849097554]
@@ -1170,7 +1227,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BotaoLateraldemandas" type="Sprite2D" parent="." unique_id=538671943]
-position = Vector2(585, 32.000004)
+position = Vector2(568, 568)
+rotation = 4.712389
 scale = Vector2(0.98485136, 1.4193562)
 texture = ExtResource("17_1e442")
 
@@ -1199,6 +1257,11 @@ vertical_alignment = 1
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]
 [connection signal="pressed" from="titulo_compra/botao_comprar" to="." method="_on_botao_comprar_pressed"]
 [connection signal="pressed" from="titulo_venda/botao_vender" to="." method="_on_botao_vender_pressed"]
+[connection signal="pressed" from="Control/Botao_compra1" to="." method="_on_botao_compra_1_pressed"]
+[connection signal="pressed" from="Control/Botao_compra2" to="." method="_on_botao_compra_2_pressed"]
+[connection signal="pressed" from="Control/Botao_compra3" to="." method="_on_botao_compra_3_pressed"]
+[connection signal="pressed" from="Control/Botao_compra4" to="." method="_on_botao_compra_4_pressed"]
+[connection signal="pressed" from="Control/Botao_compra5" to="." method="_on_botao_compra_5_pressed"]
 [connection signal="pressed" from="BotaoVoltarComCorrente" to="." method="_on_botao_voltar_com_corrente_pressed"]
 [connection signal="pressed" from="BotaoLateralMenu/botao_lateral_mapa" to="." method="_on_botao_lateral_mapa_pressed"]
 [connection signal="pressed" from="BotaoLateraldemandas/botao_lateral_demandas" to="." method="_on_botao_lateral_demandas_pressed"]

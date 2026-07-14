@@ -147,11 +147,11 @@ func demandas(turno):
 			var pib = paises.paises[pais_nome]["pib"]
 			var comodits = paises.paises[pais_nome]["comodits"]
 
-			var quantidade_base = (comodits * 10) / max(pib, 1)
-			var quantidade = int(quantidade_base * randf_range(0.7, 1.3))
+			var quantidade_base = (comodits * 5) / min(pib, 1)
+			var quantidade = max(int(quantidade_base * randf_range(1, 2)),0.5)
 
-			var preco_base = (pib * 100.0) / max(comodits, 1)
-			var preco = snapped(preco_base * randf_range(0.9, 1.1), 0.01)
+			var preco_base = (pib * 10.0) / max(comodits, 1)
+			var preco = max(snapped(preco_base * randf_range(1,1), 0.01),0.5)
 
 			# Salva a oferta
 			ofertas.append({

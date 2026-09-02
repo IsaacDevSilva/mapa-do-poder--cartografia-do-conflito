@@ -118,27 +118,27 @@ func demandas(turno):
 
 		# Labels separados
 		var labels_nome = [
-			$Control/Label_compra1,
-			$Control/Label_compra2,
-			$Control/Label_compra3,
-			$Control/Label_compra4,
-			$Control/Label_compra5
+			$compras_interface/Label_compra1,
+			$compras_interface/Label_compra2,
+			$compras_interface/Label_compra3,
+			$compras_interface/Label_compra4,
+			$compras_interface/Label_compra5
 		]
 
 		var labels_qtd = [
-			$Control/Label_compra_qtd1,
-			$Control/Label_compra_qtd2,
-			$Control/Label_compra_qtd3,
-			$Control/Label_compra_qtd4,
-			$Control/Label_compra_qtd5
+			$compras_interface/Label_compra_qtd1,
+			$compras_interface/Label_compra_qtd2,
+			$compras_interface/Label_compra_qtd3,
+			$compras_interface/Label_compra_qtd4,
+			$compras_interface/Label_compra_qtd5
 		]
 
 		var labels_preco = [
-			$Control/Label_compra_pais1,
-			$Control/Label_compra_pais2,
-			$Control/Label_compra_pais3,
-			$Control/Label_compra_pais4,
-			$Control/Label_compra_pais5
+			$compras_interface/Label_compra_pais1,
+			$compras_interface/Label_compra_pais2,
+			$compras_interface/Label_compra_pais3,
+			$compras_interface/Label_compra_pais4,
+			$compras_interface/Label_compra_pais5
 		]
 
 		for i in range(paises_compra_escolhidos.size()):
@@ -147,10 +147,10 @@ func demandas(turno):
 			var pib = paises.paises[pais_nome]["pib"]
 			var comodits = paises.paises[pais_nome]["comodits"]
 
-			var quantidade_base = (comodits * 5) / min(pib, 1)
+			var quantidade_base = comodits / 2
 			var quantidade = max(int(quantidade_base * randf_range(1, 2)),0.5)
 
-			var preco_base = (pib * 10.0) / max(comodits, 1)
+			var preco_base = (pib * 10) /2
 			var preco = max(snapped(preco_base * randf_range(1,1), 0.01),0.5)
 
 			# Salva a oferta
@@ -170,7 +170,7 @@ func _on_botao_comprar_pressed() -> void:
 
 
 func _on_botao_vender_pressed() -> void:
-	pass # Replace with function body.
+	$"animaçoes_geral".play("animaçao_venda")
 
 
 func _on_botao_lateral_mapa_pressed() -> void:
@@ -206,7 +206,7 @@ func comprar(indice):
 		print("Capital insuficiente!")
 		return
 
-	if paises.paises[pais]["materia_prima"] + oferta["qtd"] > paises.paises[pais]["armazenamento_max"]:
+	if paises.paises[pais]["materia_prima"] + oferta["qtd"] > paises.paises[pais]["estoque"]:
 		print("Armazém cheio!")
 		return
 

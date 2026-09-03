@@ -3,6 +3,7 @@ var pais = null
 var estatisticas_aberto = false
 var demandas_aberto = false
 var demanda_compra_aberto = false
+var demanda_venda_aberto = false
 var mapa_aberto = false
 var data
 var dia_atual 
@@ -10,7 +11,9 @@ var mes_atual
 var ano_atual = 2026
 var turno = 1
 var soma_pesos = 0
+var soma_pesos_venda = 0
 var pais_compra
+var pais_venda
 var turno_atual = 0
 var capital 
 var ofertas = []
@@ -76,18 +79,7 @@ func _on_conflitar_pressed() -> void:
 
 
 		
-func _on_botao_voltar_com_corrente_pressed() -> void:
-	if $"animaçoes_geral".is_playing():
-		return
 
-	if demanda_compra_aberto:
-		$"animaçoes_geral".play_backwards("painel_compra")
-		demanda_compra_aberto = false
-
-	elif demandas_aberto:
-		$"animaçoes_geral".play_backwards("demandas_animation")
-		demandas_aberto = false
-	
 		
 func demandas(turno):
 	if turno_atual != turno:
@@ -163,7 +155,79 @@ func demandas(turno):
 			labels_nome[i].text = pais_nome
 			labels_qtd[i].text = str(quantidade)
 			labels_preco[i].text = "$" + str(preco)
+			
+			
+			#separaçao 67
+			
+		var paises_venda_escolhidos = []
 
+		while paises_venda_escolhidos.size() < 5:
+			var acumulado_vendas = 0
+			soma_pesos_venda = 0
+
+			for pais_venda in paises.paises:
+				if not pais_venda in paises_compra_escolhidos:
+					soma_pesos_venda -= paises.paises[pais_venda]["comodits"]
+
+			var sorteio_venda = randf_range(soma_pesos_venda,0)
+
+			for pais_venda in paises.paises:
+				if pais_venda in paises_venda_escolhidos:
+					continue
+
+				acumulado_vendas -= paises.paises[pais_venda]["comodits"]
+
+				if sorteio_venda <= acumulado_vendas:
+					paises_venda_escolhidos.append(pais_venda)
+					break
+
+		# Labels separados
+		var labels_nome_vendas = [
+			$vendas_interface/nomes_dos_recursos/Label_compra1,
+			$vendas_interface/nomes_dos_recursos/Label_compra2,
+			$vendas_interface/nomes_dos_recursos/Label_compra3,
+			$vendas_interface/nomes_dos_recursos/Label_compra4,
+			$vendas_interface/nomes_dos_recursos/Label_compra5
+		]
+
+		var labels_qtd_vendas = [
+			$vendas_interface/nomes_dos_recursos/Label_compra_qtd1,
+			$vendas_interface/nomes_dos_recursos/Label_compra_qtd2,
+			$vendas_interface/nomes_dos_recursos/Label_compra_qtd3,
+			$vendas_interface/nomes_dos_recursos/Label_compra_qtd4,
+			$vendas_interface/nomes_dos_recursos/Label_compra_qtd5
+		]
+
+		var labels_preco_vendas = [
+			$vendas_interface/nomes_dos_recursos/Label_compra_pais1,
+			$vendas_interface/nomes_dos_recursos/Label_compra_pais2,
+			$vendas_interface/nomes_dos_recursos/Label_compra_pais3,
+			$vendas_interface/nomes_dos_recursos/Label_compra_pais4,
+			$vendas_interface/nomes_dos_recursos/Label_compra_pais5
+		]
+
+		for i in range(paises_venda_escolhidos.size()):
+			var pais_nome_venda = paises_venda_escolhidos[i]
+
+			var pib_vendas = paises.paises[pais_nome_venda]["pib"]
+			var comodits_vendas = paises.paises[pais_nome_venda]["comodits"]
+
+			var quantidade_base_vendas = comodits_vendas / 2
+			var quantidade_vendas = max(int(quantidade_base_vendas * randf_range(1, 2)),0.5)
+
+			var preco_base_vendas = (pib_vendas * 10) /2
+			var preco_vendas = max(snapped(preco_base_vendas * randf_range(1,1), 0.01),0.5)
+
+			# Salva a oferta
+			ofertas.append({
+				"pais": pais_nome_venda,
+				"qtd": quantidade_vendas,
+				"preco": preco_vendas
+			})
+
+			labels_nome_vendas[i].text = pais_nome_venda
+			labels_qtd_vendas[i].text = str(quantidade_vendas)
+			labels_preco_vendas[i].text = "$" + str(preco_vendas)
 func _on_botao_comprar_pressed() -> void:
 	$"animaçoes_geral".play("painel_compra")
 	demanda_compra_aberto = true
@@ -171,6 +235,7 @@ func _on_botao_comprar_pressed() -> void:
 
 func _on_botao_vender_pressed() -> void:
 	$"animaçoes_geral".play("animaçao_venda")
+	demanda_venda_aberto = true
 
 
 func _on_botao_lateral_mapa_pressed() -> void:
@@ -187,7 +252,29 @@ func _on_botao_lateral_demandas_pressed() -> void:
 		$"animaçoes_geral".play("demandas_animation")
 		demandas_aberto = true
 
-
+func _on_botao_voltar_com_corrente_pressed() -> void:
+	if $"animaçoes_geral".is_playing():
+		return
+		
+	if demanda_compra_aberto and demanda_venda_aberto:
+		$"animaçoes_geral".play_backwards("painel_compra")
+		await $"animaçoes_geral".animation_finished
+		$"animaçoes_geral".play_backwards("animaçao_venda")
+		await $"animaçoes_geral".animation_finished
+		$"animaçoes_geral".play_backwards("demandas_animation")
+		demandas_aberto = false
+		demanda_compra_aberto = false
+		demanda_venda_aberto = false
+	elif demanda_compra_aberto:
+		$"animaçoes_geral".play_backwards("painel_compra")
+		demanda_compra_aberto = false
+	elif demanda_venda_aberto:
+		$"animaçoes_geral".play_backwards("animaçao_venda")
+		demanda_venda_aberto = false
+	elif demandas_aberto:
+		$"animaçoes_geral".play_backwards("demandas_animation")
+		demandas_aberto = false
+		
 func formatar_dinheiro(valor):
 	if valor >= 1000:
 		return str(snapped(valor / 1000.0, 0.01)) + " T"

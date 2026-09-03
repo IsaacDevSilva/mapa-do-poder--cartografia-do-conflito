@@ -239,6 +239,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, -144), Vector2(-696, -136)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("painel_compra_direita:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(952, -416), Vector2(952, 320)]
+}
 
 [sub_resource type="Animation" id="Animation_h2qi4"]
 resource_name = "demandas_animation"
@@ -396,7 +408,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath("painel_compra_direita:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -1297,228 +1309,229 @@ theme_override_font_sizes/font_size = 20
 text = "militar"
 horizontal_alignment = 1
 
-[node name="Label_compra1" type="Label" parent="vendas_interface" unique_id=562068607]
+[node name="Label_compra1" type="Label" parent="vendas_interface/nomes_dos_recursos" unique_id=562068607]
 layout_mode = 0
-offset_left = 16.0
-offset_top = -50.0
-offset_right = 176.0
-offset_bottom = -2.0
+offset_left = 198.0
+offset_top = 16.0
+offset_right = 358.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
+text = "up-"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_compra2" type="Label" parent="vendas_interface/nomes_dos_recursos" unique_id=760924433]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 81.0
+offset_right = 359.0
+offset_bottom = 137.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label_compra2" type="Label" parent="vendas_interface" unique_id=760924433]
+[node name="Label_compra3" type="Label" parent="vendas_interface/nomes_dos_recursos" unique_id=894321327]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 14.0
-offset_right = 176.0
-offset_bottom = 70.0
+offset_left = 197.0
+offset_top = 216.0
+offset_right = 357.0
+offset_bottom = 272.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label_compra3" type="Label" parent="vendas_interface" unique_id=894321327]
+[node name="Label_compra4" type="Label" parent="vendas_interface/nomes_dos_recursos" unique_id=104071063]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 150.0
-offset_right = 184.0
-offset_bottom = 206.0
+offset_left = 196.0
+offset_top = 288.0
+offset_right = 356.0
+offset_bottom = 336.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label_compra4" type="Label" parent="vendas_interface" unique_id=104071063]
+[node name="Label_compra5" type="Label" parent="vendas_interface/nomes_dos_recursos" unique_id=431373861]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 222.0
-offset_right = 176.0
-offset_bottom = 270.0
+offset_left = 199.0
+offset_top = 415.0
+offset_right = 351.0
+offset_bottom = 471.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label_compra5" type="Label" parent="vendas_interface" unique_id=431373861]
+[node name="Label_compra_pais1" type="Label" parent="vendas_interface/nomes_dos_recursos" unique_id=393968436]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 350.0
-offset_right = 176.0
-offset_bottom = 406.0
+offset_left = 108.0
+offset_top = 16.0
+offset_right = 188.0
+offset_bottom = 64.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label_compra_pais1" type="Label" parent="vendas_interface" unique_id=393968436]
+[node name="Label_compra_pais2" type="Label" parent="vendas_interface/nomes_dos_recursos" unique_id=477280596]
 layout_mode = 0
-offset_left = 192.0
-offset_top = -50.0
-offset_right = 272.0
-offset_bottom = -2.0
+offset_left = 110.0
+offset_top = 85.0
+offset_right = 182.0
+offset_bottom = 133.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label_compra_pais2" type="Label" parent="vendas_interface" unique_id=477280596]
+[node name="Label_compra_pais3" type="Label" parent="vendas_interface/nomes_dos_recursos" unique_id=1020865123]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 22.0
-offset_right = 264.0
-offset_bottom = 70.0
+offset_left = 105.0
+offset_top = 217.0
+offset_right = 185.0
+offset_bottom = 273.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label_compra_pais3" type="Label" parent="vendas_interface" unique_id=1020865123]
+[node name="Label_compra_pais4" type="Label" parent="vendas_interface/nomes_dos_recursos" unique_id=1615465896]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 150.0
-offset_right = 272.0
-offset_bottom = 206.0
+offset_left = 105.0
+offset_top = 288.0
+offset_right = 185.0
+offset_bottom = 336.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label_compra_pais4" type="Label" parent="vendas_interface" unique_id=1615465896]
+[node name="Label_compra_pais5" type="Label" parent="vendas_interface/nomes_dos_recursos" unique_id=183355884]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 222.0
-offset_right = 272.0
-offset_bottom = 270.0
+offset_left = 103.0
+offset_top = 416.0
+offset_right = 183.0
+offset_bottom = 464.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label_compra_pais5" type="Label" parent="vendas_interface" unique_id=183355884]
+[node name="Label_compra_qtd1" type="Label" parent="vendas_interface/nomes_dos_recursos" unique_id=1085048985]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 350.0
-offset_right = 272.0
-offset_bottom = 398.0
+offset_left = 14.0
+offset_top = 15.0
+offset_right = 94.0
+offset_bottom = 63.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label_compra_qtd1" type="Label" parent="vendas_interface" unique_id=1085048985]
+[node name="Label_compra_qtd2" type="Label" parent="vendas_interface/nomes_dos_recursos" unique_id=1180694857]
 layout_mode = 0
-offset_left = 280.0
-offset_top = -50.0
-offset_right = 360.0
-offset_bottom = -2.0
+offset_left = 15.0
+offset_top = 85.0
+offset_right = 95.0
+offset_bottom = 133.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label_compra_qtd2" type="Label" parent="vendas_interface" unique_id=1180694857]
+[node name="Label_compra_qtd3" type="Label" parent="vendas_interface/nomes_dos_recursos" unique_id=2031943090]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 22.0
-offset_right = 360.0
-offset_bottom = 70.0
+offset_left = 15.0
+offset_top = 217.0
+offset_right = 95.0
+offset_bottom = 273.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label_compra_qtd3" type="Label" parent="vendas_interface" unique_id=2031943090]
+[node name="Label_compra_qtd4" type="Label" parent="vendas_interface/nomes_dos_recursos" unique_id=251146197]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 150.0
-offset_right = 360.0
-offset_bottom = 206.0
+offset_left = 13.0
+offset_top = 287.0
+offset_right = 93.0
+offset_bottom = 335.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label_compra_qtd4" type="Label" parent="vendas_interface" unique_id=251146197]
+[node name="Label_compra_qtd5" type="Label" parent="vendas_interface/nomes_dos_recursos" unique_id=2038832812]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 222.0
-offset_right = 360.0
-offset_bottom = 270.0
+offset_left = 13.0
+offset_top = 413.0
+offset_right = 93.0
+offset_bottom = 469.0
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label_compra_qtd5" type="Label" parent="vendas_interface" unique_id=2038832812]
+[node name="Botao_compra1" type="Button" parent="vendas_interface/nomes_dos_recursos" unique_id=1275245310]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 350.0
-offset_right = 360.0
-offset_bottom = 406.0
-theme_override_fonts/font = ExtResource("2_pujpp")
-theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="Botao_compra1" type="Button" parent="vendas_interface" unique_id=1275245310]
-layout_mode = 0
-offset_left = 18.0
-offset_top = -52.0
-offset_right = 178.0
-offset_bottom = -1.0
+offset_left = 193.0
+offset_top = 17.0
+offset_right = 353.0
+offset_bottom = 68.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
 theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
 
-[node name="Botao_compra2" type="Button" parent="vendas_interface" unique_id=1042761058]
+[node name="Botao_compra2" type="Button" parent="vendas_interface/nomes_dos_recursos" unique_id=1042761058]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 18.0
-offset_right = 177.0
-offset_bottom = 70.0
+offset_left = 198.0
+offset_top = 84.0
+offset_right = 358.0
+offset_bottom = 136.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
 theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
 
-[node name="Botao_compra3" type="Button" parent="vendas_interface" unique_id=319400425]
+[node name="Botao_compra3" type="Button" parent="vendas_interface/nomes_dos_recursos" unique_id=319400425]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 151.0
-offset_right = 179.0
-offset_bottom = 203.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
-theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
-
-[node name="Botao_compra4" type="Button" parent="vendas_interface" unique_id=1275627961]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 220.0
-offset_right = 179.0
+offset_left = 196.0
+offset_top = 219.0
+offset_right = 356.0
 offset_bottom = 271.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
 theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
 
-[node name="Botao_compra5" type="Button" parent="vendas_interface" unique_id=39171727]
+[node name="Botao_compra4" type="Button" parent="vendas_interface/nomes_dos_recursos" unique_id=1275627961]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 350.0
-offset_right = 180.0
-offset_bottom = 402.0
+offset_left = 197.0
+offset_top = 287.0
+offset_right = 356.0
+offset_bottom = 338.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
+
+[node name="Botao_compra5" type="Button" parent="vendas_interface/nomes_dos_recursos" unique_id=39171727]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 414.0
+offset_right = 355.0
+offset_bottom = 466.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
 theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
 

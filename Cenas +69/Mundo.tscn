@@ -507,9 +507,9 @@ position = Vector2(96, 304)
 texture = ExtResource("18_ci8bq")
 
 [node name="capital" type="Label" parent="." unique_id=1573925535]
-offset_left = 112.0
+offset_left = 137.0
 offset_top = 288.0
-offset_right = 248.0
+offset_right = 273.0
 offset_bottom = 336.0
 theme_override_colors/font_color = Color(0.2489819, 0.5469873, 0.14773285, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")

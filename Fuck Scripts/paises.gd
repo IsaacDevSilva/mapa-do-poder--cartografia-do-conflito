@@ -2,7 +2,7 @@ extends Node
 var paises = {
 
 "ESTADOS UNIDOS":{
-"pib":30.0,
+"pib":3000,
 "populacao":341,
 "militar":100,
 "honra":720,
@@ -22,7 +22,7 @@ var paises = {
 },
 
 "CHINA":{
-"pib":20.0,
+"pib":2000,
 "populacao":1410,
 "militar":95,
 "honra":500,
@@ -40,7 +40,7 @@ var paises = {
 },
 
 "REINO UNIDO":{
-"pib":4.2,
+"pib":420,
 "populacao":68,
 "militar":78,
 "honra":860,
@@ -58,7 +58,7 @@ var paises = {
 },
 
 "ALEMANHA":{
-"pib":5.5,
+"pib":550,
 "populacao":84,
 "militar":72,
 "honra":900,
@@ -75,7 +75,7 @@ var paises = {
 },
 
 "FRANCA":{
-"pib":3.6,
+"pib":360,
 "populacao":65,
 #linha six seven favor não mexer
 "militar":82,
@@ -93,7 +93,7 @@ var paises = {
 },
 
 "JAPAO":{
-"pib":4.4,
+"pib":440,
 "populacao":124,
 "militar":62,
 "honra":920,
@@ -110,7 +110,7 @@ var paises = {
 },
 
 "INDIA":{
-"pib":4.1,
+"pib":410,
 "populacao":1430,
 "militar":88,
 "honra":580,
@@ -127,7 +127,7 @@ var paises = {
 },
 
 "RUSSIA":{
-"pib":2.6,
+"pib":260,
 "populacao":144,
 "militar":94,
 "honra":380,
@@ -150,7 +150,7 @@ var paises = {
 #Índia → população monstruosa, crescimento forte, IDH mais baixo.
 #França/Reino Unido → equilibrados premium.
 "BRASIL":{
-"pib":3.3,
+"pib":330,
 "populacao":212,
 "militar":70,
 "honra":650,
@@ -167,7 +167,7 @@ var paises = {
 },
 
 "MEXICO":{
-"pib":2.1,
+"pib":210,
 "populacao":129,
 "militar":58,
 "honra":620,
@@ -184,7 +184,7 @@ var paises = {
 },
 
 "AFRICA DO SUL":{
-"pib":0.5,
+"pib":500,
 "populacao":63,
 "militar":55,
 "honra":560,
@@ -201,7 +201,7 @@ var paises = {
 },
 
 "ARABIA SAUDITA":{
-"pib":1.4,
+"pib":140,
 "populacao":38,
 "militar":82,
 "honra":540,
@@ -218,7 +218,7 @@ var paises = {
 },
 
 "ARGENTINA":{
-"pib":0.7,
+"pib":700,
 "populacao":46,
 "militar":48,
 "honra":570,
@@ -235,7 +235,7 @@ var paises = {
 },
 
 "AUSTRALIA":{
-"pib":2.1,
+"pib":210,
 "populacao":27,
 "militar":74,
 "honra":910,
@@ -252,7 +252,7 @@ var paises = {
 },
 
 "TURQUIA":{
-"pib":1.6,
+"pib":160,
 "populacao":86,
 "militar":80,
 "honra":520,
@@ -269,7 +269,7 @@ var paises = {
 },
 
 "INDONESIA":{
-"pib":1.5,
+"pib":150,
 "populacao":281,
 "militar":72,
 "honra":600,
@@ -293,7 +293,7 @@ var paises = {
 #África do Sul = commodities muito altas, segurança derrubando bastante.
 #México = equilíbrio geral intermediário.
 "HAITI":{
-"pib":0.025,
+"pib":25,
 "populacao":12,
 "militar":12,
 "honra":140,
@@ -310,7 +310,7 @@ var paises = {
 },
 
 "AFEGANISTAO":{
-"pib":0.02,
+"pib":20,
 "populacao":42,
 "militar":42,
 "honra":90,
@@ -327,7 +327,7 @@ var paises = {
 },
 
 "SIRIA":{
-"pib":0.02,
+"pib":20,
 "populacao":24,
 "militar":48,
 "honra":100,
@@ -344,7 +344,7 @@ var paises = {
 },
 
 "VENEZUELA":{
-"pib":0.11,
+"pib":11,
 "populacao":28,
 "militar":52,
 "honra":120,
@@ -361,7 +361,7 @@ var paises = {
 },
 
 "CONGO":{
-"pib":0.07,
+"pib":70,
 "populacao":111,
 "militar":32,
 "honra":180,
@@ -378,7 +378,7 @@ var paises = {
 },
 
 "CUBA":{
-"pib":0.11,
+"pib":11,
 "populacao":11,
 "militar":45,
 "honra":350,
@@ -395,7 +395,7 @@ var paises = {
 },
 
 "PAQUISTAO":{
-"pib":0.40 ,
+"pib":40 ,
 "populacao":241,
 "militar":86,
 "honra":250,
@@ -412,7 +412,7 @@ var paises = {
 },
 
 "COREIA DO NORTE":{
-"pib":0.26,
+"pib":26,
 "populacao":26,
 "militar":90,
 "honra":80,

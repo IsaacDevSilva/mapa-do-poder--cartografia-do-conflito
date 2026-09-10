@@ -5,6 +5,7 @@ var demandas_aberto = false
 var demanda_compra_aberto = false 
 var demanda_venda_aberto = false 
 var mapa_aberto = false 
+var acoes_aberto = false
 var data 
 var dia_atual  
 var mes_atual 
@@ -35,7 +36,8 @@ func _process(delta: float) -> void:
 	if pais != null: 
 		$pais_nome.text = pais 
 		formatar_dinheiro(capital) 
-		
+		paises.paises[pais].erase("respeito_nacional")
+
 func _botao_clicado(botao): 
 	pais = botao.name 
 	capital = paises.paises[pais]["pib"] 
@@ -262,11 +264,16 @@ func _on_botao_lateral_demandas_pressed() -> void:
 	if not demandas_aberto: 
 		$"animaçoes_geral".play("demandas_animation") 
 		demandas_aberto = true 
- 
+func _on_button_acoes_pressed() -> void:
+	$"animaçoes_geral".play("animaçao_acoes")
+	acoes_aberto = true
 func _on_botao_voltar_com_corrente_pressed() -> void: 
 	if $"animaçoes_geral".is_playing(): 
 		return 
-		 
+	if acoes_aberto:
+		$"animaçoes_geral".play_backwards("animaçao_acoes")
+		acoes_aberto = false
+		
 	if demanda_compra_aberto and demanda_venda_aberto: 
 		$"animaçoes_geral".play_backwards("painel_compra") 
 		await $"animaçoes_geral".animation_finished 
@@ -336,6 +343,12 @@ func vender(indice_vendas):
 	paises.paises[oferta_vendas["pais"]]["respeito_nacional"]+=5
 	$capital.text = formatar_dinheiro(capital) 
  
+
+func acoes():
+	pass
+
+
+
 func _on_botao_compra_1_pressed() -> void: 
 	comprar(0) 
 func _on_botao_compra_2_pressed() -> void: 
@@ -357,3 +370,7 @@ func _on_botao_venda_4_pressed() -> void:
 	vender(3)
 func _on_botao_venda_5_pressed() -> void:
 	vender(4)
+
+
+
+	

@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://c32ribv13dyxr" path="res://PixelMotherFuckerArts/botao_lateral_menu.png" id="17_1e442"]
 [ext_resource type="Texture2D" uid="uid://tfjtevqripxx" path="res://PixelMotherFuckerArts/CartoCoins.png" id="18_ci8bq"]
 [ext_resource type="AudioStream" uid="uid://6rv0xttskao" path="res://Sounds Sensuais/musica_epica.mp3" id="20_qxcpo"]
+[ext_resource type="Texture2D" uid="uid://baewmt0x83vuy" path="res://PixelMotherFuckerArts/acento-cedilha.png" id="21_gmgns"]
+[ext_resource type="Texture2D" uid="uid://bpru0ydjychln" path="res://PixelMotherFuckerArts/acento_til.png" id="22_m24ub"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pujpp"]
 draw_center = false
@@ -195,6 +197,46 @@ tracks/13/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, -144)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("BotaoLateralMenuacoes/PergaminhoDadosPais:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-512, 48.356)]
+}
+
+[sub_resource type="Animation" id="Animation_gmgns"]
+resource_name = "animaçao_acoes"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BotaoLateralMenuacoes/PergaminhoDadosPais:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-512, -208), Vector2(256, -208)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BotaoVoltarComCorrente:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(472, -176), Vector2(472, -8)]
 }
 
 [sub_resource type="Animation" id="Animation_1e442"]
@@ -447,6 +489,7 @@ tracks/5/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1k42u"]
 _data = {
 &"RESET": SubResource("Animation_ek21q"),
+&"animaçao_acoes": SubResource("Animation_gmgns"),
 &"animaçao_mapa": SubResource("Animation_1e442"),
 &"animaçao_venda": SubResource("Animation_u4305"),
 &"demandas_animation": SubResource("Animation_h2qi4"),
@@ -1537,6 +1580,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
 theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
 
 [node name="BotaoVoltarComCorrente" type="Button" parent="." unique_id=1749173027]
+z_index = 1
 offset_left = 472.0
 offset_top = -208.0
 offset_right = 680.0005
@@ -1602,6 +1646,59 @@ vertical_alignment = 1
 stream = ExtResource("20_qxcpo")
 volume_db = 24.0
 
+[node name="BotaoLateralMenuacoes" type="Sprite2D" parent="." unique_id=71076315]
+position = Vector2(528, 576)
+rotation = 4.712389
+texture = ExtResource("17_1e442")
+
+[node name="Button" type="Button" parent="BotaoLateralMenuacoes" unique_id=345144175]
+offset_left = 545.0495
+offset_top = 189.30286
+offset_right = 574.7932
+offset_bottom = 280.75702
+flat = true
+
+[node name="Label" type="Label" parent="BotaoLateralMenuacoes" unique_id=315921732]
+offset_left = 570.0
+offset_top = 193.0
+offset_right = 659.8568
+offset_bottom = 219.16551
+rotation = 1.5707964
+theme_override_colors/font_color = Color(0.7522724, 0, 0.061521113, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 13
+text = "acoes"
+horizontal_alignment = 1
+
+[node name="AcentoCedilha" type="Sprite2D" parent="BotaoLateralMenuacoes" unique_id=1055849622]
+modulate = Color(0.9999998, 0.17323881, 0.27168715, 1)
+position = Vector2(554, 226)
+rotation = 1.5707964
+scale = Vector2(0.75845337, 0.80026007)
+texture = ExtResource("21_gmgns")
+
+[node name="AcentoTil" type="Sprite2D" parent="BotaoLateralMenuacoes" unique_id=509457846]
+modulate = Color(0.99981016, 0.2710151, 0.24176362, 1)
+position = Vector2(570.00006, 237.62842)
+rotation = 1.5707964
+scale = Vector2(0.6993123, 0.5301441)
+texture = ExtResource("22_m24ub")
+
+[node name="PergaminhoDadosPais" type="Sprite2D" parent="BotaoLateralMenuacoes" unique_id=519430866]
+position = Vector2(-512, 48.356)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = ExtResource("7_1k42u")
+
+[node name="Label" type="Label" parent="BotaoLateralMenuacoes/PergaminhoDadosPais" unique_id=782894532]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="PergaminhoDadosPais4" type="Sprite2D" parent="." unique_id=1852639191]
+position = Vector2(960, 1072)
+scale = Vector2(3, 3)
+texture = ExtResource("7_1k42u")
+
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]
 [connection signal="pressed" from="titulo_compra/botao_comprar" to="." method="_on_botao_comprar_pressed"]
 [connection signal="pressed" from="titulo_venda/botao_vender" to="." method="_on_botao_vender_pressed"]
@@ -1618,3 +1715,4 @@ volume_db = 24.0
 [connection signal="pressed" from="BotaoVoltarComCorrente" to="." method="_on_botao_voltar_com_corrente_pressed"]
 [connection signal="pressed" from="BotaoLateralMenu/botao_lateral_mapa" to="." method="_on_botao_lateral_mapa_pressed"]
 [connection signal="pressed" from="BotaoLateraldemandas/botao_lateral_demandas" to="." method="_on_botao_lateral_demandas_pressed"]
+[connection signal="pressed" from="BotaoLateralMenuacoes/Button" to="." method="_on_button_acoes_pressed"]

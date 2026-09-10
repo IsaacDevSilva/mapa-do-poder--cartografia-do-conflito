@@ -329,7 +329,7 @@ scale = Vector2(1.4, 1.4)
 texture = ExtResource("3_srq2a")
 
 [node name="CometasDaTelaDeCarregamento5" type="Sprite2D" parent="." unique_id=555590619]
-position = Vector2(-336, -312)
+position = Vector2(-474.00003, -121)
 rotation = -0.34208453
 scale = Vector2(10, 10)
 texture = ExtResource("3_srq2a")

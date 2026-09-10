@@ -12,6 +12,9 @@ var paises = {
 "materia_prima":1500,
 "taxa_imposto": 5,
 "status_povo" : 90,
+"respeito_nacional":40,
+
+
 
 
 "saude":78,
@@ -32,6 +35,9 @@ var paises = {
 "taxa_imposto": 5,
 "status_povo" : 90,
 "estoque":10000,
+"respeito_nacional":40,
+
+
 "saude":76,
 "educacao":82,
 "seguranca":72,
@@ -53,6 +59,8 @@ var paises = {
 "saude":90,
 "educacao":89,
 "seguranca":84,
+"respeito_nacional":40,
+
 
 "idh":0.88
 },
@@ -71,6 +79,9 @@ var paises = {
 "educacao":91,
 "seguranca":88,
 "estoque":10000,
+"respeito_nacional":40,
+
+
 "idh":0.91
 },
 
@@ -89,6 +100,9 @@ var paises = {
 "educacao":87,
 "seguranca":80,
 "estoque":10000,
+"respeito_nacional":40,
+
+
 "idh":0.86
 },
 
@@ -106,6 +120,9 @@ var paises = {
 "educacao":95,
 "seguranca":93,
 "estoque":10000,
+"respeito_nacional":40,
+
+
 "idh":0.95
 },
 
@@ -123,6 +140,9 @@ var paises = {
 "educacao":68,
 "seguranca":60,
 "estoque":10000,
+"respeito_nacional":40,
+
+
 "idh":0.64
 },
 
@@ -140,6 +160,9 @@ var paises = {
 "educacao":84,
 "seguranca":58,
 "estoque":10000,
+"respeito_nacional":40,
+
+
 "idh":0.70
 },
 #Japão → rei do IDH/tecnologia, poucos commodities, militar moderado.
@@ -163,6 +186,7 @@ var paises = {
 "educacao":68,
 "seguranca":38,
 "estoque":10000,
+"respeito_nacional":30,
 "idh":0.59
 },
 
@@ -180,6 +204,7 @@ var paises = {
 "educacao":67,
 "seguranca":45,
 "estoque":10000,
+"respeito_nacional":30,
 "idh":0.61
 },
 
@@ -197,6 +222,7 @@ var paises = {
 "educacao":61,
 "seguranca":28,
 "estoque":10000,
+"respeito_nacional":30,
 "idh":0.49
 },
 
@@ -214,6 +240,7 @@ var paises = {
 "educacao":72,
 "seguranca":82,
 "estoque":10000,
+"respeito_nacional":30,
 "idh":0.77
 },
 
@@ -231,6 +258,7 @@ var paises = {
 "educacao":79,
 "seguranca":52,
 "estoque":10000,
+"respeito_nacional":30,
 "idh":0.70
 },
 
@@ -248,6 +276,7 @@ var paises = {
 "educacao":92,
 "seguranca":90,
 "estoque":10000,
+"respeito_nacional":30,
 "idh":0.92
 },
 
@@ -265,6 +294,7 @@ var paises = {
 "educacao":71,
 "seguranca":58,
 "estoque":10000,
+"respeito_nacional":30,
 "idh":0.67
 },
 
@@ -282,6 +312,7 @@ var paises = {
 "educacao":66,
 "seguranca":55,
 "estoque":10000,
+"respeito_nacional":30,
 "idh":0.63
 },
 #Austrália ficou absurdamente forte (quase verde premium escondido kkk), porque na vida real ela é bem poderosa em IDH + commodities + estabilidade.
@@ -306,6 +337,7 @@ var paises = {
 "educacao":32,
 "seguranca":12,
 "estoque":10000,
+"respeito_nacional":20,
 "idh":0.24
 },
 
@@ -323,6 +355,7 @@ var paises = {
 "educacao":20,
 "seguranca":8,
 "estoque":10000,
+"respeito_nacional":20,
 "idh":0.17
 },
 
@@ -340,6 +373,7 @@ var paises = {
 "educacao":45,
 "seguranca":10,
 "estoque":10000,
+"respeito_nacional":20,
 "idh":0.28
 },
 
@@ -357,6 +391,7 @@ var paises = {
 "educacao":68,
 "seguranca":18,
 "estoque":10000,
+"respeito_nacional":20,
 "idh":0.46
 },
 
@@ -374,6 +409,7 @@ var paises = {
 "educacao":28,
 "seguranca":15,
 "estoque":10000,
+"respeito_nacional":20,
 "idh":0.22
 },
 
@@ -391,6 +427,7 @@ var paises = {
 "educacao":84,
 "seguranca":60,
 "estoque":10000,
+"respeito_nacional":20,
 "idh":0.75
 },
 
@@ -408,6 +445,7 @@ var paises = {
 "educacao":46,
 "seguranca":35,
 "estoque":10000,
+"respeito_nacional":20,
 "idh":0.44
 },
 
@@ -425,6 +463,7 @@ var paises = {
 "educacao":72,
 "seguranca":40,
 "estoque":10000,
+"respeito_nacional":20,
 "idh":0.57
 }
 #Congo → quase sem infraestrutura, mas commodities absurdas. Pode virar monstro late-game.

@@ -18,7 +18,7 @@ var turno_atual = 0
 var capital  
 var ofertas = [] 
 var ofertas_vendas = []
-#assasinar o gabriel temponi 
+
 func _ready() -> void: 
 	for vbox in $escolha.get_children(): 
 		if vbox is VBoxContainer: 
@@ -45,8 +45,6 @@ func _botao_clicado(botao):
 	$AudioStreamPlayer2D.play()
  
  
- 
-		 
 func _turnos(dia_atual,mes_atual,ano_atual): 
 	var meses = [ 
 		"janeiro", "fevereiro", "março", "abril", 
@@ -76,17 +74,12 @@ func _on_conflitar_pressed() -> void:
 		texto += str(chave) + ": " + str(valor) + "\n" 
 	$info_estatisticas.text = texto 
 	 
- 
- 
- 
- 
-		 
- 
-		 
+
 func demandas(turno): 
 	if turno_atual != turno: 
 		turno_atual = turno 
 		ofertas.clear() 
+		ofertas_vendas.clear()
  
 		var paises_compra_escolhidos = [] 
  
@@ -316,6 +309,9 @@ func comprar(indice):
 		return 
  
 	capital -= oferta["preco"] 
+	paises.paises[pais]["respeito_nacional"] += 5
+	paises.paises[oferta["pais"]]["respeito_nacional"]+=5
+
 	paises.paises[pais]["materia_prima"] += oferta["qtd"] 
  
 	$capital.text = formatar_dinheiro(capital) 
@@ -336,7 +332,8 @@ func vender(indice_vendas):
  
 	capital += oferta_vendas["preco"] 
 	paises.paises[pais]["materia_prima"] -= oferta_vendas["qtd"] 
- 
+	paises.paises[pais]["respeito_nacional"] += 5
+	paises.paises[oferta_vendas["pais"]]["respeito_nacional"]+=5
 	$capital.text = formatar_dinheiro(capital) 
  
 func _on_botao_compra_1_pressed() -> void: 

@@ -22,12 +22,91 @@
 [ext_resource type="AudioStream" uid="uid://6rv0xttskao" path="res://Sounds Sensuais/musica_epica.mp3" id="20_qxcpo"]
 [ext_resource type="Texture2D" uid="uid://baewmt0x83vuy" path="res://PixelMotherFuckerArts/acento-cedilha.png" id="21_gmgns"]
 [ext_resource type="Texture2D" uid="uid://bpru0ydjychln" path="res://PixelMotherFuckerArts/acento_til.png" id="22_m24ub"]
+[ext_resource type="Texture2D" uid="uid://dnj7d7oflc8vu" path="res://PLANETA TERRA.png" id="23_7podu"]
+[ext_resource type="Texture2D" uid="uid://dq0pwh6pxsv5j" path="res://ABDUCAO v1.png" id="24_jxof3"]
+[ext_resource type="Texture2D" uid="uid://cer2snpr1hb5n" path="res://PLANABDUÇAO v2.png" id="25_o2wut"]
+[ext_resource type="Texture2D" uid="uid://cgivbh0wifgjj" path="res://ABDUÇAO v3.png" id="26_7a8fq"]
+[ext_resource type="Texture2D" uid="uid://b65va1tl8pm77" path="res://ABDUÇAO v4.png" id="27_hfdyo"]
+[ext_resource type="Texture2D" uid="uid://bp8vkkr2kc1hn" path="res://ABDUÇAO v5.png" id="28_n2ob7"]
+[ext_resource type="Texture2D" uid="uid://daqyhsaa7a1vp" path="res://ABDUÇAO v6.png" id="29_60vgq"]
+[ext_resource type="Texture2D" uid="uid://d7onwiaxynd2" path="res://PixelMotherFuckerArts/EFEITO_EXPLOSÃOV444.png" id="30_5hfie"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pujpp"]
 draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2js5m"]
 draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3100"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ek21q"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1k42u"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x611g"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77o43"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kno2e"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t24sw"]
+bg_color = Color(0.6392157, 0.09411765, 0.08627451, 0.84313726)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ne36"]
+draw_center = false
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ne36"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_7podu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_jxof3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_o2wut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_7a8fq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hfdyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_n2ob7")
+}, {
+"duration": 7.0,
+"texture": ExtResource("29_60vgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_60vgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_n2ob7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hfdyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_7a8fq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_jxof3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_7podu")
+}],
+"loop": 0,
+"name": &"pedro",
+"speed": 10.0
+}]
 
 [sub_resource type="Animation" id="Animation_ek21q"]
 tracks/0/type = "value"
@@ -210,10 +289,46 @@ tracks/14/keys = {
 "update": 0,
 "values": [Vector2(-512, 48.356)]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("PergaminhoDadosPais4_investbb:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 1088)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("PergaminhoDadosPais4_investbb2:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(864, 1088)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("animaçao_final_extraterrestre/Sprite2D:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
 
 [sub_resource type="Animation" id="Animation_gmgns"]
 resource_name = "animaçao_acoes"
-length = 0.7
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -221,10 +336,10 @@ tracks/0/path = NodePath("BotaoLateralMenuacoes/PergaminhoDadosPais:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-512, -208), Vector2(256, -208)]
+"values": [Vector2(-512, -239.99998), Vector2(256, -239.99998), Vector2(256, -239.99998)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -237,6 +352,22 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(472, -176), Vector2(472, -8)]
+}
+
+[sub_resource type="Animation" id="Animation_m24ub"]
+resource_name = "animaçao_investir"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PergaminhoDadosPais4_investbb:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(864, 1088), Vector2(864, 320)]
 }
 
 [sub_resource type="Animation" id="Animation_1e442"]
@@ -253,6 +384,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_7podu"]
+resource_name = "animaçao_sancionar"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PergaminhoDadosPais4_investbb2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(864, 1088), Vector2(864, 320)]
 }
 
 [sub_resource type="Animation" id="Animation_u4305"]
@@ -490,36 +637,51 @@ tracks/5/keys = {
 _data = {
 &"RESET": SubResource("Animation_ek21q"),
 &"animaçao_acoes": SubResource("Animation_gmgns"),
+&"animaçao_investir": SubResource("Animation_m24ub"),
 &"animaçao_mapa": SubResource("Animation_1e442"),
+&"animaçao_sancionar": SubResource("Animation_7podu"),
 &"animaçao_venda": SubResource("Animation_u4305"),
 &"demandas_animation": SubResource("Animation_h2qi4"),
 &"estatisticas_animaçao": SubResource("Animation_1k42u"),
 &"painel_compra": SubResource("Animation_qspml")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3100"]
-draw_center = false
+[sub_resource type="Animation" id="Animation_wtlt3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animaçao_final_extraterrestre/Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ek21q"]
-draw_center = false
+[sub_resource type="Animation" id="Animation_aj3lr"]
+resource_name = "animaçao_da_animaçao_final_alienigena"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animaçao_final_extraterrestre/Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(5, 5)]
+}
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1k42u"]
-draw_center = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x611g"]
-draw_center = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77o43"]
-draw_center = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kno2e"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t24sw"]
-bg_color = Color(0.6392157, 0.09411765, 0.08627451, 0.84313726)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ne36"]
-draw_center = false
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7podu"]
+_data = {
+&"RESET": SubResource("Animation_wtlt3"),
+&"animaçao_da_animaçao_final_alienigena": SubResource("Animation_aj3lr")
+}
 
 [node name="Mundo" type="Node2D" unique_id=261724688]
 script = ExtResource("1_ek21q")
@@ -874,9 +1036,6 @@ texture = ExtResource("7_u4305")
 position = Vector2(176, 200)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("7_u4305")
-
-[node name="animaçoes_geral" type="AnimationPlayer" parent="." unique_id=634595259]
-libraries/ = SubResource("AnimationLibrary_1k42u")
 
 [node name="conflitar" type="Button" parent="." unique_id=46860701]
 offset_left = 488.0
@@ -1690,14 +1849,58 @@ rotation = 1.5707964
 scale = Vector2(3, 3)
 texture = ExtResource("7_1k42u")
 
-[node name="Label" type="Label" parent="BotaoLateralMenuacoes/PergaminhoDadosPais" unique_id=782894532]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Button" type="Button" parent="BotaoLateralMenuacoes/PergaminhoDadosPais" unique_id=887058690]
+offset_left = -32.000004
+offset_top = -82.666664
+offset_right = 31.999996
+offset_bottom = -66.666664
+theme_override_colors/font_color = Color(0.72508633, 0.17252171, 0.14612621, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 8
+text = "investir"
+flat = true
 
-[node name="PergaminhoDadosPais4" type="Sprite2D" parent="." unique_id=1852639191]
-position = Vector2(960, 1072)
+[node name="Button_sancionarraaa" type="Button" parent="BotaoLateralMenuacoes/PergaminhoDadosPais" unique_id=590504836]
+offset_left = -37.333336
+offset_top = -15.999998
+offset_right = 46.666664
+offset_bottom = 15.000002
+text = "sancipnar"
+flat = true
+
+[node name="PergaminhoDadosPais4_investbb" type="Sprite2D" parent="." unique_id=1852639191]
+position = Vector2(960, 1088)
 scale = Vector2(3, 3)
 texture = ExtResource("7_1k42u")
+
+[node name="PergaminhoDadosPais4_investbb2" type="Sprite2D" parent="." unique_id=1654103909]
+position = Vector2(864, 1088)
+scale = Vector2(3, 3)
+texture = ExtResource("7_1k42u")
+
+[node name="Label" type="Label" parent="PergaminhoDadosPais4_investbb2" unique_id=288462103]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "s"
+
+[node name="animaçao_final_extraterrestre" type="AnimatedSprite2D" parent="." unique_id=319396210]
+visible = false
+position = Vector2(584, 320)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_0ne36")
+animation = &"pedro"
+
+[node name="Sprite2D" type="Sprite2D" parent="animaçao_final_extraterrestre" unique_id=516588418]
+visible = false
+position = Vector2(-7.9999995, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("30_5hfie")
+
+[node name="animaçoes_geral" type="AnimationPlayer" parent="." unique_id=634595259]
+libraries/ = SubResource("AnimationLibrary_1k42u")
+
+[node name="animaçoes_finais" type="AnimationPlayer" parent="." unique_id=275522527]
+libraries/ = SubResource("AnimationLibrary_7podu")
 
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]
 [connection signal="pressed" from="titulo_compra/botao_comprar" to="." method="_on_botao_comprar_pressed"]
@@ -1716,3 +1919,5 @@ texture = ExtResource("7_1k42u")
 [connection signal="pressed" from="BotaoLateralMenu/botao_lateral_mapa" to="." method="_on_botao_lateral_mapa_pressed"]
 [connection signal="pressed" from="BotaoLateraldemandas/botao_lateral_demandas" to="." method="_on_botao_lateral_demandas_pressed"]
 [connection signal="pressed" from="BotaoLateralMenuacoes/Button" to="." method="_on_button_acoes_pressed"]
+[connection signal="pressed" from="BotaoLateralMenuacoes/PergaminhoDadosPais/Button" to="." method="_on_button_investuir_pressed"]
+[connection signal="pressed" from="BotaoLateralMenuacoes/PergaminhoDadosPais/Button_sancionarraaa" to="." method="_on_button_sancionarraaa_pressed"]

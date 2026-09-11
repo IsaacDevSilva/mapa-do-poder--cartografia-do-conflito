@@ -6,6 +6,9 @@ var demanda_compra_aberto = false
 var demanda_venda_aberto = false 
 var mapa_aberto = false 
 var acoes_aberto = false
+var investimento_aberto = false
+var sancionar_aberto = false
+var turno_de_verificaçao = 1
 var data 
 var dia_atual  
 var mes_atual 
@@ -19,6 +22,7 @@ var turno_atual = 0
 var capital  
 var ofertas = [] 
 var ofertas_vendas = []
+var pib_de_comparacao 
 
 func _ready() -> void: 
 	for vbox in $escolha.get_children(): 
@@ -60,6 +64,7 @@ func _turnos(dia_atual,mes_atual,ano_atual):
 	$ano.text = str(ano_atual) 
  
 func _on_conflitar_pressed() -> void: 
+	gerenciar_progresso()
 	dia_atual = int(randi_range(1,30)) 
 	mes_atual = int(randi_range(1,12)) 
 	ano_atual = int(ano_atual+ 1) 
@@ -259,7 +264,22 @@ func _on_botao_lateral_mapa_pressed() -> void:
 		$"animaçoes_geral".play_backwards("animaçao_mapa") 
 		mapa_aberto = false 
  
- 
+func _on_button_investuir_pressed() -> void:
+	if sancionar_aberto:
+		$"animaçoes_geral".play_backwards("animaçao_sancionar")
+		sancionar_aberto = false
+		await $"animaçoes_geral".animation_finished
+	$"animaçoes_geral".play("animaçao_investir")
+	investimento_aberto = true
+
+func _on_button_sancionarraaa_pressed() -> void:
+	if investimento_aberto:
+		$"animaçoes_geral".play_backwards("animaçao_investir")
+		investimento_aberto = false
+		await $"animaçoes_geral".animation_finished
+	$"animaçoes_geral".play("animaçao_sancionar")
+	sancionar_aberto = true
+
 func _on_botao_lateral_demandas_pressed() -> void: 
 	if not demandas_aberto: 
 		$"animaçoes_geral".play("demandas_animation") 
@@ -270,10 +290,18 @@ func _on_button_acoes_pressed() -> void:
 func _on_botao_voltar_com_corrente_pressed() -> void: 
 	if $"animaçoes_geral".is_playing(): 
 		return 
-	if acoes_aberto:
+		
+	if investimento_aberto:
+		$"animaçoes_geral".play_backwards("animaçao_investir")
+		investimento_aberto = false
+	if sancionar_aberto:
+		$"animaçoes_geral".play_backwards("animaçao_sancionar")
+		sancionar_aberto = false
+	elif acoes_aberto and not investimento_aberto and not sancionar_aberto:
+	
 		$"animaçoes_geral".play_backwards("animaçao_acoes")
 		acoes_aberto = false
-		
+
 	if demanda_compra_aberto and demanda_venda_aberto: 
 		$"animaçoes_geral".play_backwards("painel_compra") 
 		await $"animaçoes_geral".animation_finished 
@@ -370,7 +398,30 @@ func _on_botao_venda_4_pressed() -> void:
 	vender(3)
 func _on_botao_venda_5_pressed() -> void:
 	vender(4)
+func gerenciar_progresso():
+	
+	if turno == 1 and turno_de_verificaçao == 1:
+		pib_de_comparacao = paises.paises[pais]["pib"]
+		turno_de_verificaçao += 5
+		print("verificado")
+		print(pib_de_comparacao)
+	elif turno == turno_de_verificaçao:
+		print(pib_de_comparacao)
+		var pib_atual = paises.paises[pais]["pib"]
+		if pib_atual < (pib_de_comparacao + (pib_de_comparacao*10)/100):
+			destruiçao_planetaria()
+		elif pib_atual < (pib_de_comparacao + (pib_de_comparacao*10)/100):
+			pib_de_comparacao = pib_atual
+		turno_de_verificaçao += 5
+#espço dedicado ao script das animaçoes finais
+func destruiçao_planetaria():
 
-
+	var destruicao_aleatoria = randi_range(1,1)
+	if destruicao_aleatoria == 1:
+		$"animaçao_final_extraterrestre".visible = true
+		$"animaçao_final_extraterrestre".play("pedro")
+		await $"animaçao_final_extraterrestre".animation_finished
+		$"animaçao_final_extraterrestre/Sprite2D".visible = true
+		$"animaçoes_finais".play(("animaçao_da_animaçao_final_alienigena"))
 
 	

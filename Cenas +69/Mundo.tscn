@@ -61,53 +61,6 @@ bg_color = Color(0.6392157, 0.09411765, 0.08627451, 0.84313726)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ne36"]
 draw_center = false
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0ne36"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("23_7podu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_jxof3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_o2wut")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_7a8fq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_hfdyo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_n2ob7")
-}, {
-"duration": 7.0,
-"texture": ExtResource("29_60vgq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_60vgq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_n2ob7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_hfdyo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_7a8fq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_jxof3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_7podu")
-}],
-"loop": 0,
-"name": &"pedro",
-"speed": 10.0
-}]
-
 [sub_resource type="Animation" id="Animation_ek21q"]
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -660,6 +613,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0.5, 0.5)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(320, -1376)]
+}
 
 [sub_resource type="Animation" id="Animation_aj3lr"]
 resource_name = "animaçao_da_animaçao_final_alienigena"
@@ -677,11 +642,111 @@ tracks/0/keys = {
 "values": [Vector2(0.5, 0.5), Vector2(5, 5)]
 }
 
+[sub_resource type="Animation" id="Animation_o2wut"]
+resource_name = "creditos"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(320, 696), Vector2(320, -1376)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7podu"]
 _data = {
 &"RESET": SubResource("Animation_wtlt3"),
-&"animaçao_da_animaçao_final_alienigena": SubResource("Animation_aj3lr")
+&"animaçao_da_animaçao_final_alienigena": SubResource("Animation_aj3lr"),
+&"creditos": SubResource("Animation_o2wut")
 }
+
+[sub_resource type="Animation" id="Animation_5hfie"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jxof3"]
+resource_name = "fade_de_transiçao"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o2wut"]
+_data = {
+&"RESET": SubResource("Animation_5hfie"),
+&"fade_de_transiçao": SubResource("Animation_jxof3")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ne36"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_7podu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_jxof3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_o2wut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_7a8fq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hfdyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_n2ob7")
+}, {
+"duration": 7.0,
+"texture": ExtResource("29_60vgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_60vgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_n2ob7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hfdyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_7a8fq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_jxof3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_7podu")
+}],
+"loop": 0,
+"name": &"pedro",
+"speed": 10.0
+}]
 
 [node name="Mundo" type="Node2D" unique_id=261724688]
 script = ExtResource("1_ek21q")
@@ -1883,6 +1948,21 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "s"
 
+[node name="animaçoes_geral" type="AnimationPlayer" parent="." unique_id=634595259]
+libraries/ = SubResource("AnimationLibrary_1k42u")
+
+[node name="animaçoes_finais" type="AnimationPlayer" parent="." unique_id=275522527]
+libraries/ = SubResource("AnimationLibrary_7podu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=261427986]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 1, 1, 0)
+
+[node name="Animation_fades" type="AnimationPlayer" parent="." unique_id=98364094]
+libraries/ = SubResource("AnimationLibrary_o2wut")
+
 [node name="animaçao_final_extraterrestre" type="AnimatedSprite2D" parent="." unique_id=319396210]
 visible = false
 position = Vector2(584, 320)
@@ -1896,11 +1976,65 @@ position = Vector2(-7.9999995, 8)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("30_5hfie")
 
-[node name="animaçoes_geral" type="AnimationPlayer" parent="." unique_id=634595259]
-libraries/ = SubResource("AnimationLibrary_1k42u")
+[node name="Label" type="Label" parent="." unique_id=235640952]
+offset_left = 320.0
+offset_top = -1376.0
+offset_right = 925.0
+offset_bottom = -1.0
+text = "FIM DO PODER
 
-[node name="animaçoes_finais" type="AnimationPlayer" parent="." unique_id=275522527]
-libraries/ = SubResource("AnimationLibrary_7podu")
+RESPONSÁVEIS
+
+PROGRAMAÇÃO
+ISAAC
+
+“Meus dedos estão doendo.”
+
+FELIPE
+
+“Supervisionar é o suficiente.”
+
+PEDRO TEMPONI
+
+“Tutorial foi a melhor coisa feita.”
+
+ÁUDIOS
+CHRISTIAN
+
+“5 linhas de código fazem diferença.”
+
+GUILHERME
+
+“Não lembro onde coloquei os áudios.”
+
+DESIGN
+ARTUR
+
+“Até que IA não é tão ruim .”
+
+JOÃO PAULO
+
+“Por que não usar o meu sol?”
+
+LUIS NERY
+
+“Faz alguma coisa Christian.”
+
+ORIENTADOR
+LAERTE RODRIGUES
+
+CLIENTE
+HUDSON
+
+PROFESSORA RESPONSÁVEL
+CAMILA LARANJEIRA
+
+EM HOMENAGEM
+A um grande amigo, Ian.
+
+Boy, sua amizade e sua memória estarão sempre presentes em nossa história.
+É coronel agindo!"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]
 [connection signal="pressed" from="titulo_compra/botao_comprar" to="." method="_on_botao_comprar_pressed"]

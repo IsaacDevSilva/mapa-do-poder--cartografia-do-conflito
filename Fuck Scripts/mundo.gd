@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 	if pais != null: 
 		$pais_nome.text = pais 
 		formatar_dinheiro(capital) 
-		paises.paises[pais].erase("respeito_nacional")
+
 
 func _botao_clicado(botao): 
 	pais = botao.name 
@@ -344,7 +344,8 @@ func comprar(indice):
 		return 
  
 	capital -= oferta["preco"] 
-	paises.paises[pais]["respeito_nacional"] += 5
+	if oferta["pais"] != pais:
+		paises.paises[oferta["pais"]]["respeito_nacional"] += 5
 	paises.paises[oferta["pais"]]["respeito_nacional"]+=5
 
 	paises.paises[pais]["materia_prima"] += oferta["qtd"] 
@@ -366,8 +367,11 @@ func vender(indice_vendas):
 		return
  
 	capital += oferta_vendas["preco"] 
+	paises.paises[pais]["pib"] += oferta_vendas["preco"]
 	paises.paises[pais]["materia_prima"] -= oferta_vendas["qtd"] 
-	paises.paises[pais]["respeito_nacional"] += 5
+	if oferta_vendas["pais"] != pais:
+		paises.paises[oferta_vendas["pais"]]["respeito_nacional"] += 5
+
 	paises.paises[oferta_vendas["pais"]]["respeito_nacional"]+=5
 	$capital.text = formatar_dinheiro(capital) 
  
@@ -410,12 +414,14 @@ func gerenciar_progresso():
 		var pib_atual = paises.paises[pais]["pib"]
 		if pib_atual < (pib_de_comparacao + (pib_de_comparacao*10)/100):
 			destruiçao_planetaria()
-		elif pib_atual < (pib_de_comparacao + (pib_de_comparacao*10)/100):
+		elif pib_atual >= (pib_de_comparacao + (pib_de_comparacao*10)/100):
 			pib_de_comparacao = pib_atual
 		turno_de_verificaçao += 5
 #espço dedicado ao script das animaçoes finais
 func destruiçao_planetaria():
-
+	$ColorRect.visible = true
+	$Animation_fades.play("fade_de_transiçao")
+	await $Animation_fades.animation_finished
 	var destruicao_aleatoria = randi_range(1,1)
 	if destruicao_aleatoria == 1:
 		$"animaçao_final_extraterrestre".visible = true
@@ -423,5 +429,7 @@ func destruiçao_planetaria():
 		await $"animaçao_final_extraterrestre".animation_finished
 		$"animaçao_final_extraterrestre/Sprite2D".visible = true
 		$"animaçoes_finais".play(("animaçao_da_animaçao_final_alienigena"))
+		await $"animaçoes_finais".animation_finished
+		$"animaçoes_finais".play("creditos")
 
 	

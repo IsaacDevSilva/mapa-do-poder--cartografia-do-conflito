@@ -22,7 +22,9 @@
 [ext_resource type="AudioStream" uid="uid://6rv0xttskao" path="res://Sounds Sensuais/musica_epica.mp3" id="20_qxcpo"]
 [ext_resource type="Texture2D" uid="uid://baewmt0x83vuy" path="res://PixelMotherFuckerArts/acento-cedilha.png" id="21_gmgns"]
 [ext_resource type="Texture2D" uid="uid://bpru0ydjychln" path="res://PixelMotherFuckerArts/acento_til.png" id="22_m24ub"]
+[ext_resource type="Texture2D" uid="uid://dmfb0oyt67wpg" path="res://PixelMotherFuckerArts/botao investir.png" id="23_7a8fq"]
 [ext_resource type="Texture2D" uid="uid://dnj7d7oflc8vu" path="res://PLANETA TERRA.png" id="23_7podu"]
+[ext_resource type="Texture2D" uid="uid://dymqs1lub206e" path="res://PixelMotherFuckerArts/botao sancionar.png" id="24_hfdyo"]
 [ext_resource type="Texture2D" uid="uid://dq0pwh6pxsv5j" path="res://ABDUCAO v1.png" id="24_jxof3"]
 [ext_resource type="Texture2D" uid="uid://cer2snpr1hb5n" path="res://PLANABDUÇAO v2.png" id="25_o2wut"]
 [ext_resource type="Texture2D" uid="uid://cgivbh0wifgjj" path="res://ABDUÇAO v3.png" id="26_7a8fq"]
@@ -30,6 +32,10 @@
 [ext_resource type="Texture2D" uid="uid://bp8vkkr2kc1hn" path="res://ABDUÇAO v5.png" id="28_n2ob7"]
 [ext_resource type="Texture2D" uid="uid://daqyhsaa7a1vp" path="res://ABDUÇAO v6.png" id="29_60vgq"]
 [ext_resource type="Texture2D" uid="uid://d7onwiaxynd2" path="res://PixelMotherFuckerArts/EFEITO_EXPLOSÃOV444.png" id="30_5hfie"]
+[ext_resource type="Texture2D" uid="uid://dvoubogvcreqp" path="res://ABDUÇAO v10 Copy Copy Copy.png" id="30_jxof3"]
+[ext_resource type="Texture2D" uid="uid://beygqjv31ar7x" path="res://ABDUÇAO v9 Copy Copy.png" id="31_o2wut"]
+[ext_resource type="Texture2D" uid="uid://bkmvmo3adtob" path="res://ABDUÇAO v8 Copy.png" id="32_7a8fq"]
+[ext_resource type="Texture2D" uid="uid://ebc13xn7vi1x" path="res://ABDUÇAO v7.png" id="33_hfdyo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pujpp"]
 draw_center = false
@@ -240,7 +246,7 @@ tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-512, 48.356)]
+"values": [Vector2(-512, -239.00002)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
@@ -663,7 +669,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 3.1415927]
+"values": [0.0, 6.283185307179586]
 }
 
 [sub_resource type="Animation" id="Animation_o2wut"]
@@ -765,6 +771,21 @@ animations = [{
 "texture": ExtResource("24_jxof3")
 }, {
 "duration": 1.0,
+"texture": ExtResource("23_7podu")
+}, {
+"duration": 1.1,
+"texture": ExtResource("30_jxof3")
+}, {
+"duration": 1.1,
+"texture": ExtResource("31_o2wut")
+}, {
+"duration": 1.1,
+"texture": ExtResource("32_7a8fq")
+}, {
+"duration": 1.1,
+"texture": ExtResource("33_hfdyo")
+}, {
+"duration": 1.1,
 "texture": ExtResource("23_7podu")
 }],
 "loop": 0,
@@ -1933,28 +1954,35 @@ scale = Vector2(0.6993123, 0.5301441)
 texture = ExtResource("22_m24ub")
 
 [node name="PergaminhoDadosPais" type="Sprite2D" parent="BotaoLateralMenuacoes" unique_id=519430866]
-position = Vector2(-512, 48.356)
+position = Vector2(-512, -239.00002)
 rotation = 1.5707964
 scale = Vector2(3, 3)
 texture = ExtResource("7_1k42u")
 
-[node name="Button" type="Button" parent="BotaoLateralMenuacoes/PergaminhoDadosPais" unique_id=887058690]
-offset_left = -32.000004
-offset_top = -82.666664
-offset_right = 31.999996
-offset_bottom = -66.666664
+[node name="Sprite2D2" type="Sprite2D" parent="BotaoLateralMenuacoes/PergaminhoDadosPais" unique_id=1021713010]
+position = Vector2(-7.6293945e-06, -72)
+texture = ExtResource("23_7a8fq")
+
+[node name="Button" type="Button" parent="BotaoLateralMenuacoes/PergaminhoDadosPais/Sprite2D2" unique_id=887058690]
+offset_left = -53.33333
+offset_top = -10.666687
+offset_right = 53.524765
+offset_bottom = 8.513611
 theme_override_colors/font_color = Color(0.72508633, 0.17252171, 0.14612621, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_font_sizes/font_size = 8
-text = "investir"
 flat = true
 
-[node name="Button_sancionarraaa" type="Button" parent="BotaoLateralMenuacoes/PergaminhoDadosPais" unique_id=590504836]
-offset_left = -37.333336
-offset_top = -15.999998
-offset_right = 46.666664
-offset_bottom = 15.000002
-text = "sancipnar"
+[node name="Sprite2D" type="Sprite2D" parent="BotaoLateralMenuacoes/PergaminhoDadosPais" unique_id=285778004]
+position = Vector2(-0.63597107, -19.932495)
+texture = ExtResource("24_hfdyo")
+
+[node name="Button_sancionarraaa" type="Button" parent="BotaoLateralMenuacoes/PergaminhoDadosPais/Sprite2D" unique_id=590504836]
+offset_left = -60.697365
+offset_top = -9.400848
+offset_right = 63.248573
+offset_bottom = 7.9388733
+theme_override_colors/font_hover_color = Color(0.8156863, 0.8156863, 0.8156863, 1)
 flat = true
 
 [node name="PergaminhoDadosPais4_investbb" type="Sprite2D" parent="." unique_id=1852639191]
@@ -1972,34 +2000,11 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "s"
 
-[node name="animaçoes_geral" type="AnimationPlayer" parent="." unique_id=634595259]
-libraries/ = SubResource("AnimationLibrary_1k42u")
-
-[node name="animaçoes_finais" type="AnimationPlayer" parent="." unique_id=275522527]
-libraries/ = SubResource("AnimationLibrary_7podu")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=261427986]
-visible = false
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(1, 1, 1, 0)
-
-[node name="Animation_fades" type="AnimationPlayer" parent="." unique_id=98364094]
-libraries/ = SubResource("AnimationLibrary_o2wut")
-
-[node name="animaçao_final_extraterrestre" type="AnimatedSprite2D" parent="." unique_id=319396210]
-visible = false
-position = Vector2(584, 320)
-scale = Vector2(0.7, 0.7)
-sprite_frames = SubResource("SpriteFrames_0ne36")
-animation = &"pedro"
-
-[node name="Sprite2D" type="Sprite2D" parent="animaçao_final_extraterrestre" unique_id=516588418]
-visible = false
-position = Vector2(-7.9999995, 8)
-rotation = 3.1415927
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("30_5hfie")
+[node name="BotaoLateranoticias2" type="Sprite2D" parent="." unique_id=1684534396]
+position = Vector2(310.21112, 576)
+rotation = -1.5707964
+scale = Vector2(1, 1.3018174)
+texture = ExtResource("17_1e442")
 
 [node name="Label" type="Label" parent="." unique_id=235640952]
 offset_left = 320.0
@@ -2062,6 +2067,51 @@ Boy, sua amizade e sua memória estarão sempre presentes em nossa história.
 É coronel agindo!"
 horizontal_alignment = 1
 
+[node name="Label2" type="Label" parent="." unique_id=394223873]
+offset_left = 565.0
+offset_top = 9.0
+offset_right = 677.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(0.7294118, 0.05490196, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 15
+text = "noticias"
+
+[node name="AcentoAgudo" type="Sprite2D" parent="." unique_id=995993930]
+modulate = Color(0.97748333, 0.11856378, 0.14901379, 1)
+position = Vector2(616.5, 6)
+scale = Vector2(1.09375, 0.6796875)
+texture = ExtResource("7_u4305")
+
+[node name="animaçoes_geral" type="AnimationPlayer" parent="." unique_id=634595259]
+libraries/ = SubResource("AnimationLibrary_1k42u")
+
+[node name="animaçoes_finais" type="AnimationPlayer" parent="." unique_id=275522527]
+libraries/ = SubResource("AnimationLibrary_7podu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=261427986]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 1, 1, 0)
+
+[node name="Animation_fades" type="AnimationPlayer" parent="." unique_id=98364094]
+libraries/ = SubResource("AnimationLibrary_o2wut")
+
+[node name="animaçao_final_extraterrestre" type="AnimatedSprite2D" parent="." unique_id=319396210]
+visible = false
+position = Vector2(584, 320)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_0ne36")
+animation = &"pedro"
+
+[node name="Sprite2D" type="Sprite2D" parent="animaçao_final_extraterrestre" unique_id=516588418]
+visible = false
+position = Vector2(-7.9999995, 8)
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("30_5hfie")
+
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]
 [connection signal="pressed" from="titulo_compra/botao_comprar" to="." method="_on_botao_comprar_pressed"]
 [connection signal="pressed" from="titulo_venda/botao_vender" to="." method="_on_botao_vender_pressed"]
@@ -2079,5 +2129,5 @@ horizontal_alignment = 1
 [connection signal="pressed" from="BotaoLateralMenu/botao_lateral_mapa" to="." method="_on_botao_lateral_mapa_pressed"]
 [connection signal="pressed" from="BotaoLateraldemandas/botao_lateral_demandas" to="." method="_on_botao_lateral_demandas_pressed"]
 [connection signal="pressed" from="BotaoLateralMenuacoes/Button" to="." method="_on_button_acoes_pressed"]
-[connection signal="pressed" from="BotaoLateralMenuacoes/PergaminhoDadosPais/Button" to="." method="_on_button_investuir_pressed"]
-[connection signal="pressed" from="BotaoLateralMenuacoes/PergaminhoDadosPais/Button_sancionarraaa" to="." method="_on_button_sancionarraaa_pressed"]
+[connection signal="pressed" from="BotaoLateralMenuacoes/PergaminhoDadosPais/Sprite2D2/Button" to="." method="_on_button_investuir_pressed"]
+[connection signal="pressed" from="BotaoLateralMenuacoes/PergaminhoDadosPais/Sprite2D/Button_sancionarraaa" to="." method="_on_button_sancionarraaa_pressed"]

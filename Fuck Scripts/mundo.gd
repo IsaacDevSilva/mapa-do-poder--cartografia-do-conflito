@@ -298,7 +298,6 @@ func _on_botao_voltar_com_corrente_pressed() -> void:
 		$"animaçoes_geral".play_backwards("animaçao_sancionar")
 		sancionar_aberto = false
 	elif acoes_aberto and not investimento_aberto and not sancionar_aberto:
-	
 		$"animaçoes_geral".play_backwards("animaçao_acoes")
 		acoes_aberto = false
 

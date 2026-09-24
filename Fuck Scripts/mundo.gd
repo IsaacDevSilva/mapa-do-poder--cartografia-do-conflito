@@ -416,6 +416,19 @@ func gerenciar_progresso():
 		elif pib_atual >= (pib_de_comparacao + (pib_de_comparacao*10)/100):
 			pib_de_comparacao = pib_atual
 		turno_de_verificaçao += 5
+func marcador_paises():
+	for pin in get_tree().get_nodes_in_group("pinsmapa"):
+		var nome_pais_pin = pin.name.replace("TagMapa", "")
+		var respeito_pin = paises.paises[nome_pais_pin]["respeito_nacional"]
+		pin.modulate = cor_do_respeito(respeito_pin)
+func cor_do_respeito(respeito: float) -> Color:
+	if respeito < 0:
+		var valor = inverse_lerp(-100.0, 0.0, respeito)
+		return Color.RED.lerp(Color.YELLOW, valor)
+	else:
+		var valor = inverse_lerp(0.0, 100.0, respeito)
+		return Color.YELLOW.lerp(Color.GREEN, valor)
+		
 #espço dedicado ao script das animaçoes finais
 func destruiçao_planetaria():
 	$ColorRect.visible = true

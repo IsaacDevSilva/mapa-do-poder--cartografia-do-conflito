@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://beygqjv31ar7x" path="res://ABDUÇAO v9 Copy Copy.png" id="31_o2wut"]
 [ext_resource type="Texture2D" uid="uid://bkmvmo3adtob" path="res://ABDUÇAO v8 Copy.png" id="32_7a8fq"]
 [ext_resource type="Texture2D" uid="uid://ebc13xn7vi1x" path="res://ABDUÇAO v7.png" id="33_hfdyo"]
+[ext_resource type="Texture2D" uid="uid://cmys7s6bn4r8k" path="res://PixelMotherFuckerArts/calendario.png" id="39_60vgq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tf8jb"]
 draw_center = false
@@ -350,7 +351,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0.6889951, 0.68862915)]
+"values": [Vector2(0, 0), Vector2(0.6985645, 0.7098831)]
 }
 
 [sub_resource type="Animation" id="Animation_7podu"]
@@ -811,7 +812,7 @@ texture = ExtResource("2_q3100")
 
 [node name="MapaMundi" type="Sprite2D" parent="." unique_id=406280827]
 z_index = 1
-position = Vector2(560, 304)
+position = Vector2(568.00006, 314)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("3_otxd1")
 
@@ -888,7 +889,7 @@ position = Vector2(278.66678, -63.895054)
 scale = Vector2(2.1770835, 2.1782408)
 texture = ExtResource("5_n2ob7")
 
-[node name="TagMapaarabiasaudita" type="Sprite2D" parent="MapaMundi" unique_id=105797354 groups=["pinsmapa"]]
+[node name="TagMapaarabia saudita" type="Sprite2D" parent="MapaMundi" unique_id=105797354 groups=["pinsmapa"]]
 z_index = 1
 position = Vector2(127.72232, -52.277775)
 scale = Vector2(2.1770835, 2.1782408)
@@ -1324,34 +1325,40 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Calendario" type="Sprite2D" parent="." unique_id=1940710106]
+position = Vector2(184, 112)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("39_60vgq")
+
 [node name="dia" type="Label" parent="." unique_id=2075429758]
-offset_left = 48.0
-offset_top = 64.0
-offset_right = 208.0
-offset_bottom = 96.0
-theme_override_colors/font_color = Color(0.49788624, 0.20059884, 3.3691526e-07, 1)
+offset_left = 103.0
+offset_top = 132.0
+offset_right = 263.0
+offset_bottom = 164.0
+theme_override_colors/font_color = Color(0.9764706, 0.2784314, 0, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ek21q")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="mes" type="Label" parent="." unique_id=886283734]
-offset_left = 48.0
-offset_top = 104.0
-offset_right = 200.0
-offset_bottom = 136.0
-theme_override_colors/font_color = Color(0.49788624, 0.20059884, 3.3691526e-07, 1)
+offset_left = 104.0
+offset_top = 100.0
+offset_right = 256.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(0.9764706, 0.2784314, 0, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ek21q")
 horizontal_alignment = 1
 
 [node name="ano" type="Label" parent="." unique_id=1623147127]
-offset_left = 48.0
-offset_top = 144.0
-offset_right = 208.0
-offset_bottom = 168.0
-theme_override_colors/font_color = Color(0.49788624, 0.20059884, 3.3691526e-07, 1)
+offset_left = 104.0
+offset_top = 72.0
+offset_right = 256.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.89411765, 0.6, 0, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ek21q")
@@ -2273,6 +2280,7 @@ rotation = 3.1415927
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("30_5hfie")
 
+[connection signal="pressed" from="MapaMundi/X/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]
 [connection signal="pressed" from="titulo_compra/botao_comprar" to="." method="_on_botao_comprar_pressed"]
 [connection signal="pressed" from="titulo_venda/botao_vender" to="." method="_on_botao_vender_pressed"]

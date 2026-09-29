@@ -8,6 +8,7 @@ var mapa_aberto = false
 var acoes_aberto = false
 var investimento_aberto = false
 var sancionar_aberto = false
+
 var turno_de_verificaçao = 1
 var data 
 var dia_atual  
@@ -40,7 +41,7 @@ func _process(delta: float) -> void:
 	if pais != null: 
 		$pais_nome.text = pais 
 		formatar_dinheiro(capital) 
-
+	marcador_paises()
 
 func _botao_clicado(botao): 
 	pais = botao.name 
@@ -249,7 +250,9 @@ func demandas(turno):
 func _on_botao_comprar_pressed() -> void: 
 	$"animaçoes_geral".play("painel_compra") 
 	demanda_compra_aberto = true 
- 
+func _on_button_pressed() -> void:
+	$"animaçoes_geral".play_backwards("animaçao_mapa")
+	mapa_aberto = false
  
 func _on_botao_vender_pressed() -> void: 
 	$"animaçoes_geral".play("animaçao_venda") 
@@ -402,7 +405,6 @@ func _on_botao_venda_4_pressed() -> void:
 func _on_botao_venda_5_pressed() -> void:
 	vender(4)
 func gerenciar_progresso():
-	
 	if turno == 1 and turno_de_verificaçao == 1:
 		pib_de_comparacao = paises.paises[pais]["pib"]
 		turno_de_verificaçao += 5
@@ -419,16 +421,13 @@ func gerenciar_progresso():
 func marcador_paises():
 	for pin in get_tree().get_nodes_in_group("pinsmapa"):
 		var nome_pais_pin = pin.name.replace("TagMapa", "")
-		var respeito_pin = paises.paises[nome_pais_pin]["respeito_nacional"]
-		pin.modulate = cor_do_respeito(respeito_pin)
-func cor_do_respeito(respeito: float) -> Color:
-	if respeito < 0:
-		var valor = inverse_lerp(-100.0, 0.0, respeito)
-		return Color.RED.lerp(Color.YELLOW, valor)
-	else:
-		var valor = inverse_lerp(0.0, 100.0, respeito)
-		return Color.YELLOW.lerp(Color.GREEN, valor)
-		
+		var respeito = paises.paises[nome_pais_pin.to_upper()]["respeito_nacional"]
+		if respeito < 50:
+			var valor = inverse_lerp(0.0, 50.0, respeito)
+			pin.modulate = Color.RED.lerp(Color.YELLOW, valor)
+		else:
+			var valor = inverse_lerp(50.0, 100.0, respeito)
+			pin.modulate = Color.YELLOW.lerp(Color.GREEN, valor)
 #espço dedicado ao script das animaçoes finais
 func destruiçao_planetaria():
 	$ColorRect.visible = true

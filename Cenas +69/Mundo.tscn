@@ -20,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://dxux525wshy3y" path="res://PixelMotherFuckerArts/materia prima 4.png" id="14_u4305"]
 [ext_resource type="Texture2D" uid="uid://b74k2ssi3ugsl" path="res://PixelMotherFuckerArts/Materia Prima 5.png" id="15_qxcpo"]
 [ext_resource type="Texture2D" uid="uid://c32ribv13dyxr" path="res://PixelMotherFuckerArts/botao_lateral_menu.png" id="17_1e442"]
-[ext_resource type="Texture2D" uid="uid://tfjtevqripxx" path="res://PixelMotherFuckerArts/CartoCoins.png" id="18_ci8bq"]
 [ext_resource type="AudioStream" uid="uid://6rv0xttskao" path="res://Sounds Sensuais/musica_epica.mp3" id="20_qxcpo"]
 [ext_resource type="Texture2D" uid="uid://baewmt0x83vuy" path="res://PixelMotherFuckerArts/acento-cedilha.png" id="21_gmgns"]
 [ext_resource type="Texture2D" uid="uid://bpru0ydjychln" path="res://PixelMotherFuckerArts/acento_til.png" id="22_m24ub"]
@@ -38,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://beygqjv31ar7x" path="res://ABDUÇAO v9 Copy Copy.png" id="31_o2wut"]
 [ext_resource type="Texture2D" uid="uid://bkmvmo3adtob" path="res://ABDUÇAO v8 Copy.png" id="32_7a8fq"]
 [ext_resource type="Texture2D" uid="uid://ebc13xn7vi1x" path="res://ABDUÇAO v7.png" id="33_hfdyo"]
+[ext_resource type="Texture2D" uid="uid://c86ykly0tbcxg" path="res://PixelMotherFuckerArts/idhe pib.png" id="39_5vwc1"]
 [ext_resource type="Texture2D" uid="uid://cmys7s6bn4r8k" path="res://PixelMotherFuckerArts/calendario.png" id="39_60vgq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tf8jb"]
@@ -72,6 +72,9 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t24sw"]
 bg_color = Color(0.6392157, 0.09411765, 0.08627451, 0.84313726)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uccd1"]
+draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ne36"]
 draw_center = false
@@ -631,7 +634,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Label:position")
+tracks/1/path = NodePath("creditos:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -687,7 +690,7 @@ length = 30.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label:position")
+tracks/0/path = NodePath("creditos:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -985,15 +988,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="CartoCoins" type="Sprite2D" parent="." unique_id=1052814361]
-position = Vector2(96, 304)
-texture = ExtResource("18_ci8bq")
-
 [node name="capital" type="Label" parent="." unique_id=1573925535]
-offset_left = 137.0
-offset_top = 288.0
-offset_right = 273.0
-offset_bottom = 336.0
+offset_left = 142.0
+offset_top = 212.0
+offset_right = 209.0
+offset_bottom = 268.0
 theme_override_colors/font_color = Color(0.2489819, 0.5469873, 0.14773285, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_font_sizes/font_size = 20
@@ -2016,6 +2015,18 @@ offset_bottom = 466.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
 theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
 
+[node name="idh" type="Label" parent="." unique_id=1780256441]
+offset_left = 142.0
+offset_top = 276.0
+offset_right = 209.0
+offset_bottom = 332.0
+theme_override_colors/font_color = Color(0.13333334, 0.07450981, 0.61960787, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_uccd1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="BotaoVoltarComCorrente" type="Button" parent="." unique_id=1749173027]
 z_index = 1
 offset_left = 472.0
@@ -2174,7 +2185,52 @@ rotation = -1.5707964
 scale = Vector2(1, 1.3018174)
 texture = ExtResource("17_1e442")
 
-[node name="Label" type="Label" parent="." unique_id=235640952]
+[node name="Label2" type="Label" parent="." unique_id=394223873]
+offset_left = 565.0
+offset_top = 9.0
+offset_right = 677.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(0.7294118, 0.05490196, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 15
+text = "noticias"
+
+[node name="AcentoAgudo" type="Sprite2D" parent="." unique_id=995993930]
+modulate = Color(0.97748333, 0.11856378, 0.14901379, 1)
+position = Vector2(616.5, 6)
+scale = Vector2(1.09375, 0.6796875)
+texture = ExtResource("7_u4305")
+
+[node name="animaçoes_geral" type="AnimationPlayer" parent="." unique_id=634595259]
+libraries/ = SubResource("AnimationLibrary_1k42u")
+
+[node name="animaçoes_finais" type="AnimationPlayer" parent="." unique_id=275522527]
+libraries/ = SubResource("AnimationLibrary_7podu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=261427986]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 1, 1, 0)
+
+[node name="Animation_fades" type="AnimationPlayer" parent="." unique_id=98364094]
+libraries/ = SubResource("AnimationLibrary_o2wut")
+
+[node name="animaçao_final_extraterrestre" type="AnimatedSprite2D" parent="." unique_id=319396210]
+visible = false
+position = Vector2(584, 320)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_0ne36")
+animation = &"pedro"
+
+[node name="Sprite2D" type="Sprite2D" parent="animaçao_final_extraterrestre" unique_id=516588418]
+visible = false
+position = Vector2(-7.9999995, 8)
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("30_5hfie")
+
+[node name="creditos" type="Label" parent="." unique_id=235640952]
 offset_left = 320.0
 offset_top = -1376.0
 offset_right = 925.0
@@ -2235,50 +2291,10 @@ Boy, sua amizade e sua memória estarão sempre presentes em nossa história.
 É coronel agindo!"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="." unique_id=394223873]
-offset_left = 565.0
-offset_top = 9.0
-offset_right = 677.0
-offset_bottom = 25.0
-theme_override_colors/font_color = Color(0.7294118, 0.05490196, 0.09019608, 1)
-theme_override_fonts/font = ExtResource("2_pujpp")
-theme_override_font_sizes/font_size = 15
-text = "noticias"
-
-[node name="AcentoAgudo" type="Sprite2D" parent="." unique_id=995993930]
-modulate = Color(0.97748333, 0.11856378, 0.14901379, 1)
-position = Vector2(616.5, 6)
-scale = Vector2(1.09375, 0.6796875)
-texture = ExtResource("7_u4305")
-
-[node name="animaçoes_geral" type="AnimationPlayer" parent="." unique_id=634595259]
-libraries/ = SubResource("AnimationLibrary_1k42u")
-
-[node name="animaçoes_finais" type="AnimationPlayer" parent="." unique_id=275522527]
-libraries/ = SubResource("AnimationLibrary_7podu")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=261427986]
-visible = false
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(1, 1, 1, 0)
-
-[node name="Animation_fades" type="AnimationPlayer" parent="." unique_id=98364094]
-libraries/ = SubResource("AnimationLibrary_o2wut")
-
-[node name="animaçao_final_extraterrestre" type="AnimatedSprite2D" parent="." unique_id=319396210]
-visible = false
-position = Vector2(584, 320)
-scale = Vector2(0.7, 0.7)
-sprite_frames = SubResource("SpriteFrames_0ne36")
-animation = &"pedro"
-
-[node name="Sprite2D" type="Sprite2D" parent="animaçao_final_extraterrestre" unique_id=516588418]
-visible = false
-position = Vector2(-7.9999995, 8)
-rotation = 3.1415927
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("30_5hfie")
+[node name="IdhePib" type="Sprite2D" parent="." unique_id=1960112695]
+position = Vector2(152, 272)
+scale = Vector2(2, 2)
+texture = ExtResource("39_5vwc1")
 
 [connection signal="pressed" from="MapaMundi/X/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]

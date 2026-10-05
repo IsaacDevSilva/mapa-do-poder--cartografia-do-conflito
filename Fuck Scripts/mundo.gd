@@ -76,12 +76,13 @@ func _on_conflitar_pressed() -> void:
 	for chave in paises.paises[pais]: 
 		var valor = paises.paises[pais][chave] 
 		if chave == "pib": 
-			valor = str(valor) + " T" 
+			valor = str(valor) + " B" 
 		elif chave == "populacao": 
 			valor = str(valor) + " M" 
 		texto += str(chave) + ": " + str(valor) + "\n" 
 	$info_estatisticas.text = texto 
-	 
+	$idh.text = str(paises.paises[pais]["idh"])
+	
 
 func demandas(turno): 
 	if turno_atual != turno: 
@@ -290,19 +291,16 @@ func _on_botao_lateral_demandas_pressed() -> void:
 func _on_button_acoes_pressed() -> void:
 	$"animaçoes_geral".play("animaçao_acoes")
 	acoes_aberto = true
-func _on_botao_voltar_com_corrente_pressed() -> void: 
-	if $"animaçoes_geral".is_playing(): 
-		return 
-		
-	if investimento_aberto:
+func _on_botao_voltar_com_corrente_pressed() -> void:
+	if acoes_aberto and not investimento_aberto and not sancionar_aberto:
+		$"animaçoes_geral".play_backwards("animaçao_acoes")
+		acoes_aberto = false 
+	elif investimento_aberto:
 		$"animaçoes_geral".play_backwards("animaçao_investir")
 		investimento_aberto = false
-	if sancionar_aberto:
+	elif sancionar_aberto:
 		$"animaçoes_geral".play_backwards("animaçao_sancionar")
 		sancionar_aberto = false
-	elif acoes_aberto and not investimento_aberto and not sancionar_aberto:
-		$"animaçoes_geral".play_backwards("animaçao_acoes")
-		acoes_aberto = false
 
 	if demanda_compra_aberto and demanda_venda_aberto: 
 		$"animaçoes_geral".play_backwards("painel_compra") 

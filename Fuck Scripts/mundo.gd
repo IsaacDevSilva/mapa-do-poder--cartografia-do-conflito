@@ -75,11 +75,12 @@ func _on_conflitar_pressed() -> void:
 	var texto = "" 
 	for chave in paises.paises[pais]: 
 		var valor = paises.paises[pais][chave] 
-		if chave == "pib": 
-			valor = str(valor) + " B" 
+		if chave == "pib" or chave == "idh": 
+			continue
 		elif chave == "populacao": 
 			valor = str(valor) + " M" 
 		texto += str(chave) + ": " + str(valor) + "\n" 
+		
 	$info_estatisticas.text = texto 
 	$idh.text = str(paises.paises[pais]["idh"])
 	
@@ -292,6 +293,7 @@ func _on_button_acoes_pressed() -> void:
 	$"animaçoes_geral".play("animaçao_acoes")
 	acoes_aberto = true
 func _on_botao_voltar_com_corrente_pressed() -> void:
+	
 	if acoes_aberto and not investimento_aberto and not sancionar_aberto:
 		$"animaçoes_geral".play_backwards("animaçao_acoes")
 		acoes_aberto = false 
@@ -322,11 +324,13 @@ func _on_botao_voltar_com_corrente_pressed() -> void:
 		demandas_aberto = false 
 		 
 func formatar_dinheiro(valor): 
-	if valor >= 1: 
-		return str(valor) + "B" 
+	var valor_grafico
+	if valor >= 1000: 
+		valor_grafico = str((valor)/1000) + "T" 
+		return valor_grafico
 	else: 
-		return str(valor) + " B" 
- 
+		valor_grafico = str(valor) + "B" 
+		return valor_grafico
  
  
 func comprar(indice): 
@@ -406,10 +410,7 @@ func gerenciar_progresso():
 	if turno == 1 and turno_de_verificaçao == 1:
 		pib_de_comparacao = paises.paises[pais]["pib"]
 		turno_de_verificaçao += 5
-		print("verificado")
-		print(pib_de_comparacao)
 	elif turno == turno_de_verificaçao:
-		print(pib_de_comparacao)
 		var pib_atual = paises.paises[pais]["pib"]
 		if pib_atual < (pib_de_comparacao + (pib_de_comparacao*10)/100):
 			destruiçao_planetaria()
@@ -440,5 +441,5 @@ func destruiçao_planetaria():
 		$"animaçoes_finais".play(("animaçao_da_animaçao_final_alienigena"))
 		await $"animaçoes_finais".animation_finished
 		$"animaçoes_finais".play("creditos")
-
+	#Parabéns Felipe;>D
 	

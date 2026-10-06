@@ -46,6 +46,9 @@ draw_center = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60vgq"]
 bg_color = Color(0.56580234, 0.14287335, 0.1012693, 0.61960787)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uccd1"]
+draw_center = false
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pujpp"]
 draw_center = false
 
@@ -72,9 +75,6 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t24sw"]
 bg_color = Color(0.6392157, 0.09411765, 0.08627451, 0.84313726)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uccd1"]
-draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ne36"]
 draw_center = false
@@ -976,6 +976,11 @@ position = Vector2(108.85417, -101.65123)
 scale = Vector2(1.5, 1.501)
 texture = ExtResource("5_n2ob7")
 
+[node name="IdhePib" type="Sprite2D" parent="." unique_id=1960112695]
+position = Vector2(173.5, 272)
+scale = Vector2(2.671875, 2)
+texture = ExtResource("39_5vwc1")
+
 [node name="pais_nome" type="Label" parent="." unique_id=646060268]
 offset_left = 336.0
 offset_top = 544.0
@@ -989,13 +994,25 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="capital" type="Label" parent="." unique_id=1573925535]
-offset_left = 142.0
-offset_top = 212.0
-offset_right = 209.0
+offset_left = 165.0
+offset_top = 218.0
+offset_right = 227.0
 offset_bottom = 268.0
 theme_override_colors/font_color = Color(0.2489819, 0.5469873, 0.14773285, 1)
 theme_override_fonts/font = ExtResource("2_pujpp")
 theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="idh" type="Label" parent="." unique_id=1780256441]
+offset_left = 168.0
+offset_top = 276.0
+offset_right = 230.0
+offset_bottom = 327.0
+theme_override_colors/font_color = Color(0.13333334, 0.07450981, 0.61960787, 1)
+theme_override_fonts/font = ExtResource("2_pujpp")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_uccd1")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -2015,18 +2032,6 @@ offset_bottom = 466.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
 theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
 
-[node name="idh" type="Label" parent="." unique_id=1780256441]
-offset_left = 142.0
-offset_top = 276.0
-offset_right = 209.0
-offset_bottom = 332.0
-theme_override_colors/font_color = Color(0.13333334, 0.07450981, 0.61960787, 1)
-theme_override_fonts/font = ExtResource("2_pujpp")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_uccd1")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="BotaoVoltarComCorrente" type="Button" parent="." unique_id=1749173027]
 z_index = 1
 offset_left = 472.0
@@ -2290,11 +2295,6 @@ A um grande amigo, Ian.
 Boy, sua amizade e sua memória estarão sempre presentes em nossa história.
 É coronel agindo!"
 horizontal_alignment = 1
-
-[node name="IdhePib" type="Sprite2D" parent="." unique_id=1960112695]
-position = Vector2(152, 272)
-scale = Vector2(2, 2)
-texture = ExtResource("39_5vwc1")
 
 [connection signal="pressed" from="MapaMundi/X/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="conflitar" to="." method="_on_conflitar_pressed"]

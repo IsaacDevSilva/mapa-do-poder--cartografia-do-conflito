@@ -292,6 +292,7 @@ func _on_botao_lateral_demandas_pressed() -> void:
 func _on_button_acoes_pressed() -> void:
 	$"animaçoes_geral".play("animaçao_acoes")
 	acoes_aberto = true
+	acoes()
 func _on_botao_voltar_com_corrente_pressed() -> void:
 	
 	if acoes_aberto and not investimento_aberto and not sancionar_aberto:
@@ -381,8 +382,9 @@ func vender(indice_vendas):
  
 
 func acoes():
-	pass
-
+	$PergaminhoDadosPais4_investbb/Label5.text = str(paises.paises[pais]["saude"])
+	$PergaminhoDadosPais4_investbb/Label6.text = str(paises.paises[pais]["seguranca"])
+	$PergaminhoDadosPais4_investbb/Label7.text = str(paises.paises[pais]["educacao"])
 
 
 func _on_botao_compra_1_pressed() -> void: 

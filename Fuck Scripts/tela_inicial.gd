@@ -1,16 +1,18 @@
 extends Node2D
-
+var som = 0
 var tutorial_rodando = false
 var painel_tutorial_ativo = null
-
+var ativo = false
 func _ready() -> void:
 	$tutorial_panel_01.visible = false
 	$tutorial_panel_02.visible = false
 	$tutorial_panel_03.visible = false
 	$tutorial_panel_04.visible = false
-
-
-
+func _physics_process(delta: float) -> void:
+	$AudioStreamPlayer2D2.pitch_scale = som
+	som = $ColorRect2/HSlider.value
+	$AudioStreamPlayer2D2.volume_db = $"ColorRect2/67".value
+	$AudioStreamPlayer2D2.volume_linear = $"ColorRect2/68".value
 func _on_jogar_pressed() -> void:
 	get_tree().change_scene_to_file("res://Cenas +69/Mundo.tscn")
 
@@ -96,3 +98,8 @@ func _on_tutorial_mouse_entered() -> void:
 
 func _on_creditos_mouse_entered() -> void:
 	$AudioStreamPlayer2D.play()
+
+
+func _on_button_pressed() -> void:
+	$ColorRect2.visible = true
+	$AudioStreamPlayer2D2.play()

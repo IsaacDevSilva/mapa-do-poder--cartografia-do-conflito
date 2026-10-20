@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b37ou0rep6j7"
+path="res://.godot/imported/gemido-whatsapp.mp3-66316a449bb3b448aae0855af14765f5.mp3str"
+
+[deps]
+
+source_file="res://Sounds Sensuais/gemido-whatsapp.mp3"
+dest_files=["res://.godot/imported/gemido-whatsapp.mp3-66316a449bb3b448aae0855af14765f5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

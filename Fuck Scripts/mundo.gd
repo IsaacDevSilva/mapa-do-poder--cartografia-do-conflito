@@ -50,7 +50,9 @@ func _botao_clicado(botao):
 	print(pais) 
 	$capital.text = formatar_dinheiro(capital) 
 	$AudioStreamPlayer2D.play()
- 
+	$AudioStreamPlayer2D.volume_linear = 35
+	
+	
  
 func _turnos(dia_atual,mes_atual,ano_atual): 
 	var meses = [ 
@@ -421,8 +423,52 @@ func gerenciar_progresso():
 		turno_de_verificaçao += 5
 func marcador_paises():
 	for pin in get_tree().get_nodes_in_group("pinsmapa"):
-		var nome_pais_pin = pin.name.replace("TagMapa", "")
-		var respeito = paises.paises[nome_pais_pin.to_upper()]["respeito_nacional"]
+		var nome_pais_pin = pin.name.replace("TagMapa", "").to_upper()
+		var chave_encontrada = ""
+		# Procura o país ignorando os acentos
+		for chave in paises.paises.keys():
+			var nome_chave = str(chave).to_upper()
+
+			var nome_pin_limpo = nome_pais_pin
+			nome_pin_limpo = nome_pin_limpo.replace("Á", "A")
+			nome_pin_limpo = nome_pin_limpo.replace("À", "A")
+			nome_pin_limpo = nome_pin_limpo.replace("Â", "A")
+			nome_pin_limpo = nome_pin_limpo.replace("Ã", "A")
+			nome_pin_limpo = nome_pin_limpo.replace("É", "E")
+			nome_pin_limpo = nome_pin_limpo.replace("Ê", "E")
+			nome_pin_limpo = nome_pin_limpo.replace("Í", "I")
+			nome_pin_limpo = nome_pin_limpo.replace("Ó", "O")
+			nome_pin_limpo = nome_pin_limpo.replace("Ô", "O")
+			nome_pin_limpo = nome_pin_limpo.replace("Õ", "O")
+			nome_pin_limpo = nome_pin_limpo.replace("Ú", "U")
+			nome_pin_limpo = nome_pin_limpo.replace("Ü", "U")
+			nome_pin_limpo = nome_pin_limpo.replace("Ç", "C")
+
+			nome_chave = nome_chave.replace("Á", "A")
+			nome_chave = nome_chave.replace("À", "A")
+			nome_chave = nome_chave.replace("Â", "A")
+			nome_chave = nome_chave.replace("Ã", "A")
+			nome_chave = nome_chave.replace("É", "E")
+			nome_chave = nome_chave.replace("Ê", "E")
+			nome_chave = nome_chave.replace("Í", "I")
+			nome_chave = nome_chave.replace("Ó", "O")
+			nome_chave = nome_chave.replace("Ô", "O")
+			nome_chave = nome_chave.replace("Õ", "O")
+			nome_chave = nome_chave.replace("Ú", "U")
+			nome_chave = nome_chave.replace("Ü", "U")
+			nome_chave = nome_chave.replace("Ç", "C")
+
+			if nome_chave == nome_pin_limpo:
+				chave_encontrada = str(chave)
+				break
+
+		if chave_encontrada == "":
+			print("País não encontrado: ", nome_pais_pin)
+			continue
+
+		var respeito = paises.paises[chave_encontrada]["respeito_nacional"]
+		respeito = clamp(respeito, 0, 100)
+
 		if respeito < 50:
 			var valor = inverse_lerp(0.0, 50.0, respeito)
 			pin.modulate = Color.RED.lerp(Color.YELLOW, valor)

@@ -85,7 +85,7 @@ var paises = {
 "idh":0.91
 },
 
-"FRANCA":{
+"FRANÇA":{
 "pib":360,
 "populacao":65,
 #linha six seven favor não mexer
@@ -106,7 +106,7 @@ var paises = {
 "idh":0.86
 },
 
-"JAPAO":{
+"JAPÃO":{
 "pib":440,
 "populacao":124,
 "militar":62,
@@ -126,7 +126,7 @@ var paises = {
 "idh":0.95
 },
 
-"INDIA":{
+"ÍNDIA":{
 "pib":410,
 "populacao":1430,
 "militar":88,
@@ -146,7 +146,7 @@ var paises = {
 "idh":0.64
 },
 
-"RUSSIA":{
+"RÚSSIA":{
 "pib":260,
 "populacao":144,
 "militar":94,
@@ -190,7 +190,7 @@ var paises = {
 "idh":0.59
 },
 
-"MEXICO":{
+"MÉXICO":{
 "pib":210,
 "populacao":129,
 "militar":58,
@@ -208,7 +208,7 @@ var paises = {
 "idh":0.61
 },
 
-"AFRICA DO SUL":{
+"AFRÍCA DO SUL":{
 "pib":500,
 "populacao":63,
 "militar":55,
@@ -226,7 +226,7 @@ var paises = {
 "idh":0.49
 },
 
-"ARABIA SAUDITA":{
+"ARÁBIA SAUDITA":{
 "pib":140,
 "populacao":38,
 "militar":82,
@@ -262,7 +262,7 @@ var paises = {
 "idh":0.70
 },
 
-"AUSTRALIA":{
+"AUSTRÁLIA":{
 "pib":210,
 "populacao":27,
 "militar":74,
@@ -298,7 +298,7 @@ var paises = {
 "idh":0.67
 },
 
-"INDONESIA":{
+"INDONÉSIA":{
 "pib":150,
 "populacao":281,
 "militar":72,
@@ -323,7 +323,7 @@ var paises = {
 #Turquia = militar forte e posição geopolítica forte.
 #África do Sul = commodities muito altas, segurança derrubando bastante.
 #México = equilíbrio geral intermediário.
-"HAITI":{
+"HAITÍ":{
 "pib":25,
 "populacao":12,
 "militar":12,
@@ -341,7 +341,7 @@ var paises = {
 "idh":0.24
 },
 
-"AFEGANISTAO":{
+"AFEGANISTÃO":{
 "pib":20,
 "populacao":42,
 "militar":42,
@@ -359,7 +359,7 @@ var paises = {
 "idh":0.17
 },
 
-"SIRIA":{
+"SÍRIA":{
 "pib":20,
 "populacao":24,
 "militar":48,
@@ -431,7 +431,7 @@ var paises = {
 "idh":0.75
 },
 
-"PAQUISTAO":{
+"PAQUISTÃO":{
 "pib":40 ,
 "populacao":241,
 "militar":86,
@@ -449,7 +449,7 @@ var paises = {
 "idh":0.44
 },
 
-"COREIA DO NORTE":{
+"CORÉIA DO NORTE":{
 "pib":26,
 "populacao":26,
 "militar":90,

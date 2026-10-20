@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://0coslxkn1l4l" path="res://PixelMotherFuckerArts/botao_conflitarV2.png" id="6_q3100"]
 [ext_resource type="Texture2D" uid="uid://oge4tutranqb" path="res://PixelMotherFuckerArts/pergaminho_dados_pais.png" id="7_1k42u"]
 [ext_resource type="FontFile" uid="uid://cbf8swj14yrcq" path="res://Sounds Sensuais/upheavtt.ttf" id="7_5vwc1"]
-[ext_resource type="LabelSettings" uid="uid://dbbo6qeotknbs" path="res://Fonte 8 bit wonder/padraobb.tres" id="8_xtjoe"]
 [ext_resource type="Texture2D" uid="uid://2qcnxhxu6ey1" path="res://PixelMotherFuckerArts/botao_comprar.png" id="9_wsjnt"]
 [ext_resource type="Texture2D" uid="uid://cij7ypkrk5mxy" path="res://PixelMotherFuckerArts/botao vender.png" id="10_qspml"]
 [ext_resource type="Texture2D" uid="uid://cro45wd43dg62" path="res://PixelMotherFuckerArts/painel_compra_venda.png" id="11_31gsa"]
@@ -21,9 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://dxux525wshy3y" path="res://PixelMotherFuckerArts/materia prima 4.png" id="14_u4305"]
 [ext_resource type="Texture2D" uid="uid://b74k2ssi3ugsl" path="res://PixelMotherFuckerArts/Materia Prima 5.png" id="15_qxcpo"]
 [ext_resource type="Texture2D" uid="uid://c32ribv13dyxr" path="res://PixelMotherFuckerArts/botao_lateral_menu.png" id="17_1e442"]
-[ext_resource type="AudioStream" uid="uid://6rv0xttskao" path="res://Sounds Sensuais/musica_epica.mp3" id="20_qxcpo"]
 [ext_resource type="Texture2D" uid="uid://dmfb0oyt67wpg" path="res://PixelMotherFuckerArts/botao investir.png" id="23_7a8fq"]
 [ext_resource type="Texture2D" uid="uid://dnj7d7oflc8vu" path="res://PLANETA TERRA.png" id="23_7podu"]
+[ext_resource type="AudioStream" uid="uid://b80lq8up2d05q" path="res://Sounds Sensuais/nova-musica-fundo.mp3" id="23_hfdyo"]
 [ext_resource type="Texture2D" uid="uid://dymqs1lub206e" path="res://PixelMotherFuckerArts/botao sancionar.png" id="24_hfdyo"]
 [ext_resource type="Texture2D" uid="uid://dq0pwh6pxsv5j" path="res://ABDUCAO v1.png" id="24_jxof3"]
 [ext_resource type="Texture2D" uid="uid://cer2snpr1hb5n" path="res://PLANABDUÇAO v2.png" id="25_o2wut"]
@@ -693,10 +692,10 @@ tracks/0/path = NodePath("creditos:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 20.033333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 20.032316, 20.033333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(272, 696), Vector2(272, -1376)]
+"values": [Vector2(64, 704), Vector2(64, -1384), Vector2(272, -1376)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7podu"]
@@ -987,8 +986,7 @@ offset_right = 868.0
 offset_bottom = 632.0
 theme_override_colors/font_color = Color(0.7764706, 0.37254903, 0, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
-theme_override_font_sizes/font_size = 16
-label_settings = ExtResource("8_xtjoe")
+theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -1104,7 +1102,7 @@ text = "alemanha"
 flat = true
 icon_alignment = 1
 
-[node name="FRANCA" type="Button" parent="escolha/desenvolvidos" unique_id=1701476101]
+[node name="FRANÇA" type="Button" parent="escolha/desenvolvidos" unique_id=1701476101]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
@@ -1113,7 +1111,7 @@ text = "frança"
 flat = true
 icon_alignment = 1
 
-[node name="JAPAO" type="Button" parent="escolha/desenvolvidos" unique_id=689342804]
+[node name="JAPÃO" type="Button" parent="escolha/desenvolvidos" unique_id=689342804]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
@@ -1122,7 +1120,7 @@ text = "japão"
 flat = true
 icon_alignment = 1
 
-[node name="INDIA" type="Button" parent="escolha/desenvolvidos" unique_id=1931304231]
+[node name="ÍNDIA" type="Button" parent="escolha/desenvolvidos" unique_id=1931304231]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
@@ -1131,7 +1129,7 @@ text = "índia"
 flat = true
 icon_alignment = 1
 
-[node name="RUSSIA" type="Button" parent="escolha/desenvolvidos" unique_id=1203999101]
+[node name="RÚSSIA" type="Button" parent="escolha/desenvolvidos" unique_id=1203999101]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23773366, 0.5803147, 0, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
@@ -1157,7 +1155,7 @@ text = "brasil"
 flat = true
 icon_alignment = 1
 
-[node name="MEXICO" type="Button" parent="escolha/desenvolvimento" unique_id=1312343363]
+[node name="MÉXICO" type="Button" parent="escolha/desenvolvimento" unique_id=1312343363]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.82000756, 0.7541016, 0.14851916, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
@@ -1166,7 +1164,7 @@ text = "méxico"
 flat = true
 icon_alignment = 1
 
-[node name="AFRICA DO SUL" type="Button" parent="escolha/desenvolvimento" unique_id=1104707651]
+[node name="AFRÍCA DO SUL" type="Button" parent="escolha/desenvolvimento" unique_id=1104707651]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.82000756, 0.7541016, 0.14851916, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
@@ -1175,7 +1173,7 @@ text = "áfrica do sul"
 flat = true
 icon_alignment = 1
 
-[node name="ARABIA SAUDITA" type="Button" parent="escolha/desenvolvimento" unique_id=1560912036]
+[node name="ARÁBIA SAUDITA" type="Button" parent="escolha/desenvolvimento" unique_id=1560912036]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.82000756, 0.7541016, 0.14851916, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
@@ -1193,7 +1191,7 @@ text = "argentina"
 flat = true
 icon_alignment = 1
 
-[node name="AUSTRALIA" type="Button" parent="escolha/desenvolvimento" unique_id=669643899]
+[node name="AUSTRÁLIA" type="Button" parent="escolha/desenvolvimento" unique_id=669643899]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.82000756, 0.7541016, 0.14851916, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
@@ -1211,7 +1209,7 @@ text = "turquia"
 flat = true
 icon_alignment = 1
 
-[node name="INDONESIA" type="Button" parent="escolha/desenvolvimento" unique_id=1107291404]
+[node name="INDONÉSIA" type="Button" parent="escolha/desenvolvimento" unique_id=1107291404]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.82000756, 0.7541016, 0.14851916, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
@@ -1228,7 +1226,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 theme_override_constants/separation = 15
 
-[node name="HAITI" type="Button" parent="escolha/subdesenvolvidos" unique_id=750744868]
+[node name="HAITÍ" type="Button" parent="escolha/subdesenvolvidos" unique_id=750744868]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.81960785, 0.2509804, 0.14901961, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
@@ -1237,7 +1235,7 @@ text = "haití"
 flat = true
 icon_alignment = 1
 
-[node name="AFEGANISTAO" type="Button" parent="escolha/subdesenvolvidos" unique_id=1710808831]
+[node name="AFEGANISTÃO" type="Button" parent="escolha/subdesenvolvidos" unique_id=1710808831]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.81960785, 0.2509804, 0.14901961, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
@@ -1246,7 +1244,7 @@ text = "afeganistão"
 flat = true
 icon_alignment = 1
 
-[node name="SIRIA" type="Button" parent="escolha/subdesenvolvidos" unique_id=2126017875]
+[node name="SÍRIA" type="Button" parent="escolha/subdesenvolvidos" unique_id=2126017875]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.81960785, 0.2509804, 0.14901961, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
@@ -1282,7 +1280,7 @@ text = "cuba"
 flat = true
 icon_alignment = 1
 
-[node name="PAQUISTAO" type="Button" parent="escolha/subdesenvolvidos" unique_id=1435496257]
+[node name="PAQUISTÃO" type="Button" parent="escolha/subdesenvolvidos" unique_id=1435496257]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.81960785, 0.2509804, 0.14901961, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
@@ -1291,7 +1289,7 @@ text = "paquistão"
 flat = true
 icon_alignment = 1
 
-[node name="COREIA DO NORTE" type="Button" parent="escolha/subdesenvolvidos" unique_id=1807636773]
+[node name="CORÉIA DO NORTE" type="Button" parent="escolha/subdesenvolvidos" unique_id=1807636773]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.81960785, 0.2509804, 0.14901961, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
@@ -1504,7 +1502,7 @@ offset_right = 322.0
 offset_bottom = -83.0
 theme_override_colors/font_color = Color(0.4, 0.22352941, 0.19215687, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 32
 text = "matéria prima"
 horizontal_alignment = 1
 
@@ -1516,7 +1514,7 @@ offset_right = 314.0
 offset_bottom = 125.0
 theme_override_colors/font_color = Color(0.4, 0.22352941, 0.19215687, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 32
 text = "tecnologia"
 horizontal_alignment = 1
 
@@ -1528,7 +1526,7 @@ offset_right = 314.0
 offset_bottom = 325.0
 theme_override_colors/font_color = Color(0.4, 0.22352941, 0.19215687, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 32
 text = "militar"
 horizontal_alignment = 1
 
@@ -1539,6 +1537,7 @@ offset_top = -50.0
 offset_right = 176.0
 offset_bottom = -2.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1551,6 +1550,7 @@ offset_top = 14.0
 offset_right = 176.0
 offset_bottom = 70.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1563,6 +1563,7 @@ offset_top = 150.0
 offset_right = 184.0
 offset_bottom = 206.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1575,6 +1576,7 @@ offset_top = 222.0
 offset_right = 176.0
 offset_bottom = 270.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1587,6 +1589,7 @@ offset_top = 350.0
 offset_right = 176.0
 offset_bottom = 406.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1599,6 +1602,7 @@ offset_top = -50.0
 offset_right = 272.0
 offset_bottom = -2.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1611,6 +1615,7 @@ offset_top = 22.0
 offset_right = 264.0
 offset_bottom = 70.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1623,6 +1628,7 @@ offset_top = 150.0
 offset_right = 272.0
 offset_bottom = 206.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1635,6 +1641,7 @@ offset_top = 222.0
 offset_right = 272.0
 offset_bottom = 270.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1647,6 +1654,7 @@ offset_top = 350.0
 offset_right = 272.0
 offset_bottom = 398.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1659,6 +1667,7 @@ offset_top = -50.0
 offset_right = 360.0
 offset_bottom = -2.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1671,6 +1680,7 @@ offset_top = 22.0
 offset_right = 360.0
 offset_bottom = 70.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1683,6 +1693,7 @@ offset_top = 150.0
 offset_right = 360.0
 offset_bottom = 206.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1695,6 +1706,7 @@ offset_top = 222.0
 offset_right = 360.0
 offset_bottom = 270.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1707,6 +1719,7 @@ offset_top = 350.0
 offset_right = 360.0
 offset_bottom = 406.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1718,6 +1731,7 @@ offset_left = 18.0
 offset_top = -52.0
 offset_right = 178.0
 offset_bottom = -1.0
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
 theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
 
@@ -1727,6 +1741,7 @@ offset_left = 17.0
 offset_top = 18.0
 offset_right = 177.0
 offset_bottom = 70.0
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
 theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
 
@@ -1736,6 +1751,7 @@ offset_left = 19.0
 offset_top = 151.0
 offset_right = 179.0
 offset_bottom = 203.0
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
 theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
 
@@ -1745,6 +1761,7 @@ offset_left = 20.0
 offset_top = 220.0
 offset_right = 179.0
 offset_bottom = 271.0
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
 theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
 
@@ -1754,6 +1771,7 @@ offset_left = 21.0
 offset_top = 350.0
 offset_right = 180.0
 offset_bottom = 402.0
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_kno2e")
 theme_override_styles/hover = SubResource("StyleBoxFlat_t24sw")
 
@@ -1787,7 +1805,7 @@ offset_right = 314.0
 offset_bottom = 199.0
 theme_override_colors/font_color = Color(0.4, 0.22352941, 0.19215687, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 32
 text = "tecnologia"
 horizontal_alignment = 1
 
@@ -1799,7 +1817,7 @@ offset_right = 314.0
 offset_bottom = -9.0
 theme_override_colors/font_color = Color(0.4, 0.22352941, 0.19215687, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 32
 text = "matéria prima"
 horizontal_alignment = 1
 
@@ -1811,7 +1829,7 @@ offset_right = 306.0
 offset_bottom = 391.0
 theme_override_colors/font_color = Color(0.4, 0.22352941, 0.19215687, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 32
 text = "militar"
 horizontal_alignment = 1
 
@@ -1822,6 +1840,7 @@ offset_top = 16.0
 offset_right = 358.0
 offset_bottom = 64.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 text = "up-"
 horizontal_alignment = 1
@@ -1835,6 +1854,7 @@ offset_top = 81.0
 offset_right = 359.0
 offset_bottom = 137.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1847,6 +1867,7 @@ offset_top = 216.0
 offset_right = 357.0
 offset_bottom = 272.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1859,6 +1880,7 @@ offset_top = 288.0
 offset_right = 356.0
 offset_bottom = 336.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1871,6 +1893,7 @@ offset_top = 415.0
 offset_right = 351.0
 offset_bottom = 471.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1883,6 +1906,7 @@ offset_top = 16.0
 offset_right = 188.0
 offset_bottom = 64.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1895,6 +1919,7 @@ offset_top = 85.0
 offset_right = 182.0
 offset_bottom = 133.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1907,6 +1932,7 @@ offset_top = 217.0
 offset_right = 185.0
 offset_bottom = 273.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1919,6 +1945,7 @@ offset_top = 288.0
 offset_right = 185.0
 offset_bottom = 336.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1931,6 +1958,7 @@ offset_top = 416.0
 offset_right = 183.0
 offset_bottom = 464.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1943,6 +1971,7 @@ offset_top = 15.0
 offset_right = 94.0
 offset_bottom = 63.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1955,6 +1984,7 @@ offset_top = 85.0
 offset_right = 95.0
 offset_bottom = 133.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1967,6 +1997,7 @@ offset_top = 217.0
 offset_right = 95.0
 offset_bottom = 273.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1979,6 +2010,7 @@ offset_top = 287.0
 offset_right = 93.0
 offset_bottom = 335.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1991,6 +2023,7 @@ offset_top = 413.0
 offset_right = 93.0
 offset_bottom = 469.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_77o43")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -2106,8 +2139,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1442395078]
-stream = ExtResource("20_qxcpo")
-volume_db = -80.0
+stream = ExtResource("23_hfdyo")
+volume_db = 1.0
+parameters/looping = true
 
 [node name="BotaoLateralMenuacoes" type="Sprite2D" parent="." unique_id=71076315]
 position = Vector2(528, 576)
@@ -2301,10 +2335,11 @@ texture = ExtResource("30_5hfie")
 [node name="creditos" type="Label" parent="." unique_id=235640952]
 offset_left = 320.0
 offset_top = -1376.0
-offset_right = 977.0
+offset_right = 1348.0
 offset_bottom = -1.0
 theme_override_colors/font_color = Color(1, 0.10980392, 0.17254902, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 25
 text = "FIM DO PODER
 
 RESPONSÁVEIS
@@ -2312,7 +2347,7 @@ RESPONSÁVEIS
 PROGRAMAÇÃO
 ISAAC
 
-“Eu ja fiz tudo.”
+“Eu já fiz tudo.”
 
 FELIPE
 
@@ -2329,12 +2364,12 @@ CHRISTIAN
 
 GUILHERME
 
-“Não lembro onde coloquei os áudios.”
+“Nem tão ruim”
 
 DESIGN
 ARTUR
 
-“Até que IA não é tão ruim .”
+“Você não fez nada Miguel .”
 
 JOÃO PAULO
 

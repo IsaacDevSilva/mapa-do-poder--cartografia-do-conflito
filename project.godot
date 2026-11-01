@@ -21,6 +21,9 @@ paises="*uid://vfmnxi6l0bvo"
 [global_group]
 
 pinsmapa=""
+paisesfaceis=""
+paisesmedios=""
+paisesdificeis=""
 
 [physics]
 

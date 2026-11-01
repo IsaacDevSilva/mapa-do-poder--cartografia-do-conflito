@@ -8,7 +8,7 @@ var mapa_aberto = false
 var acoes_aberto = false
 var investimento_aberto = false
 var sancionar_aberto = false
-
+var dificuldade_atual
 var turno_de_verificaçao = 1
 var data 
 var dia_atual  
@@ -50,8 +50,17 @@ func _botao_clicado(botao):
 	print(pais) 
 	$capital.text = formatar_dinheiro(capital) 
 	$AudioStreamPlayer2D.play()
-	$AudioStreamPlayer2D.volume_linear = 35
-	
+	$AudioStreamPlayer2D.volume_linear = 15
+
+	if botao.is_in_group("paisesfaceis"):
+		dificuldade_atual = "facil"
+		print(dificuldade_atual)
+	elif botao.is_in_group("paisesmedios"):
+		dificuldade_atual = "medio"
+		print(dificuldade_atual)
+	elif botao.is_in_group("paisesdificeis"):
+		dificuldade_atual = "dicil"
+		print(dificuldade_atual)
 	
  
 func _turnos(dia_atual,mes_atual,ano_atual): 
@@ -421,6 +430,16 @@ func gerenciar_progresso():
 		elif pib_atual >= (pib_de_comparacao + (pib_de_comparacao*10)/100):
 			pib_de_comparacao = pib_atual
 		turno_de_verificaçao += 5
+		
+	if dificuldade_atual == "facil":
+		if paises.paises[pais]["pib"] >= 4000 and paises.paises[pais]["idh"] >= 0.9:
+			destruiçao_planetaria()
+	if dificuldade_atual == "medio":
+		if paises.paises[pais]["pib"] >= 4000 and paises.paises[pais]["idh"] >= 0.9:
+			destruiçao_planetaria()
+	if dificuldade_atual == "dificil":
+		if paises.paises[pais]["pib"] >= 4000 and paises.paises[pais]["idh"] >= 0.9:
+			destruiçao_planetaria()
 func marcador_paises():
 	for pin in get_tree().get_nodes_in_group("pinsmapa"):
 		var nome_pais_pin = pin.name.replace("TagMapa", "").to_upper()

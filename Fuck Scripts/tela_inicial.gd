@@ -22,7 +22,8 @@ var tween_pagina: Tween = null  # animação de troca de página em andamento
 
 func _ready() -> void:
 	for pagina in paginas_tutorial:
-		pagina.visible = false
+		if pagina != null:
+			pagina.visible = false
 
 func _physics_process(delta: float) -> void:
 	$AudioStreamPlayer2D2.pitch_scale = som

@@ -15,7 +15,7 @@ var mapa_aberto = false
 var acoes_aberto = false
 var investimento_aberto = false
 var sancionar_aberto = false
-
+var dificuldade_atual
 var turno_de_verificaçao = 1
 var data 
 var dia_atual  
@@ -51,8 +51,11 @@ func _ready() -> void:
 func _process(delta: float) -> void: 
 	if pais != null: 
 		$pais_nome.text = pais 
+		capital = paises.paises[pais]["pib"] 
+		$capital.text = formatar_dinheiro(capital) 
 		formatar_dinheiro(capital) 
 	marcador_paises()
+
 
 func _botao_clicado(botao): 
 	pais = botao.name 
@@ -61,7 +64,17 @@ func _botao_clicado(botao):
 	print(pais) 
 	$capital.text = formatar_dinheiro(capital) 
 	$AudioStreamPlayer2D.play()
-	$AudioStreamPlayer2D.volume_linear = 35
+	$AudioStreamPlayer2D.volume_linear = 15
+
+	if botao.is_in_group("paisesfaceis"):
+		dificuldade_atual = "facil"
+		print(dificuldade_atual)
+	elif botao.is_in_group("paisesmedios"):
+		dificuldade_atual = "medio"
+		print(dificuldade_atual)
+	elif botao.is_in_group("paisesdificeis"):
+		dificuldade_atual = "dicil"
+		print(dificuldade_atual)
 	pais_escolhido.emit()
 	
 	
@@ -399,6 +412,7 @@ func acoes():
 	$PergaminhoDadosPais4_investbb/Label5.text = str(paises.paises[pais]["saude"])
 	$PergaminhoDadosPais4_investbb/Label6.text = str(paises.paises[pais]["seguranca"])
 	$PergaminhoDadosPais4_investbb/Label7.text = str(paises.paises[pais]["educacao"])
+	$PergaminhoDadosPais4_investbb/Label9.text = str(paises.paises[pais]["idh"])
 
 
 func _on_botao_compra_1_pressed() -> void: 
@@ -433,6 +447,17 @@ func gerenciar_progresso():
 		elif pib_atual >= (pib_de_comparacao + (pib_de_comparacao*10)/100):
 			pib_de_comparacao = pib_atual
 		turno_de_verificaçao += 5
+		
+	if dificuldade_atual == "facil":
+		if paises.paises[pais]["pib"] >= 4000 and paises.paises[pais]["idh"] >= 0.9:
+			destruiçao_planetaria()
+	if dificuldade_atual == "medio":
+		if paises.paises[pais]["pib"] >= 2000 and paises.paises[pais]["idh"] >= 0.8:
+			destruiçao_planetaria()
+	if dificuldade_atual == "dificil":
+		if paises.paises[pais]["pib"] >= 1000 and paises.paises[pais]["idh"] >= 0.7:
+			destruiçao_planetaria()
+
 func marcador_paises():
 	for pin in get_tree().get_nodes_in_group("pinsmapa"):
 		var nome_pais_pin = pin.name.replace("TagMapa", "").to_upper()
@@ -502,4 +527,16 @@ func destruiçao_planetaria():
 		await $"animaçoes_finais".animation_finished
 		$"animaçoes_finais".play("creditos")
 	#Parabéns Felipe;>D
+	
+
+
+func _on_investir_pressed() -> void:
+	paises.paises[pais]["seguranca"] += $PergaminhoDadosPais4_investbb/SpinBox.value
+	paises.paises[pais]["saude"] += $PergaminhoDadosPais4_investbb/SpinBox2.value
+	paises.paises[pais]["educacao"] += $PergaminhoDadosPais4_investbb/SpinBox3.value
+	paises.paises[pais]["idh"] += (($PergaminhoDadosPais4_investbb/SpinBox3.value + $PergaminhoDadosPais4_investbb/SpinBox2.value + $PergaminhoDadosPais4_investbb/SpinBox.value)/3)/100
+	paises.paises[pais]["idh"] =snappedf(paises.paises[pais]["idh"],0.01)
+	var total = $PergaminhoDadosPais4_investbb/SpinBox.value + $PergaminhoDadosPais4_investbb/SpinBox2.value + $PergaminhoDadosPais4_investbb/SpinBox3.value
+	paises.paises[pais]["pib"] -= total
+	acoes()
 	

@@ -1,4 +1,11 @@
 extends Node2D 
+
+
+signal pais_escolhido
+
+
+@export var mostrar_tutorial = true
+
 var pais = null 
 var estatisticas_aberto = false 
 var demandas_aberto = false 
@@ -35,6 +42,10 @@ func _ready() -> void:
 	$mes.text = str("janeiro") 
 	$ano.text = str(2026) 
 	$escolha.visible = true 
+
+	
+	if mostrar_tutorial:
+		add_child(preload("res://Cenas +69/tutorial_guiado.tscn").instantiate())
 	 
  
 func _process(delta: float) -> void: 
@@ -51,6 +62,7 @@ func _botao_clicado(botao):
 	$capital.text = formatar_dinheiro(capital) 
 	$AudioStreamPlayer2D.play()
 	$AudioStreamPlayer2D.volume_linear = 35
+	pais_escolhido.emit()
 	
 	
  
@@ -115,7 +127,7 @@ func demandas(turno):
 					paises_compra_escolhidos.append(pais_compra) 
 					break 
  
-		# Labels separados 
+
 		var labels_nome = [ 
 			$compras_interface/Label_compra1, 
 			$compras_interface/Label_compra2, 
@@ -152,7 +164,7 @@ func demandas(turno):
 			var preco_base = (pib)/ randf_range(1.5,5.0)
 			var preco = max(snapped(preco_base * randf_range(0.8,1.2), 1),0.5) 
  
-			# Salva a oferta 
+
 			ofertas.append({ 
 				"pais": pais_nome, 
 				"qtd": quantidade, 

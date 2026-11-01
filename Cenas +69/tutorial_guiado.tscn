@@ -1,0 +1,104 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Fuck Scripts/tutorial_guiado.gd" id="1_tutorial"]
+[ext_resource type="Script" path="res://Fuck Scripts/tutorial_destaque.gd" id="2_destaque"]
+[ext_resource type="FontFile" uid="uid://cbf8swj14yrcq" path="res://Sounds Sensuais/upheavtt.ttf" id="3_fonte"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_caixa"]
+bg_color = Color(0.96, 0.89, 0.74, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_botao"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_botao_hover"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.62, 0.37, 0.22, 1)
+
+[node name="TutorialGuiado" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_tutorial")
+
+[node name="Destaque" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_destaque")
+
+[node name="CaixaDica" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(560, 0)
+offset_left = 256.0
+offset_top = 16.0
+offset_right = 816.0
+offset_bottom = 136.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_caixa")
+
+[node name="Margem" type="MarginContainer" parent="CaixaDica"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="Coluna" type="VBoxContainer" parent="CaixaDica/Margem"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Texto" type="Label" parent="CaixaDica/Margem/Coluna"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 1)
+theme_override_fonts/font = ExtResource("3_fonte")
+theme_override_font_sizes/font_size = 20
+text = "Texto da dica"
+autowrap_mode = 3
+
+[node name="Botoes" type="HBoxContainer" parent="CaixaDica/Margem/Coluna"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Contador" type="Label" parent="CaixaDica/Margem/Coluna/Botoes"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.43529412, 0.25490198, 0.16862746, 0.7)
+theme_override_fonts/font = ExtResource("3_fonte")
+theme_override_font_sizes/font_size = 16
+text = "1/25"
+vertical_alignment = 1
+
+[node name="Pular" type="Button" parent="CaixaDica/Margem/Coluna/Botoes"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.96, 0.89, 0.74, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fonte")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_botao")
+theme_override_styles/hover = SubResource("StyleBoxFlat_botao_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_botao")
+text = "Pular tutorial"
+
+[node name="Proximo" type="Button" parent="CaixaDica/Margem/Coluna/Botoes"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.96, 0.89, 0.74, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fonte")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_botao")
+theme_override_styles/hover = SubResource("StyleBoxFlat_botao_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_botao")
+text = "Próximo"

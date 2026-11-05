@@ -1,11 +1,6 @@
 extends Node2D 
-
-
 signal pais_escolhido
-
-
 @export var mostrar_tutorial = true
-
 var pais = null 
 var estatisticas_aberto = false 
 var demandas_aberto = false 
@@ -31,7 +26,11 @@ var capital
 var ofertas = [] 
 var ofertas_vendas = []
 var pib_de_comparacao 
-
+var imposto_arrecadado
+var imposto_total
+var qualidade_de_vida
+var taxa_de_imposto_nao_base
+var primeiravez = true
 func _ready() -> void: 
 	for vbox in $escolha.get_children(): 
 		if vbox is VBoxContainer: 
@@ -54,6 +53,9 @@ func _process(delta: float) -> void:
 		capital = paises.paises[pais]["pib"] 
 		$capital.text = formatar_dinheiro(capital) 
 		formatar_dinheiro(capital) 
+		if primeiravez:
+			taxa_de_imposto_nao_base = paises.paises[pais]["taxa_imposto"]
+			primeiravez = false
 	marcador_paises()
 
 
@@ -110,7 +112,8 @@ func _on_conflitar_pressed() -> void:
 		
 	$info_estatisticas.text = texto 
 	$idh.text = str(paises.paises[pais]["idh"])
-	
+	impostos()
+	despesas_do_governo()
 
 func demandas(turno): 
 	if turno_atual != turno: 
@@ -539,4 +542,17 @@ func _on_investir_pressed() -> void:
 	var total = $PergaminhoDadosPais4_investbb/SpinBox.value + $PergaminhoDadosPais4_investbb/SpinBox2.value + $PergaminhoDadosPais4_investbb/SpinBox3.value
 	paises.paises[pais]["pib"] -= total
 	acoes()
-	
+func impostos():
+	qualidade_de_vida = float(paises.paises[pais]["idh"]) * float(paises.paises[pais]["tecnologia"] / 100.0) 
+	var taxa_de_producao = snapped(paises.paises[pais]["idh"],0.15) * randf_range(1,2)
+	imposto_arrecadado = paises.paises[pais]["populacao"] * qualidade_de_vida * taxa_de_producao * 5
+	imposto_total = imposto_arrecadado * (paises.paises[pais]["taxa_imposto"]/100.0)
+	print(imposto_total)
+	paises.paises[pais]["pib"] += int(imposto_total)
+func despesas_do_governo():
+	var qualidade_servicos = (
+	float(paises.paises[pais]["saude"]) + float(paises.paises[pais]["educacao"]) + float(paises.paises[pais]["seguranca"])) / 300.0
+	var gasto_social = qualidade_servicos * 0.10
+	var total = taxa_de_imposto_nao_base * (0.6 + gasto_social) * 5
+	paises.paises[pais]["pib"] -= int(total)
+	print(total)

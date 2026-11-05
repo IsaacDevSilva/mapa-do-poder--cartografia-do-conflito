@@ -2304,6 +2304,7 @@ offset_top = -56.000004
 offset_right = 33.166664
 offset_bottom = -25.000004
 scale = Vector2(0.5, 0.5)
+step = 10.0
 suffix = "B"
 
 [node name="SpinBox2" type="SpinBox" parent="PergaminhoDadosPais4_investbb" unique_id=197475301]
@@ -2312,6 +2313,7 @@ offset_top = -93.333336
 offset_right = 33.166668
 offset_bottom = -62.333336
 scale = Vector2(0.5, 0.5)
+step = 10.0
 suffix = "B"
 
 [node name="SpinBox3" type="SpinBox" parent="PergaminhoDadosPais4_investbb" unique_id=2082416229]
@@ -2320,6 +2322,7 @@ offset_top = -18.666668
 offset_right = 33.16666
 offset_bottom = 12.333332
 scale = Vector2(0.5, 0.5)
+step = 10.0
 suffix = "B"
 
 [node name="investir" type="Button" parent="PergaminhoDadosPais4_investbb" unique_id=1747897986]

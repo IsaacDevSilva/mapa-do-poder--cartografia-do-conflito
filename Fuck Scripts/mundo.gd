@@ -31,6 +31,8 @@ var imposto_total
 var qualidade_de_vida
 var taxa_de_imposto_nao_base
 var primeiravez = true
+var taxa_de_imposto
+var constituicao_aberto = false
 func _ready() -> void: 
 	for vbox in $escolha.get_children(): 
 		if vbox is VBoxContainer: 
@@ -325,7 +327,7 @@ func _on_button_acoes_pressed() -> void:
 	acoes()
 func _on_botao_voltar_com_corrente_pressed() -> void:
 	
-	if acoes_aberto and not investimento_aberto and not sancionar_aberto:
+	if acoes_aberto and not investimento_aberto and not sancionar_aberto and not constituicao_aberto:
 		$"animaçoes_geral".play_backwards("animaçao_acoes")
 		acoes_aberto = false 
 	elif investimento_aberto:
@@ -334,7 +336,9 @@ func _on_botao_voltar_com_corrente_pressed() -> void:
 	elif sancionar_aberto:
 		$"animaçoes_geral".play_backwards("animaçao_sancionar")
 		sancionar_aberto = false
-
+	elif constituicao_aberto:
+		$"animaçoes_geral".play_backwards("animacao_constituicao")
+		constituicao_aberto = false
 	if demanda_compra_aberto and demanda_venda_aberto: 
 		$"animaçoes_geral".play_backwards("painel_compra") 
 		await $"animaçoes_geral".animation_finished 
@@ -416,7 +420,7 @@ func acoes():
 	$PergaminhoDadosPais4_investbb/Label6.text = str(paises.paises[pais]["seguranca"])
 	$PergaminhoDadosPais4_investbb/Label7.text = str(paises.paises[pais]["educacao"])
 	$PergaminhoDadosPais4_investbb/Label9.text = str(paises.paises[pais]["idh"])
-
+	$PergaminhoDadosPais4_investbb/Label11.text = str(paises.paises[pais]["pib"])
 
 func _on_botao_compra_1_pressed() -> void: 
 	comprar(0) 
@@ -445,9 +449,9 @@ func gerenciar_progresso():
 		turno_de_verificaçao += 5
 	elif turno == turno_de_verificaçao:
 		var pib_atual = paises.paises[pais]["pib"]
-		if pib_atual < (pib_de_comparacao + (pib_de_comparacao*10)/100):
+		if pib_atual < (pib_de_comparacao + (pib_de_comparacao*25)/100):
 			destruiçao_planetaria()
-		elif pib_atual >= (pib_de_comparacao + (pib_de_comparacao*10)/100):
+		elif pib_atual >= (pib_de_comparacao + (pib_de_comparacao*25)/100):
 			pib_de_comparacao = pib_atual
 		turno_de_verificaçao += 5
 		
@@ -534,14 +538,17 @@ func destruiçao_planetaria():
 
 
 func _on_investir_pressed() -> void:
-	paises.paises[pais]["seguranca"] += $PergaminhoDadosPais4_investbb/SpinBox.value
-	paises.paises[pais]["saude"] += $PergaminhoDadosPais4_investbb/SpinBox2.value
-	paises.paises[pais]["educacao"] += $PergaminhoDadosPais4_investbb/SpinBox3.value
-	paises.paises[pais]["idh"] += (($PergaminhoDadosPais4_investbb/SpinBox3.value + $PergaminhoDadosPais4_investbb/SpinBox2.value + $PergaminhoDadosPais4_investbb/SpinBox.value)/3)/100
-	paises.paises[pais]["idh"] =snappedf(paises.paises[pais]["idh"],0.01)
-	var total = $PergaminhoDadosPais4_investbb/SpinBox.value + $PergaminhoDadosPais4_investbb/SpinBox2.value + $PergaminhoDadosPais4_investbb/SpinBox3.value
-	paises.paises[pais]["pib"] -= total
-	acoes()
+	if int($PergaminhoDadosPais4_investbb/SpinBox.value + $PergaminhoDadosPais4_investbb/SpinBox2.value + $PergaminhoDadosPais4_investbb/SpinBox3.value) <= paises.paises[pais]["pib"]:
+		paises.paises[pais]["seguranca"] += int($PergaminhoDadosPais4_investbb/SpinBox.value / 10)
+		paises.paises[pais]["saude"] += int($PergaminhoDadosPais4_investbb/SpinBox2.value / 10)
+		paises.paises[pais]["educacao"] += int($PergaminhoDadosPais4_investbb/SpinBox3.value / 10)
+		paises.paises[pais]["idh"] += (($PergaminhoDadosPais4_investbb/SpinBox3.value + $PergaminhoDadosPais4_investbb/SpinBox2.value + $PergaminhoDadosPais4_investbb/SpinBox.value)/3)/1000
+		paises.paises[pais]["idh"] =snappedf(paises.paises[pais]["idh"],0.01)
+		var total = int($PergaminhoDadosPais4_investbb/SpinBox.value + $PergaminhoDadosPais4_investbb/SpinBox2.value + $PergaminhoDadosPais4_investbb/SpinBox3.value)
+		paises.paises[pais]["pib"] -= total
+		acoes()
+	else: 
+		print("sem capital")
 func impostos():
 	qualidade_de_vida = float(paises.paises[pais]["idh"]) * float(paises.paises[pais]["tecnologia"] / 100.0) 
 	var taxa_de_producao = snapped(paises.paises[pais]["idh"],0.15) * randf_range(1,2)
@@ -553,6 +560,15 @@ func despesas_do_governo():
 	var qualidade_servicos = (
 	float(paises.paises[pais]["saude"]) + float(paises.paises[pais]["educacao"]) + float(paises.paises[pais]["seguranca"])) / 300.0
 	var gasto_social = qualidade_servicos * 0.10
-	var total = taxa_de_imposto_nao_base * (0.6 + gasto_social) * 5
+	var total = imposto_arrecadado * (float(taxa_de_imposto_nao_base) / 100.0) * (0.6 + gasto_social)
 	paises.paises[pais]["pib"] -= int(total)
-	print(total)
+	print(total,qualidade_servicos, gasto_social)
+
+
+func _on_constituicao_pressed() -> void:
+	$"animaçoes_geral".play("animacao_constituicao")
+	$abrir_cosnt/SpinBox.value = paises.paises[pais]["taxa_imposto"]
+	constituicao_aberto = true
+func _on_alterar_cosnt_pressed() -> void:
+	paises.paises[pais]["taxa_imposto"] = $abrir_cosnt/SpinBox.value
+	print(paises.paises[pais]["taxa_imposto"])

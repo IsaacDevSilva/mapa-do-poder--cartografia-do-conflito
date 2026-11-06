@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://beygqjv31ar7x" path="res://ABDUÇAO v9 Copy Copy.png" id="31_o2wut"]
 [ext_resource type="Texture2D" uid="uid://bkmvmo3adtob" path="res://ABDUÇAO v8 Copy.png" id="32_7a8fq"]
 [ext_resource type="Texture2D" uid="uid://ebc13xn7vi1x" path="res://ABDUÇAO v7.png" id="33_hfdyo"]
+[ext_resource type="Texture2D" uid="uid://b8n0m8p21567w" path="res://PixelMotherFuckerArts/botao_carregando.png" id="38_n2ob7"]
 [ext_resource type="Texture2D" uid="uid://c86ykly0tbcxg" path="res://PixelMotherFuckerArts/idhe pib.png" id="39_5vwc1"]
 [ext_resource type="Texture2D" uid="uid://cmys7s6bn4r8k" path="res://PixelMotherFuckerArts/calendario.png" id="39_60vgq"]
 
@@ -293,6 +294,34 @@ tracks/17/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0.5, 0.5)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("abrir_cosnt:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(864, 1088)]
+}
+
+[sub_resource type="Animation" id="Animation_n2ob7"]
+resource_name = "animacao_constituicao"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("abrir_cosnt:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(864, 1088), Vector2(864, 320)]
 }
 
 [sub_resource type="Animation" id="Animation_gmgns"]
@@ -605,6 +634,7 @@ tracks/5/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1k42u"]
 _data = {
 &"RESET": SubResource("Animation_ek21q"),
+&"animacao_constituicao": SubResource("Animation_n2ob7"),
 &"animaçao_acoes": SubResource("Animation_gmgns"),
 &"animaçao_investir": SubResource("Animation_m24ub"),
 &"animaçao_mapa": SubResource("Animation_1e442"),
@@ -805,6 +835,7 @@ animations = [{
 
 [node name="Mundo" type="Node2D" unique_id=261724688]
 script = ExtResource("1_ek21q")
+mostrar_tutorial = null
 
 [node name="TexturaMesaV2" type="Sprite2D" parent="." unique_id=226496044]
 position = Vector2(621, 338.00003)
@@ -2143,6 +2174,23 @@ stream = ExtResource("23_hfdyo")
 volume_db = 1.0
 parameters/looping = true
 
+[node name="BotaoLateranoticias2" type="Sprite2D" parent="." unique_id=1684534396]
+position = Vector2(310.21112, 576)
+rotation = -1.5707964
+scale = Vector2(1, 1.3018174)
+texture = ExtResource("17_1e442")
+
+[node name="Label2" type="Label" parent="BotaoLateranoticias2" unique_id=394223873]
+offset_left = 571.0
+offset_top = 191.87708
+offset_right = 683.0
+offset_bottom = 209.87708
+rotation = 1.5707964
+theme_override_colors/font_color = Color(0.7294118, 0.05490196, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 19
+text = "notícias"
+
 [node name="BotaoLateralMenuacoes" type="Sprite2D" parent="." unique_id=71076315]
 position = Vector2(528, 576)
 rotation = 4.712389
@@ -2198,6 +2246,16 @@ offset_right = 63.248573
 offset_bottom = 7.9388733
 theme_override_colors/font_hover_color = Color(0.8156863, 0.8156863, 0.8156863, 1)
 flat = true
+
+[node name="constituicao" type="Button" parent="BotaoLateralMenuacoes/PergaminhoDadosPais" unique_id=1822898997]
+offset_left = -56.0
+offset_top = -15.999992
+offset_right = 57.05684
+offset_bottom = 53.544716
+icon = ExtResource("38_n2ob7")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="PergaminhoDadosPais4_investbb" type="Sprite2D" parent="." unique_id=1852639191]
 position = Vector2(960, 1088)
@@ -2305,6 +2363,7 @@ offset_right = 33.166664
 offset_bottom = -25.000004
 scale = Vector2(0.5, 0.5)
 step = 10.0
+alignment = 1
 suffix = "B"
 
 [node name="SpinBox2" type="SpinBox" parent="PergaminhoDadosPais4_investbb" unique_id=197475301]
@@ -2314,6 +2373,7 @@ offset_right = 33.166668
 offset_bottom = -62.333336
 scale = Vector2(0.5, 0.5)
 step = 10.0
+alignment = 1
 suffix = "B"
 
 [node name="SpinBox3" type="SpinBox" parent="PergaminhoDadosPais4_investbb" unique_id=2082416229]
@@ -2323,6 +2383,7 @@ offset_right = 33.16666
 offset_bottom = 12.333332
 scale = Vector2(0.5, 0.5)
 step = 10.0
+alignment = 1
 suffix = "B"
 
 [node name="investir" type="Button" parent="PergaminhoDadosPais4_investbb" unique_id=1747897986]
@@ -2331,6 +2392,27 @@ offset_top = 61.333336
 offset_right = 32.333332
 offset_bottom = 92.333336
 text = "Investir"
+
+[node name="Label10" type="Label" parent="PergaminhoDadosPais4_investbb" unique_id=52179118]
+offset_left = -2.6666667
+offset_top = -98.66667
+offset_right = 37.333332
+offset_bottom = -75.66667
+theme_override_colors/font_color = Color(0.34509805, 1, 0.26666668, 1)
+theme_override_fonts/font = ExtResource("7_5vwc1")
+text = "PIB:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label11" type="Label" parent="PergaminhoDadosPais4_investbb" unique_id=1528009906]
+offset_left = 32.0
+offset_top = -98.66667
+offset_right = 72.0
+offset_bottom = -75.66667
+theme_override_colors/font_color = Color(0.34509805, 1, 0.26666668, 1)
+theme_override_fonts/font = ExtResource("7_5vwc1")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PergaminhoDadosPais4_investbb2" type="Sprite2D" parent="." unique_id=1654103909]
 position = Vector2(864, 1088)
@@ -2343,21 +2425,40 @@ offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("7_5vwc1")
 text = "s"
 
-[node name="BotaoLateranoticias2" type="Sprite2D" parent="." unique_id=1684534396]
-position = Vector2(310.21112, 576)
-rotation = -1.5707964
-scale = Vector2(1, 1.3018174)
-texture = ExtResource("17_1e442")
+[node name="abrir_cosnt" type="Sprite2D" parent="." unique_id=1545497765]
+position = Vector2(864, 1088)
+scale = Vector2(3, 3)
+texture = ExtResource("7_1k42u")
 
-[node name="Label2" type="Label" parent="." unique_id=394223873]
-offset_left = 571.0
-offset_top = 5.0
-offset_right = 683.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.7294118, 0.05490196, 0.09019608, 1)
+[node name="Label" type="Label" parent="abrir_cosnt" unique_id=1615271832]
+offset_left = -77.33333
+offset_top = -85.333336
+offset_right = 35.66667
+offset_bottom = -73.333336
+theme_override_colors/font_color = Color(0.21332362, 0.35421315, 0.7695816, 1)
 theme_override_fonts/font = ExtResource("7_5vwc1")
-theme_override_font_sizes/font_size = 19
-text = "notícias"
+theme_override_font_sizes/font_size = 12
+text = "Taxa de imposto:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="abrir_cosnt" unique_id=2122152810]
+offset_left = 32.666668
+offset_top = -86.333336
+offset_right = 119.16667
+offset_bottom = -55.333336
+scale = Vector2(0.5, 0.5)
+alignment = 1
+suffix = "%"
+
+[node name="alterar_cosnt" type="Button" parent="abrir_cosnt" unique_id=930540352]
+offset_left = -71.0
+offset_top = 69.333336
+offset_right = 76.0
+offset_bottom = 88.333336
+theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 12
+text = "alterar constituição"
 
 [node name="animaçoes_geral" type="AnimationPlayer" parent="." unique_id=634595259]
 libraries/ = SubResource("AnimationLibrary_1k42u")
@@ -2471,4 +2572,6 @@ horizontal_alignment = 1
 [connection signal="pressed" from="BotaoLateralMenuacoes/Button" to="." method="_on_button_acoes_pressed"]
 [connection signal="pressed" from="BotaoLateralMenuacoes/PergaminhoDadosPais/Sprite2D2/Button" to="." method="_on_button_investuir_pressed"]
 [connection signal="pressed" from="BotaoLateralMenuacoes/PergaminhoDadosPais/Sprite2D/Button_sancionarraaa" to="." method="_on_button_sancionarraaa_pressed"]
+[connection signal="pressed" from="BotaoLateralMenuacoes/PergaminhoDadosPais/constituicao" to="." method="_on_constituicao_pressed"]
 [connection signal="pressed" from="PergaminhoDadosPais4_investbb/investir" to="." method="_on_investir_pressed"]
+[connection signal="pressed" from="abrir_cosnt/alterar_cosnt" to="." method="_on_alterar_cosnt_pressed"]

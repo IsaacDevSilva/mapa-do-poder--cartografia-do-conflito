@@ -306,6 +306,10 @@ func _on_button_investuir_pressed() -> void:
 		$"animaçoes_geral".play_backwards("animaçao_sancionar")
 		sancionar_aberto = false
 		await $"animaçoes_geral".animation_finished
+	elif constituicao_aberto:
+		$"animaçoes_geral".play_backwards("animacao_constituicao")
+		constituicao_aberto = false
+		await $"animaçoes_geral".animation_finished
 	$"animaçoes_geral".play("animaçao_investir")
 	investimento_aberto = true
 
@@ -313,6 +317,10 @@ func _on_button_sancionarraaa_pressed() -> void:
 	if investimento_aberto:
 		$"animaçoes_geral".play_backwards("animaçao_investir")
 		investimento_aberto = false
+		await $"animaçoes_geral".animation_finished
+	elif constituicao_aberto:
+		$"animaçoes_geral".play_backwards("animacao_constituicao")
+		constituicao_aberto = false
 		await $"animaçoes_geral".animation_finished
 	$"animaçoes_geral".play("animaçao_sancionar")
 	sancionar_aberto = true
@@ -566,9 +574,24 @@ func despesas_do_governo():
 
 
 func _on_constituicao_pressed() -> void:
+	if sancionar_aberto:
+		$"animaçoes_geral".play_backwards("animaçao_sancionar")
+		sancionar_aberto = false
+		await $"animaçoes_geral".animation_finished
+	elif investimento_aberto:
+		$"animaçoes_geral".play_backwards("animaçao_investir")
+		investimento_aberto = false
 	$"animaçoes_geral".play("animacao_constituicao")
 	$abrir_cosnt/SpinBox.value = paises.paises[pais]["taxa_imposto"]
 	constituicao_aberto = true
 func _on_alterar_cosnt_pressed() -> void:
 	paises.paises[pais]["taxa_imposto"] = $abrir_cosnt/SpinBox.value
 	print(paises.paises[pais]["taxa_imposto"])
+func revolta_popular():
+	pass
+func _on_botao_noticias_pressed() -> void:
+	$"animaçoes_geral".play("animacao_noticias")
+
+
+func _on_botao_voltar_noticia_pressed() -> void:
+	pass # Replace with function body.

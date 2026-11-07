@@ -23,11 +23,13 @@
 [ext_resource type="Texture2D" uid="uid://dmfb0oyt67wpg" path="res://PixelMotherFuckerArts/botao investir.png" id="23_7a8fq"]
 [ext_resource type="Texture2D" uid="uid://dnj7d7oflc8vu" path="res://PLANETA TERRA.png" id="23_7podu"]
 [ext_resource type="AudioStream" uid="uid://b80lq8up2d05q" path="res://Sounds Sensuais/nova-musica-fundo.mp3" id="23_hfdyo"]
+[ext_resource type="Texture2D" uid="uid://dknc5mlctmshf" path="res://PixelMotherFuckerArts/menu noticias rudmentar.png" id="24_60vgq"]
 [ext_resource type="Texture2D" uid="uid://dymqs1lub206e" path="res://PixelMotherFuckerArts/botao sancionar.png" id="24_hfdyo"]
 [ext_resource type="Texture2D" uid="uid://dq0pwh6pxsv5j" path="res://ABDUCAO v1.png" id="24_jxof3"]
 [ext_resource type="Texture2D" uid="uid://cer2snpr1hb5n" path="res://PLANABDUÇAO v2.png" id="25_o2wut"]
 [ext_resource type="Texture2D" uid="uid://cgivbh0wifgjj" path="res://ABDUÇAO v3.png" id="26_7a8fq"]
 [ext_resource type="Texture2D" uid="uid://b65va1tl8pm77" path="res://ABDUÇAO v4.png" id="27_hfdyo"]
+[ext_resource type="Texture2D" uid="uid://cwi7jxeusansy" path="res://PixelMotherFuckerArts/Botao Voltar.png" id="28_5vwc1"]
 [ext_resource type="Texture2D" uid="uid://bp8vkkr2kc1hn" path="res://ABDUÇAO v5.png" id="28_n2ob7"]
 [ext_resource type="Texture2D" uid="uid://daqyhsaa7a1vp" path="res://ABDUÇAO v6.png" id="29_60vgq"]
 [ext_resource type="Texture2D" uid="uid://d7onwiaxynd2" path="res://PixelMotherFuckerArts/EFEITO_EXPLOSÃOV444.png" id="30_5hfie"]
@@ -185,7 +187,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(160, -416.00003)]
+"values": [Vector2(160, -424.00003)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -194,10 +196,10 @@ tracks/9/path = NodePath("painel_compra_direita:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(992, -416)]
+"values": [Vector2(992.00006, -424), Vector2(992.00006, -424)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -307,6 +309,18 @@ tracks/18/keys = {
 "update": 0,
 "values": [Vector2(864, 1088)]
 }
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("BotaoLateranoticias2/Sprite2D:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(927.99994, 210.3128)]
+}
 
 [sub_resource type="Animation" id="Animation_n2ob7"]
 resource_name = "animacao_constituicao"
@@ -322,6 +336,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(864, 1088), Vector2(864, 320)]
+}
+
+[sub_resource type="Animation" id="Animation_5vwc1"]
+resource_name = "animacao_noticias"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BotaoLateranoticias2/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(904, 204.16756), Vector2(248.99997, 203.974)]
 }
 
 [sub_resource type="Animation" id="Animation_gmgns"]
@@ -635,6 +665,7 @@ tracks/5/keys = {
 _data = {
 &"RESET": SubResource("Animation_ek21q"),
 &"animacao_constituicao": SubResource("Animation_n2ob7"),
+&"animacao_noticias": SubResource("Animation_5vwc1"),
 &"animaçao_acoes": SubResource("Animation_gmgns"),
 &"animaçao_investir": SubResource("Animation_m24ub"),
 &"animaçao_mapa": SubResource("Animation_1e442"),
@@ -835,10 +866,9 @@ animations = [{
 
 [node name="Mundo" type="Node2D" unique_id=261724688]
 script = ExtResource("1_ek21q")
-mostrar_tutorial = null
 
 [node name="TexturaMesaV2" type="Sprite2D" parent="." unique_id=226496044]
-position = Vector2(621, 338.00003)
+position = Vector2(624, 352)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_q3100")
 
@@ -1478,7 +1508,7 @@ offset_bottom = 8.0
 flat = true
 
 [node name="painel_compra_esquerda" type="Sprite2D" parent="." unique_id=556160178]
-position = Vector2(160, -416.00003)
+position = Vector2(160, -424.00003)
 scale = Vector2(3, 3)
 texture = ExtResource("7_1k42u")
 
@@ -1508,7 +1538,7 @@ scale = Vector2(0.33333334, 0.33333334)
 texture = ExtResource("15_qxcpo")
 
 [node name="painel_compra_direita" type="Sprite2D" parent="." unique_id=133202378]
-position = Vector2(992, -416)
+position = Vector2(992.00006, -424)
 scale = Vector2(3, 3)
 texture = ExtResource("7_1k42u")
 
@@ -2174,26 +2204,9 @@ stream = ExtResource("23_hfdyo")
 volume_db = 1.0
 parameters/looping = true
 
-[node name="BotaoLateranoticias2" type="Sprite2D" parent="." unique_id=1684534396]
-position = Vector2(310.21112, 576)
-rotation = -1.5707964
-scale = Vector2(1, 1.3018174)
-texture = ExtResource("17_1e442")
-
-[node name="Label2" type="Label" parent="BotaoLateranoticias2" unique_id=394223873]
-offset_left = 571.0
-offset_top = 191.87708
-offset_right = 683.0
-offset_bottom = 209.87708
-rotation = 1.5707964
-theme_override_colors/font_color = Color(0.7294118, 0.05490196, 0.09019608, 1)
-theme_override_fonts/font = ExtResource("7_5vwc1")
-theme_override_font_sizes/font_size = 19
-text = "notícias"
-
 [node name="BotaoLateralMenuacoes" type="Sprite2D" parent="." unique_id=71076315]
 position = Vector2(528, 576)
-rotation = 4.712389
+rotation = -1.5707964
 texture = ExtResource("17_1e442")
 
 [node name="Button" type="Button" parent="BotaoLateralMenuacoes" unique_id=345144175]
@@ -2256,6 +2269,48 @@ icon = ExtResource("38_n2ob7")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="BotaoLateranoticias2" type="Sprite2D" parent="." unique_id=1684534396]
+position = Vector2(310.21112, 576)
+rotation = -1.5707964
+scale = Vector2(1, 1.3018174)
+texture = ExtResource("17_1e442")
+
+[node name="Label2" type="Label" parent="BotaoLateranoticias2" unique_id=394223873]
+offset_left = 571.0
+offset_top = 191.87708
+offset_right = 660.0
+offset_bottom = 209.87708
+rotation = 1.5707964
+theme_override_colors/font_color = Color(0.7294118, 0.05490196, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 19
+text = "notícias"
+
+[node name="Sprite2D" type="Sprite2D" parent="BotaoLateranoticias2" unique_id=650028546]
+position = Vector2(927.99994, 210.3128)
+rotation = 1.5707964
+scale = Vector2(0.766283, 1.0030864)
+texture = ExtResource("24_60vgq")
+
+[node name="botao_voltar_noticia" type="Button" parent="BotaoLateranoticias2/Sprite2D" unique_id=641501778]
+clip_contents = true
+offset_left = -440.82343
+offset_top = 200.38147
+offset_right = -361.32434
+offset_bottom = 245.59079
+scale = Vector2(1.5041027, 1.34375)
+icon = ExtResource("28_5vwc1")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="botao_noticias" type="Button" parent="BotaoLateranoticias2" unique_id=1943372552]
+offset_left = 541.275
+offset_top = 185.2671
+offset_right = 574.67633
+offset_bottom = 285.84814
+flat = true
 
 [node name="PergaminhoDadosPais4_investbb" type="Sprite2D" parent="." unique_id=1852639191]
 position = Vector2(960, 1088)
@@ -2573,5 +2628,7 @@ horizontal_alignment = 1
 [connection signal="pressed" from="BotaoLateralMenuacoes/PergaminhoDadosPais/Sprite2D2/Button" to="." method="_on_button_investuir_pressed"]
 [connection signal="pressed" from="BotaoLateralMenuacoes/PergaminhoDadosPais/Sprite2D/Button_sancionarraaa" to="." method="_on_button_sancionarraaa_pressed"]
 [connection signal="pressed" from="BotaoLateralMenuacoes/PergaminhoDadosPais/constituicao" to="." method="_on_constituicao_pressed"]
+[connection signal="pressed" from="BotaoLateranoticias2/Sprite2D/botao_voltar_noticia" to="." method="_on_botao_voltar_noticia_pressed"]
+[connection signal="pressed" from="BotaoLateranoticias2/botao_noticias" to="." method="_on_botao_noticias_pressed"]
 [connection signal="pressed" from="PergaminhoDadosPais4_investbb/investir" to="." method="_on_investir_pressed"]
 [connection signal="pressed" from="abrir_cosnt/alterar_cosnt" to="." method="_on_alterar_cosnt_pressed"]

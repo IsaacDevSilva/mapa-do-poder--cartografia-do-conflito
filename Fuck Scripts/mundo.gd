@@ -29,10 +29,20 @@ var pib_de_comparacao
 var imposto_arrecadado
 var imposto_total
 var qualidade_de_vida
+var saude_inicial = 0
+var educacao_inicial = 0
+var seguranca_inicial = 0
+var pib_anterior 
 var taxa_de_imposto_nao_base
 var primeiravez = true
 var taxa_de_imposto
 var constituicao_aberto = false
+var noticias_disponiveis = []
+var noticia_atual = ""
+var noticia_anterior = ""
+var quantidade_noticias = 4
+var estabilidade_governo = 100.0
+var partida_encerrada = false
 func _ready() -> void: 
 	for vbox in $escolha.get_children(): 
 		if vbox is VBoxContainer: 
@@ -57,7 +67,11 @@ func _process(delta: float) -> void:
 		formatar_dinheiro(capital) 
 		if primeiravez:
 			taxa_de_imposto_nao_base = paises.paises[pais]["taxa_imposto"]
+			saude_inicial = paises.paises[pais]["saude"]
+			seguranca_inicial = paises.paises[pais]["seguranca"]
+			educacao_inicial = paises.paises[pais]["educacao"]
 			primeiravez = false
+		
 	marcador_paises()
 
 
@@ -97,6 +111,7 @@ func _turnos(dia_atual,mes_atual,ano_atual):
  
 func _on_conflitar_pressed() -> void: 
 	gerenciar_progresso()
+	pib_anterior = paises.paises[pais]["pib"]
 	dia_atual = int(randi_range(1,30)) 
 	mes_atual = int(randi_range(1,12)) 
 	ano_atual = int(ano_atual+ 1) 
@@ -116,7 +131,9 @@ func _on_conflitar_pressed() -> void:
 	$idh.text = str(paises.paises[pais]["idh"])
 	impostos()
 	despesas_do_governo()
-
+	atualizar_status_povo()
+	atualizar_estabilidade_governo()
+	gerar_noticia()
 func demandas(turno): 
 	if turno_atual != turno: 
 		turno_atual = turno 
@@ -560,7 +577,18 @@ func _on_investir_pressed() -> void:
 func impostos():
 	qualidade_de_vida = float(paises.paises[pais]["idh"]) * float(paises.paises[pais]["tecnologia"] / 100.0) 
 	var taxa_de_producao = snapped(paises.paises[pais]["idh"],0.15) * randf_range(1,2)
-	imposto_arrecadado = paises.paises[pais]["populacao"] * qualidade_de_vida * taxa_de_producao * 5
+	var status = paises.paises[pais]["status_povo"]
+	var eficiencia_popular = 1.0
+
+	if status < 60:
+		eficiencia_popular = 0.9
+	if status < 40:
+		eficiencia_popular = 0.75
+	if status < 25:
+		eficiencia_popular = 0.55
+	if status < 10:
+		eficiencia_popular = 0.35
+	imposto_arrecadado = paises.paises[pais]["populacao"] * qualidade_de_vida * taxa_de_producao * 5 * eficiencia_popular
 	imposto_total = imposto_arrecadado * (paises.paises[pais]["taxa_imposto"]/100.0)
 	print(imposto_total)
 	paises.paises[pais]["pib"] += int(imposto_total)
@@ -594,4 +622,93 @@ func _on_botao_noticias_pressed() -> void:
 
 
 func _on_botao_voltar_noticia_pressed() -> void:
-	pass # Replace with function body.
+	$"animaçoes_geral".play_backwards("animacao_noticias")
+
+func atualizar_status_povo():
+	var saude = paises.paises[pais]["saude"]
+	var educacao = paises.paises[pais]["educacao"]
+	var seguranca = paises.paises[pais]["seguranca"]
+	var servicos_atuais = (saude + educacao + seguranca) / 3.0
+	var servicos_iniciais = (saude_inicial + educacao_inicial + seguranca_inicial) / 3.0
+	var impacto_servicos = (servicos_atuais - servicos_iniciais) * 0.2
+	var imposto_atual = paises.paises[pais]["taxa_imposto"]
+	var diferenca_imposto = imposto_atual - taxa_de_imposto_nao_base
+	var impacto_imposto = diferenca_imposto * 0.5
+	var pib_atual = paises.paises[pais]["pib"]
+	var crescimento = pib_atual - pib_anterior
+	var impacto_economia = 0.0
+	if crescimento > 0:
+		impacto_economia = 1.0
+	elif crescimento < 0:
+		impacto_economia = -1.0
+	var status = 70.0 + impacto_servicos - impacto_imposto + impacto_economia
+	paises.paises[pais]["status_povo"] = clamp(status, 0.0, 100.0)
+	print("Aprovação:", status)
+	print("crescimento", crescimento)
+	
+func gerar_noticia():
+	noticias_disponiveis.clear()
+
+	var status = paises.paises[pais]["status_povo"]
+	var pib_atual = paises.paises[pais]["pib"]
+	var imposto = paises.paises[pais]["taxa_imposto"]
+
+	var saude = paises.paises[pais]["saude"]
+	var educacao = paises.paises[pais]["educacao"]
+	var seguranca = paises.paises[pais]["seguranca"]
+
+	if status >= 80:
+		noticias_disponiveis.append("Governo registra aprovação histórica.")
+	elif status >= 60:
+		noticias_disponiveis.append("Governo mantém boa aprovação popular.")
+	elif status >= 40:
+		noticias_disponiveis.append("Insatisfação popular cresce.")
+	elif status >= 20:
+		noticias_disponiveis.append("Manifestações pressionam o governo.")
+	else:
+		noticias_disponiveis.append("País enfrenta grave crise política.")
+	
+	if pib_atual > pib_anterior:
+		noticias_disponiveis.append("Economia nacional apresenta crescimento.")
+	elif pib_atual < pib_anterior:
+		noticias_disponiveis.append("Economia nacional registra retração.")
+
+	if imposto > taxa_de_imposto_nao_base:
+		noticias_disponiveis.append("Aumento dos impostos gera debates.")
+	elif imposto < taxa_de_imposto_nao_base:
+		noticias_disponiveis.append("Redução da carga tributária é anunciada.")
+
+	if saude > saude_inicial:
+		noticias_disponiveis.append("Investimentos melhoram a saúde pública.")
+	if educacao > educacao_inicial:
+		noticias_disponiveis.append("Educação recebe novos investimentos.")
+	if seguranca > seguranca_inicial:
+		noticias_disponiveis.append("Segurança nacional recebe melhorias.")
+
+	noticias_disponiveis.shuffle()
+	var texto = ""
+	var limite = mini(quantidade_noticias, noticias_disponiveis.size())
+	for i in range(limite):
+		texto += "• " + noticias_disponiveis[i] + "\n\n"
+	$BotaoLateranoticias2/Sprite2D/Label_noticias.text = texto
+func atualizar_estabilidade_governo():
+	var imposto = paises.paises[pais]["taxa_imposto"]
+	var status = paises.paises[pais]["status_povo"]
+	var perda_estabilidade = 0.0
+	if imposto >= 100:
+		perda_estabilidade += 25
+	elif imposto >= 90:
+		perda_estabilidade += 15
+	elif imposto >= 80:
+		perda_estabilidade += 8
+	elif imposto >= 70:
+		perda_estabilidade += 4
+	if status < 40:
+		perda_estabilidade += 3
+	if status < 20:
+		perda_estabilidade += 7
+	estabilidade_governo -= perda_estabilidade
+	estabilidade_governo = clamp(estabilidade_governo, 0.0, 100.0)
+	print("Estabilidade do governo: ", estabilidade_governo)
+	if estabilidade_governo <= 0:
+		destruiçao_planetaria()

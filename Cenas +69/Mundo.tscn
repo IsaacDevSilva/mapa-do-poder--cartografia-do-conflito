@@ -80,6 +80,9 @@ bg_color = Color(0.6392157, 0.09411765, 0.08627451, 0.84313726)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ne36"]
 draw_center = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1lc8"]
+draw_center = false
+
 [sub_resource type="Animation" id="Animation_ek21q"]
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2304,6 +2307,16 @@ icon = ExtResource("28_5vwc1")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Label_noticias" type="Label" parent="BotaoLateranoticias2/Sprite2D" unique_id=1707263903]
+offset_left = -284.24936
+offset_top = -105.313446
+offset_right = 324.24936
+offset_bottom = 272.42654
+theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a1lc8")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="botao_noticias" type="Button" parent="BotaoLateranoticias2" unique_id=1943372552]
 offset_left = 541.275

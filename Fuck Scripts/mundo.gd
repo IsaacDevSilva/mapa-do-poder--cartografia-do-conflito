@@ -40,9 +40,12 @@ var constituicao_aberto = false
 var noticias_disponiveis = []
 var noticia_atual = ""
 var noticia_anterior = ""
-var quantidade_noticias = 4
+var quantidade_noticias = 10
 var estabilidade_governo = 100.0
 var partida_encerrada = false
+var taxa_de_natalidade = 1.5
+var taxa_de_mortalidade = 0.8
+var populaçao_ativa = 80
 func _ready() -> void: 
 	for vbox in $escolha.get_children(): 
 		if vbox is VBoxContainer: 
@@ -133,6 +136,7 @@ func _on_conflitar_pressed() -> void:
 	despesas_do_governo()
 	atualizar_status_povo()
 	atualizar_estabilidade_governo()
+	atualizar_populacao()
 	gerar_noticia()
 func demandas(turno): 
 	if turno_atual != turno: 
@@ -619,18 +623,16 @@ func revolta_popular():
 	pass
 func _on_botao_noticias_pressed() -> void:
 	$"animaçoes_geral".play("animacao_noticias")
-
-
 func _on_botao_voltar_noticia_pressed() -> void:
 	$"animaçoes_geral".play_backwards("animacao_noticias")
-
 func atualizar_status_povo():
 	var saude = paises.paises[pais]["saude"]
 	var educacao = paises.paises[pais]["educacao"]
 	var seguranca = paises.paises[pais]["seguranca"]
-	var servicos_atuais = (saude + educacao + seguranca) / 3.0
-	var servicos_iniciais = (saude_inicial + educacao_inicial + seguranca_inicial) / 3.0
-	var impacto_servicos = (servicos_atuais - servicos_iniciais) * 0.2
+	var melhoria_saude = saude - saude_inicial
+	var melhoria_educacao = educacao - educacao_inicial
+	var melhoria_seguranca = seguranca - seguranca_inicial
+	var impacto_servicos = (melhoria_saude +melhoria_educacao +melhoria_seguranca) * 3.0
 	var imposto_atual = paises.paises[pais]["taxa_imposto"]
 	var diferenca_imposto = imposto_atual - taxa_de_imposto_nao_base
 	var impacto_imposto = diferenca_imposto * 0.5
@@ -642,21 +644,23 @@ func atualizar_status_povo():
 	elif crescimento < 0:
 		impacto_economia = -1.0
 	var status = 70.0 + impacto_servicos - impacto_imposto + impacto_economia
-	paises.paises[pais]["status_povo"] = clamp(status, 0.0, 100.0)
-	print("Aprovação:", status)
-	print("crescimento", crescimento)
+	paises.paises[pais]["status_povo"] = roundi(clamp(status, 0.0, 100.0))
+	print("Impacto dos serviços: ", impacto_servicos)
+	print("Impacto dos impostos: ", impacto_imposto)
+	print("Impacto da economia: ", impacto_economia)
+	print("Aprovação: ", status)
 	
 func gerar_noticia():
 	noticias_disponiveis.clear()
-
 	var status = paises.paises[pais]["status_povo"]
 	var pib_atual = paises.paises[pais]["pib"]
 	var imposto = paises.paises[pais]["taxa_imposto"]
-
 	var saude = paises.paises[pais]["saude"]
 	var educacao = paises.paises[pais]["educacao"]
 	var seguranca = paises.paises[pais]["seguranca"]
-
+	var populacao = paises.paises[pais]["populacao"]
+	var populaçao_anterior = 0
+	var populaçao_ativa_anterior = 0
 	if status >= 80:
 		noticias_disponiveis.append("Governo registra aprovação histórica.")
 	elif status >= 60:
@@ -684,7 +688,13 @@ func gerar_noticia():
 		noticias_disponiveis.append("Educação recebe novos investimentos.")
 	if seguranca > seguranca_inicial:
 		noticias_disponiveis.append("Segurança nacional recebe melhorias.")
+	if populacao > populaçao_anterior:
+		noticias_disponiveis.append("O país registra crescimento populacional.")
+		populaçao_anterior = populacao
 
+	if populaçao_ativa > populaçao_ativa_anterior:
+		noticias_disponiveis.append("Mais cidadãos ingressaram no mercado de trabalho.")
+		populaçao_ativa_anterior = populaçao_ativa
 	noticias_disponiveis.shuffle()
 	var texto = ""
 	var limite = mini(quantidade_noticias, noticias_disponiveis.size())
@@ -694,21 +704,63 @@ func gerar_noticia():
 func atualizar_estabilidade_governo():
 	var imposto = paises.paises[pais]["taxa_imposto"]
 	var status = paises.paises[pais]["status_povo"]
+	var saude = paises.paises[pais]["saude"]
+	var educacao = paises.paises[pais]["educacao"]
+	var seguranca = paises.paises[pais]["seguranca"]
+
+	# COMPARAÇÃO COM OS SERVIÇOS INICIAIS
+	var melhoria_saude = saude - saude_inicial
+	var melhoria_educacao = educacao - educacao_inicial
+	var melhoria_seguranca = seguranca - seguranca_inicial
+
+	var melhoria_servicos = (melhoria_saude + melhoria_educacao + melhoria_seguranca) / 3.0
+
 	var perda_estabilidade = 0.0
+
+	# PRESSÃO DOS IMPOSTOS
 	if imposto >= 100:
-		perda_estabilidade += 25
+		perda_estabilidade += 80
 	elif imposto >= 90:
-		perda_estabilidade += 15
+		perda_estabilidade += 75
 	elif imposto >= 80:
-		perda_estabilidade += 8
+		perda_estabilidade += 70
 	elif imposto >= 70:
-		perda_estabilidade += 4
+		perda_estabilidade += 65
+	elif imposto >= 60:
+		perda_estabilidade += 60
+	elif imposto >= 50:
+		perda_estabilidade += 50
+	elif imposto >= 40:
+		perda_estabilidade += 15
+	elif imposto >= 30:
+		perda_estabilidade += 10
+	elif imposto >= 20:
+		perda_estabilidade += 0
+	elif imposto >= 10:
+		perda_estabilidade += 0
+
+	# INSATISFAÇÃO POPULAR
 	if status < 40:
 		perda_estabilidade += 3
 	if status < 20:
 		perda_estabilidade += 7
+
+	# IMPACTO DOS SERVIÇOS PÚBLICOS
+	var reducao = melhoria_servicos * 2.5
+	perda_estabilidade -= reducao
+
+	# ATUALIZA ESTABILIDADE
 	estabilidade_governo -= perda_estabilidade
 	estabilidade_governo = clamp(estabilidade_governo, 0.0, 100.0)
+	estabilidade_governo = int(estabilidade_governo)
+
+	print("Perda de estabilidade: ", perda_estabilidade)
 	print("Estabilidade do governo: ", estabilidade_governo)
+
 	if estabilidade_governo <= 0:
 		destruiçao_planetaria()
+func atualizar_populacao():
+	var populacao = paises.paises[pais]["populacao"]
+	var nascimentos = populacao * taxa_de_natalidade
+	var mortes = populacao * taxa_de_mortalidade
+	paises.paises[pais]["populacao"] += nascimentos - mortes

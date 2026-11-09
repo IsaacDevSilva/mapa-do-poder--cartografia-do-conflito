@@ -33,7 +33,9 @@
 [ext_resource type="Texture2D" uid="uid://cwi7jxeusansy" path="res://PixelMotherFuckerArts/Botao Voltar.png" id="28_5vwc1"]
 [ext_resource type="Texture2D" uid="uid://bp8vkkr2kc1hn" path="res://ABDUÇAO v5.png" id="28_n2ob7"]
 [ext_resource type="Texture2D" uid="uid://daqyhsaa7a1vp" path="res://ABDUÇAO v6.png" id="29_60vgq"]
+[ext_resource type="Texture2D" uid="uid://esnrpdjk586p" path="res://PixelMotherFuckerArts/caveira.png" id="29_s2a1v"]
 [ext_resource type="Texture2D" uid="uid://d7onwiaxynd2" path="res://PixelMotherFuckerArts/EFEITO_EXPLOSÃOV444.png" id="30_5hfie"]
+[ext_resource type="Texture2D" uid="uid://b57msrwbyqo1l" path="res://PixelMotherFuckerArts/nascimento.png" id="30_26mbe"]
 [ext_resource type="Texture2D" uid="uid://dvoubogvcreqp" path="res://ABDUÇAO v10 Copy Copy Copy.png" id="30_jxof3"]
 [ext_resource type="Texture2D" uid="uid://beygqjv31ar7x" path="res://ABDUÇAO v9 Copy Copy.png" id="31_o2wut"]
 [ext_resource type="Texture2D" uid="uid://bkmvmo3adtob" path="res://ABDUÇAO v8 Copy.png" id="32_7a8fq"]
@@ -81,6 +83,9 @@ bg_color = Color(0.6392157, 0.09411765, 0.08627451, 0.84313726)
 draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1lc8"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2a1v"]
 draw_center = false
 
 [sub_resource type="Animation" id="Animation_ek21q"]
@@ -2318,6 +2323,78 @@ offset_right = 324.24936
 offset_bottom = 272.42654
 theme_override_fonts/font = ExtResource("7_5vwc1")
 theme_override_styles/normal = SubResource("StyleBoxFlat_a1lc8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mortes" type="Label" parent="BotaoLateranoticias2/Sprite2D" unique_id=1017483821]
+offset_left = -473.15427
+offset_top = -103.68007
+offset_right = -433.15427
+offset_bottom = -80.68007
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0.89007354, 0, 0.07794956, 1)
+theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 20
+text = "0M"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="nascimentos" type="Label" parent="BotaoLateranoticias2/Sprite2D" unique_id=1518833212]
+offset_left = -473.15427
+offset_top = -199.38467
+offset_right = -433.15427
+offset_bottom = -176.38467
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0.7881235, 0.058396354, 1)
+theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 20
+text = "0M"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Caveira" type="Sprite2D" parent="BotaoLateranoticias2/Sprite2D" unique_id=24730890]
+position = Vector2(-336.82172, -175.45851)
+scale = Vector2(2.8, 2.8)
+texture = ExtResource("29_s2a1v")
+
+[node name="Nascimento" type="Sprite2D" parent="BotaoLateranoticias2/Sprite2D" unique_id=2080315759]
+position = Vector2(-336.8217, -87.729294)
+scale = Vector2(2, 2)
+texture = ExtResource("30_26mbe")
+
+[node name="dia" type="Label" parent="BotaoLateranoticias2/Sprite2D" unique_id=1713848477]
+offset_left = 80.19564
+offset_top = 199.38455
+offset_right = 120.19564
+offset_bottom = 257.38455
+theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_s2a1v")
+text = "a"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mes" type="Label" parent="BotaoLateranoticias2/Sprite2D" unique_id=1593947440]
+offset_left = 208.50864
+offset_top = 199.38455
+offset_right = 248.50864
+offset_bottom = 257.38455
+theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_s2a1v")
+text = "a"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ano" type="Label" parent="BotaoLateranoticias2/Sprite2D" unique_id=1442878250]
+offset_left = 320.78253
+offset_top = 199.38455
+offset_right = 360.78253
+offset_bottom = 257.38455
+theme_override_fonts/font = ExtResource("7_5vwc1")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_s2a1v")
+text = "a"
 horizontal_alignment = 1
 vertical_alignment = 1
 

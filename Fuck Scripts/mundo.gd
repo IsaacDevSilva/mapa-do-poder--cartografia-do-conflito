@@ -43,9 +43,11 @@ var noticia_anterior = ""
 var quantidade_noticias = 10
 var estabilidade_governo = 100.0
 var partida_encerrada = false
-var taxa_de_natalidade = 1.5
-var taxa_de_mortalidade = 0.8
+var taxa_de_natalidade = 0.15
+var taxa_de_mortalidade = 0.08
 var populaçao_ativa = 80
+var populaçao_anterior = 0
+var populaçao_ativa_anterior = 0
 func _ready() -> void: 
 	for vbox in $escolha.get_children(): 
 		if vbox is VBoxContainer: 
@@ -121,6 +123,13 @@ func _on_conflitar_pressed() -> void:
 	_turnos(dia_atual,mes_atual,ano_atual) 
 	turno += 1 
 	demandas(turno) 
+
+	impostos()
+	despesas_do_governo()
+	atualizar_status_povo()
+	atualizar_estabilidade_governo()
+	atualizar_populacao()
+	gerar_noticia()
 	var texto = "" 
 	for chave in paises.paises[pais]: 
 		var valor = paises.paises[pais][chave] 
@@ -132,12 +141,6 @@ func _on_conflitar_pressed() -> void:
 		
 	$info_estatisticas.text = texto 
 	$idh.text = str(paises.paises[pais]["idh"])
-	impostos()
-	despesas_do_governo()
-	atualizar_status_povo()
-	atualizar_estabilidade_governo()
-	atualizar_populacao()
-	gerar_noticia()
 func demandas(turno): 
 	if turno_atual != turno: 
 		turno_atual = turno 
@@ -659,8 +662,7 @@ func gerar_noticia():
 	var educacao = paises.paises[pais]["educacao"]
 	var seguranca = paises.paises[pais]["seguranca"]
 	var populacao = paises.paises[pais]["populacao"]
-	var populaçao_anterior = 0
-	var populaçao_ativa_anterior = 0
+
 	if status >= 80:
 		noticias_disponiveis.append("Governo registra aprovação histórica.")
 	elif status >= 60:
@@ -701,6 +703,9 @@ func gerar_noticia():
 	for i in range(limite):
 		texto += "• " + noticias_disponiveis[i] + "\n\n"
 	$BotaoLateranoticias2/Sprite2D/Label_noticias.text = texto
+	$BotaoLateranoticias2/Sprite2D/dia.text = str(dia_atual)
+	$BotaoLateranoticias2/Sprite2D/mes.text = str(mes_atual)
+	$BotaoLateranoticias2/Sprite2D/ano.text = str(ano_atual)
 func atualizar_estabilidade_governo():
 	var imposto = paises.paises[pais]["taxa_imposto"]
 	var status = paises.paises[pais]["status_povo"]
@@ -761,6 +766,10 @@ func atualizar_estabilidade_governo():
 		destruiçao_planetaria()
 func atualizar_populacao():
 	var populacao = paises.paises[pais]["populacao"]
-	var nascimentos = populacao * taxa_de_natalidade
-	var mortes = populacao * taxa_de_mortalidade
+	var nascimentos = snapped((populacao * taxa_de_natalidade / 100 * (paises.paises[pais]["saude"])/100), 0.1)
+	var mortes = snapped((populacao * taxa_de_mortalidade / 100 * (paises.paises[pais]["seguranca"]/100)), 0.1)
 	paises.paises[pais]["populacao"] += nascimentos - mortes
+	paises.paises[pais]["populacao"] = snappedf(paises.paises[pais]["populacao"],0.1)
+	
+	$BotaoLateranoticias2/Sprite2D/mortes.text = str(mortes,"M")
+	$BotaoLateranoticias2/Sprite2D/nascimentos.text = str(nascimentos,"M")

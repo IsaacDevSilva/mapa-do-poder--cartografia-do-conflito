@@ -2353,12 +2353,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Caveira" type="Sprite2D" parent="BotaoLateranoticias2/Sprite2D" unique_id=24730890]
-position = Vector2(-336.82172, -175.45851)
+position = Vector2(-336.82172, -79.75389)
 scale = Vector2(2.8, 2.8)
 texture = ExtResource("29_s2a1v")
 
 [node name="Nascimento" type="Sprite2D" parent="BotaoLateranoticias2/Sprite2D" unique_id=2080315759]
-position = Vector2(-336.8217, -87.729294)
+position = Vector2(-336.8217, -175.45851)
 scale = Vector2(2, 2)
 texture = ExtResource("30_26mbe")
 

@@ -123,10 +123,9 @@ func _on_conflitar_pressed() -> void:
 	_turnos(dia_atual,mes_atual,ano_atual) 
 	turno += 1 
 	demandas(turno) 
-
 	impostos()
 	despesas_do_governo()
-	atualizar_status_povo()
+	#atualizar_status_povo()
 	atualizar_estabilidade_governo()
 	atualizar_populacao()
 	gerar_noticia()
@@ -400,52 +399,48 @@ func formatar_dinheiro(valor):
 		return valor_grafico
  
  
-func comprar(indice): 
-	if indice >= ofertas.size(): 
-		return 
- 
-	var oferta = ofertas[indice] 
- 
-	if capital < oferta["preco"]: 
-		print("Capital insuficiente!") 
-		return 
- 
-	if paises.paises[pais]["materia_prima"] + oferta["qtd"] > paises.paises[pais]["estoque"]: 
-		print("Armazém cheio!") 
-		return 
- 
-	capital -= oferta["preco"] 
+func comprar(indice):
+	if indice >= ofertas.size():
+		return
+
+	var oferta = ofertas[indice]
+
+	if capital < oferta["preco"]:
+		print("Capital insuficiente!")
+		return
+
+	if paises.paises[pais]["materia_prima"] + oferta["qtd"] > paises.paises[pais]["estoque"]:
+		print("Armazém cheio!")
+		return
+
+	capital -= oferta["preco"]
+	paises.paises[pais]["pib"] -= oferta["preco"]
+
 	if oferta["pais"] != pais:
 		paises.paises[oferta["pais"]]["respeito_nacional"] += 5
-	paises.paises[oferta["pais"]]["respeito_nacional"]+=5
 
-	paises.paises[pais]["materia_prima"] += oferta["qtd"] 
- 
-	$capital.text = formatar_dinheiro(capital) 
+	paises.paises[pais]["materia_prima"] += oferta["qtd"]
+
+	$capital.text = formatar_dinheiro(capital)
  
 func vender(indice_vendas):
-	if indice_vendas >= ofertas_vendas.size(): 
-		return 
- 
-	var oferta_vendas = ofertas_vendas[indice_vendas] 
- 
-	if capital < oferta_vendas["preco"]: 
-		print("Capital insuficiente!") 
-		return 
- 
+	if indice_vendas >= ofertas_vendas.size():
+		return
+
+	var oferta_vendas = ofertas_vendas[indice_vendas]
+
 	if paises.paises[pais]["materia_prima"] < oferta_vendas["qtd"]:
 		print("Matéria-prima insuficiente!")
 		return
- 
-	capital += oferta_vendas["preco"] 
+
+	capital += oferta_vendas["preco"]
 	paises.paises[pais]["pib"] += oferta_vendas["preco"]
-	paises.paises[pais]["materia_prima"] -= oferta_vendas["qtd"] 
+	paises.paises[pais]["materia_prima"] -= oferta_vendas["qtd"]
+
 	if oferta_vendas["pais"] != pais:
 		paises.paises[oferta_vendas["pais"]]["respeito_nacional"] += 5
 
-	paises.paises[oferta_vendas["pais"]]["respeito_nacional"]+=5
-	$capital.text = formatar_dinheiro(capital) 
- 
+	$capital.text = formatar_dinheiro(capital)
 
 func acoes():
 	$PergaminhoDadosPais4_investbb/Label5.text = str(paises.paises[pais]["saude"])
@@ -706,6 +701,7 @@ func gerar_noticia():
 	$BotaoLateranoticias2/Sprite2D/dia.text = str(dia_atual)
 	$BotaoLateranoticias2/Sprite2D/mes.text = str(mes_atual)
 	$BotaoLateranoticias2/Sprite2D/ano.text = str(ano_atual)
+
 func atualizar_estabilidade_governo():
 	var imposto = paises.paises[pais]["taxa_imposto"]
 	var status = paises.paises[pais]["status_povo"]
@@ -713,7 +709,6 @@ func atualizar_estabilidade_governo():
 	var educacao = paises.paises[pais]["educacao"]
 	var seguranca = paises.paises[pais]["seguranca"]
 
-	# COMPARAÇÃO COM OS SERVIÇOS INICIAIS
 	var melhoria_saude = saude - saude_inicial
 	var melhoria_educacao = educacao - educacao_inicial
 	var melhoria_seguranca = seguranca - seguranca_inicial
@@ -722,7 +717,6 @@ func atualizar_estabilidade_governo():
 
 	var perda_estabilidade = 0.0
 
-	# PRESSÃO DOS IMPOSTOS
 	if imposto >= 100:
 		perda_estabilidade += 80
 	elif imposto >= 90:
@@ -739,37 +733,41 @@ func atualizar_estabilidade_governo():
 		perda_estabilidade += 15
 	elif imposto >= 30:
 		perda_estabilidade += 10
-	elif imposto >= 20:
-		perda_estabilidade += 0
-	elif imposto >= 10:
-		perda_estabilidade += 0
 
-	# INSATISFAÇÃO POPULAR
+	# Reduzir impostos aumenta a aprovação
+	var diferenca_imposto = imposto - taxa_de_imposto_nao_base
+	if diferenca_imposto < 0:
+		perda_estabilidade += diferenca_imposto * 0.5
+
 	if status < 40:
 		perda_estabilidade += 3
 	if status < 20:
 		perda_estabilidade += 7
 
-	# IMPACTO DOS SERVIÇOS PÚBLICOS
-	var reducao = melhoria_servicos * 2.5
+	# Investir em serviços reduz a perda de estabilidade
+	var reducao = maxf(melhoria_servicos * 2.5, 0.0)
+
 	perda_estabilidade -= reducao
 
-	# ATUALIZA ESTABILIDADE
 	estabilidade_governo -= perda_estabilidade
-	estabilidade_governo = clamp(estabilidade_governo, 0.0, 100.0)
+	estabilidade_governo = clampf(estabilidade_governo, 0.0, 100.0)
 	estabilidade_governo = int(estabilidade_governo)
 
+	paises.paises[pais]["status_povo"] = estabilidade_governo
+
+	print("Redução: ", reducao)
 	print("Perda de estabilidade: ", perda_estabilidade)
 	print("Estabilidade do governo: ", estabilidade_governo)
 
 	if estabilidade_governo <= 0:
 		destruiçao_planetaria()
+
 func atualizar_populacao():
 	var populacao = paises.paises[pais]["populacao"]
 	var nascimentos = snapped((populacao * taxa_de_natalidade / 100 * (paises.paises[pais]["saude"])/100), 0.1)
-	var mortes = snapped((populacao * taxa_de_mortalidade / 100 * (paises.paises[pais]["seguranca"]/100)), 0.1)
+	var mortes = snappedf(populacao * (taxa_de_mortalidade / 100.0) * (1.0 - (paises.paises[pais]["seguranca"] / 100.0) * 0.8),0.1)
 	paises.paises[pais]["populacao"] += nascimentos - mortes
 	paises.paises[pais]["populacao"] = snappedf(paises.paises[pais]["populacao"],0.1)
-	
+	print(mortes, "idsjfi")
 	$BotaoLateranoticias2/Sprite2D/mortes.text = str(mortes,"M")
 	$BotaoLateranoticias2/Sprite2D/nascimentos.text = str(nascimentos,"M")

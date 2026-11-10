@@ -18,6 +18,14 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 
 paises="*uid://vfmnxi6l0bvo"
 
+[file_customization]
+
+folder_colors={
+"res://Cenas +69/": "red",
+"res://Fuck Scripts/": "green",
+"res://PixelMotherFuckerArts/": "yellow"
+}
+
 [global_group]
 
 pinsmapa=""
